@@ -164,8 +164,184 @@ export default function WebDesignService() {
         </div>
       </section>
 
-      {/* Our Process */}
+      {/* Portfolio Section */}
       <section className="py-24 bg-[#F7F7F7]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
+              Our Recent Work
+            </h2>
+            <p className="text-xl text-[#4A4A4A]">
+              High-converting websites and landing pages we've designed and developed for clients across industries.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* Portfolio Item 1 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-green/20 to-brand-green/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-green" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 1</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Home Services Website
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Landing page design & development
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 2 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-orange/20 to-brand-orange/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-orange" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 2</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  E-commerce Store
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Shopify theme customization
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 3 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-purple/20 to-brand-purple/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-purple" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 3</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Multifamily Property
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Lease-up landing page
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 4 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-green/20 to-brand-green/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-green" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 4</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Service Business
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Full website redesign
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 5 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-orange/20 to-brand-orange/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-orange" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 5</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Product Landing Page
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  High-conversion design
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 6 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-purple/20 to-brand-purple/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-purple" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 6</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  SaaS Platform
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Marketing website design
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 7 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-green/20 to-brand-green/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-green" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 7</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Local Business
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  Mobile-first website
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 8 */}
+            <Card className="border-2 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand-orange/20 to-brand-orange/5 flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-brand-orange" />
+                  </div>
+                  <p className="text-sm font-medium text-[#4A4A4A]">Project 8</p>
+                </div>
+              </div>
+              <CardContent className="pt-4 pb-4">
+                <h3 className="font-display text-base text-[#0B0B0B] mb-1">
+                  Campaign Landing Page
+                </h3>
+                <p className="text-xs text-[#4A4A4A]">
+                  PPC campaign optimization
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="py-24 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">

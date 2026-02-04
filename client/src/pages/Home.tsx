@@ -121,6 +121,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Section */}
+      <section className="py-16 bg-white border-t border-b border-border">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-[#4A4A4A] font-display text-sm uppercase tracking-wider mb-2">
+              CERTIFIED PARTNERS
+            </p>
+            <h2 className="font-display text-2xl text-[#0B0B0B]">
+              Trusted by Leading Platforms
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto items-center">
+            {/* Google Ads Partner */}
+            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Google</div>
+                <div className="text-sm text-[#4A4A4A]">Ads Partner</div>
+              </div>
+            </div>
+
+            {/* Meta Ads Partner */}
+            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Meta</div>
+                <div className="text-sm text-[#4A4A4A]">Business Partner</div>
+              </div>
+            </div>
+
+            {/* Shopify Partner */}
+            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Shopify</div>
+                <div className="text-sm text-[#4A4A4A]">Partner</div>
+              </div>
+            </div>
+
+            {/* Klaviyo Partner */}
+            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Klaviyo</div>
+                <div className="text-sm text-[#4A4A4A]">Partner</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 bg-white">
         <div className="container">

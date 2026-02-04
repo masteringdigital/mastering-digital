@@ -133,37 +133,41 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto items-center">
             {/* Google Ads Partner */}
-            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Google</div>
-                <div className="text-sm text-[#4A4A4A]">Ads Partner</div>
-              </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/xHqmIfPNOwxildYe.png"
+                alt="Google Partner"
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             {/* Meta Ads Partner */}
-            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Meta</div>
-                <div className="text-sm text-[#4A4A4A]">Business Partner</div>
-              </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/nMuqgrPdFxcknINv.png"
+                alt="Meta Business Partner"
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             {/* Shopify Partner */}
-            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Shopify</div>
-                <div className="text-sm text-[#4A4A4A]">Partner</div>
-              </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/kThdyIdckgAzqUwi.png"
+                alt="Shopify Partner"
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             {/* Klaviyo Partner */}
-            <div className="flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#4A4A4A] mb-1">Klaviyo</div>
-                <div className="text-sm text-[#4A4A4A]">Partner</div>
-              </div>
+            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/bCpwSgXqZZpuCJbW.png"
+                alt="Klaviyo Partner"
+                className="h-20 w-auto object-contain"
+              />
             </div>
           </div>
         </div>

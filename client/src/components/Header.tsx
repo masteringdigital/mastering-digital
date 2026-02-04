@@ -129,12 +129,11 @@ export default function Header() {
               </NavigationMenuList>
             </NavigationMenu>
             
-            <button
-              onClick={() => scrollToSection("industries")}
-              className="text-foreground hover:text-primary font-medium"
-            >
-              Industries
-            </button>
+            <Link href="/industries">
+              <a className="text-foreground hover:text-primary font-medium">
+                Industries
+              </a>
+            </Link>
             <button
               onClick={() => scrollToSection("results")}
               className="text-foreground hover:text-primary font-medium"
@@ -204,12 +203,11 @@ export default function Header() {
                   </a>
                 </Link>
               </div>
-              <button
-                onClick={() => scrollToSection("industries")}
-                className="text-foreground hover:text-primary font-medium text-left px-3"
-              >
-                Industries
-              </button>
+              <Link href="/industries">
+                <a className="text-foreground hover:text-primary font-medium text-left px-3">
+                  Industries
+                </a>
+              </Link>
               <button
                 onClick={() => scrollToSection("results")}
                 className="text-foreground hover:text-primary font-medium text-left px-3"

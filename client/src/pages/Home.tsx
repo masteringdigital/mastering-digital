@@ -318,6 +318,221 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              CASE STUDIES
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
+              Client Success Stories
+            </h2>
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
+              Real businesses. Real challenges. Real results.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Case Study 1: Lifetime Enclosures */}
+            <Card className="border-2 shadow-lg overflow-hidden">
+              <div className="bg-brand-green/10 p-6 border-b-4 border-brand-green">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/NNwRLzCLMqFpoYat.jpg"
+                  alt="Lifetime Enclosures"
+                  className="h-12 w-auto mb-4"
+                />
+                <h3 className="font-display text-2xl text-[#0B0B0B] mb-2">
+                  Lifetime Enclosures
+                </h3>
+                <p className="text-brand-green font-semibold">Home Services • HVAC & Enclosures</p>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Challenge</p>
+                    <p className="text-[#0B0B0B]">
+                      Low lead volume and high cost per lead were limiting growth. Needed to scale qualified appointments.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Solution</p>
+                    <p className="text-[#0B0B0B]">
+                      Rebuilt Google Ads strategy, optimized landing pages, and implemented AI-powered lead follow-up.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t">
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">2.7x</div>
+                    <p className="text-sm text-[#4A4A4A]">Lead increase</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">35%</div>
+                    <p className="text-sm text-[#4A4A4A]">Lower CPL</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">5min</div>
+                    <p className="text-sm text-[#4A4A4A]">Response time</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">$180k</div>
+                    <p className="text-sm text-[#4A4A4A]">Added revenue</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 2: Shoma Group */}
+            <Card className="border-2 shadow-lg overflow-hidden">
+              <div className="bg-brand-orange/10 p-6 border-b-4 border-brand-orange">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/SAscemzkqTESLBNO.png"
+                  alt="Shoma Group"
+                  className="h-12 w-auto mb-4"
+                />
+                <h3 className="font-display text-2xl text-[#0B0B0B] mb-2">
+                  Shoma Group
+                </h3>
+                <p className="text-brand-orange font-semibold">Multifamily • Lease-Ups</p>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Challenge</p>
+                    <p className="text-[#0B0B0B]">
+                      Multiple properties needed faster lease-ups with better qualified prospects and lower vacancy rates.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Solution</p>
+                    <p className="text-[#0B0B0B]">
+                      Geo-targeted campaigns, conversion-optimized landing pages, and automated tour booking system.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t">
+                  <div>
+                    <div className="text-3xl font-bold text-brand-orange">2.5x</div>
+                    <p className="text-sm text-[#4A4A4A]">Revenue growth</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-orange">42%</div>
+                    <p className="text-sm text-[#4A4A4A]">Faster lease-up</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-orange">68%</div>
+                    <p className="text-sm text-[#4A4A4A]">Tour booking rate</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-orange">3.2x</div>
+                    <p className="text-sm text-[#4A4A4A]">ROAS</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 3: Wristband Resources */}
+            <Card className="border-2 shadow-lg overflow-hidden">
+              <div className="bg-brand-purple/10 p-6 border-b-4 border-brand-purple">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/VHIlECxTYboCdXqI.jpg"
+                  alt="Wristband Resources"
+                  className="h-12 w-auto mb-4"
+                />
+                <h3 className="font-display text-2xl text-[#0B0B0B] mb-2">
+                  Wristband Resources
+                </h3>
+                <p className="text-brand-purple font-semibold">E-commerce • Custom Products</p>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Challenge</p>
+                    <p className="text-[#0B0B0B]">
+                      High customer acquisition costs and low repeat purchase rates were limiting profitability.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Solution</p>
+                    <p className="text-[#0B0B0B]">
+                      Performance marketing campaigns, email automation, and retention strategy to increase LTV.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t">
+                  <div>
+                    <div className="text-3xl font-bold text-brand-purple">3x</div>
+                    <p className="text-sm text-[#4A4A4A]">Ad spend scale</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-purple">4.8</div>
+                    <p className="text-sm text-[#4A4A4A]">ROAS</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-purple">52%</div>
+                    <p className="text-sm text-[#4A4A4A]">Lower CAC</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-purple">38%</div>
+                    <p className="text-sm text-[#4A4A4A]">Repeat rate</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 4: Lifetime Flooring */}
+            <Card className="border-2 shadow-lg overflow-hidden">
+              <div className="bg-brand-green/10 p-6 border-b-4 border-brand-green">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/bdBIEHBVRiVezemY.png"
+                  alt="Lifetime Flooring"
+                  className="h-12 w-auto mb-4"
+                />
+                <h3 className="font-display text-2xl text-[#0B0B0B] mb-2">
+                  Lifetime Flooring
+                </h3>
+                <p className="text-brand-green font-semibold">Home Services • Flooring Installation</p>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Challenge</p>
+                    <p className="text-[#0B0B0B]">
+                      Inconsistent lead flow and poor tracking made it difficult to scale profitably.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-[#4A4A4A] mb-2">Solution</p>
+                    <p className="text-[#0B0B0B]">
+                      Multi-channel strategy with Google LSA, Meta ads, and comprehensive GA4 tracking setup.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t">
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">3.1x</div>
+                    <p className="text-sm text-[#4A4A4A]">Lead volume</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">28%</div>
+                    <p className="text-sm text-[#4A4A4A]">Lower CPL</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">100%</div>
+                    <p className="text-sm text-[#4A4A4A]">Tracking accuracy</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-brand-green">$240k</div>
+                    <p className="text-sm text-[#4A4A4A]">Added revenue</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Industries Section */}
       <section id="industries" className="py-24 bg-white">
         <div className="container">

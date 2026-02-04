@@ -46,7 +46,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column - 6 cols */}
             <div className="lg:col-span-6 space-y-6">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-[#0B0B0B] leading-tight">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] leading-tight">
                 Grow Faster With a Marketing Partner Who Actually Delivers
               </h1>
               <p className="text-xl text-[#4A4A4A] leading-relaxed">

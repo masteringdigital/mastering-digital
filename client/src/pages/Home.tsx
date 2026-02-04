@@ -351,6 +351,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-[#F7F7F7]">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              Client Success Stories
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-black mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-brand-charcoal text-lg max-w-2xl mx-auto">
+              Real feedback from businesses we've helped grow.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-border">
+              <div className="mb-6">
+                <svg className="w-10 h-10 text-brand-green" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <p className="text-brand-charcoal mb-6 leading-relaxed">
+                "Mastering Digital transformed our lead generation. We went from 15 leads per month to over 40, and our cost per lead dropped by 35%. Their AI follow-up system is a game-changer."
+              </p>
+              <div className="border-t border-border pt-6">
+                <p className="font-display font-bold text-brand-black">Michael Thompson</p>
+                <p className="text-sm text-brand-charcoal">Owner, Lifetime Enclosures</p>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-border">
+              <div className="mb-6">
+                <svg className="w-10 h-10 text-brand-orange" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <p className="text-brand-charcoal mb-6 leading-relaxed">
+                "We've worked with three agencies before. Mastering Digital is the first one that actually delivered results. Revenue is up 2.5x in six months, and we finally have visibility into what's working."
+              </p>
+              <div className="border-t border-border pt-6">
+                <p className="font-display font-bold text-brand-black">Sarah Chen</p>
+                <p className="text-sm text-brand-charcoal">Marketing Director, Shoma Group</p>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-border">
+              <div className="mb-6">
+                <svg className="w-10 h-10 text-brand-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <p className="text-brand-charcoal mb-6 leading-relaxed">
+                "The team at Mastering Digital doesn't just run campaigns—they become a true partner. Their strategic approach and transparent reporting gave us confidence to scale our ad spend 3x."
+              </p>
+              <div className="border-t border-border pt-6">
+                <p className="font-display font-bold text-brand-black">David Rodriguez</p>
+                <p className="text-sm text-brand-charcoal">CEO, Wristband Resources</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Industries Section */}
       <section id="industries" className="py-24 bg-white">
         <div className="container">

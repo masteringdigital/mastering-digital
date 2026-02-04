@@ -121,6 +121,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Client Logos Section */}
+      <section className="py-16 bg-white border-y border-border">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-[#4A4A4A] text-sm uppercase tracking-wider mb-2">
+              Trusted by Industry Leaders
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60 hover:opacity-100 transition-opacity">
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/NNwRLzCLMqFpoYat.jpg"
+              alt="Lifetime Enclosures"
+              className="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/bdBIEHBVRiVezemY.png"
+              alt="Lifetime Flooring"
+              className="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/SAscemzkqTESLBNO.png"
+              alt="Shoma Group"
+              className="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/VHIlECxTYboCdXqI.jpg"
+              alt="Wristband Resources"
+              className="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 bg-white">
         <div className="container">

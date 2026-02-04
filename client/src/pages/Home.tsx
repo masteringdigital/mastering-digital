@@ -593,6 +593,77 @@ export default function Home() {
             </Card>
           </div>
         </div>
+      </section>      {/* Team Section */}
+      <section className="py-24 bg-[#F7F7F7]">
+        <div className="container">
+          <div className="text-center mb-16">
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              OUR TEAM
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
+              Meet Your Growth Partners
+            </h2>
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
+              Senior strategists with decades of combined experience driving results for businesses like yours.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Michael Schott */}
+            <Card className="border-2 shadow-sm text-center">
+              <CardContent className="pt-8 pb-6">
+                <img
+                  src="https://ui-avatars.com/api/?name=Michael+Schott&background=6FBF73&color=fff&size=120&bold=true"
+                  alt="Michael Schott"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-brand-green"
+                />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-2">
+                  Michael Schott
+                </h3>
+                <p className="text-brand-green font-semibold mb-3">Co-Founder & Strategist</p>
+                <p className="text-[#4A4A4A] text-sm">
+                  15+ years in digital marketing with expertise in paid acquisition and conversion optimization.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Johny Schott */}
+            <Card className="border-2 shadow-sm text-center">
+              <CardContent className="pt-8 pb-6">
+                <img
+                  src="https://ui-avatars.com/api/?name=Johny+Schott&background=F5A623&color=fff&size=120&bold=true"
+                  alt="Johny Schott"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-brand-orange"
+                />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-2">
+                  Johny Schott
+                </h3>
+                <p className="text-brand-orange font-semibold mb-3">Co-Founder & Creative Director</p>
+                <p className="text-[#4A4A4A] text-sm">
+                  Specializes in web design, UX optimization, and building high-converting landing pages.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Leo Barros */}
+            <Card className="border-2 shadow-sm text-center">
+              <CardContent className="pt-8 pb-6">
+                <img
+                  src="https://ui-avatars.com/api/?name=Leo+Barros&background=5B2C6F&color=fff&size=120&bold=true"
+                  alt="Leo Barros"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-brand-purple"
+                />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-2">
+                  Leo Barros
+                </h3>
+                <p className="text-brand-purple font-semibold mb-3">AI & Automation Specialist</p>
+                <p className="text-[#4A4A4A] text-sm">
+                  Builds AI-powered systems for lead qualification, follow-up automation, and reporting.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* Final CTA Section */}

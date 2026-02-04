@@ -1,8 +1,8 @@
 /*
-DESIGN: Kinetic Gradient Futurism
-- Clean footer with organized link columns
-- Brand identity with logo and tagline
-- Subtle gradient accents
+DESIGN: Professional Modern Marketing
+- Black background footer (#0B0B0B)
+- White text with muted gray links
+- Green hover states for links
 */
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-[#0B0B0B] text-white">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Column 1: Logo + Tagline */}
@@ -24,19 +24,19 @@ export default function Footer() {
               alt="Mastering Digital"
               className="h-10 w-auto mb-4"
             />
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-[#9CA3AF] text-sm leading-relaxed">
               Growth marketing for home services, e-commerce, and multifamily.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-display text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-display text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Services
                 </button>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("industries")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Industries
                 </button>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("results")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Results
                 </button>
@@ -60,7 +60,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("why-choose-us")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   About
                 </button>
@@ -68,7 +68,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Contact
                 </button>
@@ -78,12 +78,12 @@ export default function Footer() {
 
           {/* Column 3: Industries */}
           <div>
-            <h3 className="font-display text-foreground mb-4">Industries</h3>
+            <h3 className="font-display text-white mb-4">Industries</h3>
             <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => scrollToSection("industries")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Home Services
                 </button>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("industries")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   E-commerce
                 </button>
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("industries")}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   Lease-Ups
                 </button>
@@ -109,12 +109,12 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="font-display text-foreground mb-4">Contact</h3>
+            <h3 className="font-display text-white mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="mailto:info@masteringdigital.com"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-[#9CA3AF] hover:text-brand-green text-sm"
                 >
                   info@masteringdigital.com
                 </a>
@@ -124,16 +124,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border">
+        <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-[#9CA3AF] text-sm">
               © 2026 Mastering Digital. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <button className="text-[#9CA3AF] hover:text-brand-green text-sm">
                 Privacy Policy
               </button>
-              <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <button className="text-[#9CA3AF] hover:text-brand-green text-sm">
                 Terms of Service
               </button>
             </div>

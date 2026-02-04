@@ -10,6 +10,9 @@ import StrategyService from "./pages/StrategyService";
 import WebDesignService from "./pages/WebDesignService";
 import AIService from "./pages/AIService";
 import Industries from "./pages/Industries";
+import SEOService from "./pages/SEOService";
+import PPCService from "./pages/PPCService";
+import MetaAdsService from "./pages/MetaAdsService";
 
 function Router() {
   return (
@@ -19,6 +22,9 @@ function Router() {
       <Route path={"/services/strategy"} component={StrategyService} />
       <Route path={"/services/web-design"} component={WebDesignService} />
       <Route path={"/services/ai-implementation"} component={AIService} />
+      <Route path={"/services/seo"} component={SEOService} />
+      <Route path={"/services/ppc"} component={PPCService} />
+      <Route path={"/services/meta-ads"} component={MetaAdsService} />
       <Route path={"/industries"} component={Industries} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Palette, Bot, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Target, Palette, Bot, ArrowRight, CheckCircle2, Search, TrendingUp, Share2, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
@@ -18,10 +18,10 @@ export default function Services() {
               OUR SERVICES
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              Strategy-Led Marketing That Drives Results
+              Comprehensive Digital Marketing Services
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              We don't just execute campaigns — we build comprehensive marketing systems that generate leads, appointments, and revenue for home services, e-commerce, and multifamily businesses.
+              From SEO and paid advertising to AI automation and email marketing, we provide end-to-end digital marketing solutions that drive measurable growth.
             </p>
           </div>
         </div>
@@ -30,42 +30,154 @@ export default function Services() {
       {/* Main Services Grid */}
       <section className="py-24 bg-white">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Strategy & Channel Marketing */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* SEO */}
             <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader className="border-b-4 border-brand-green bg-brand-green/5">
-                <Target className="w-12 h-12 text-brand-green mb-4" />
+                <Search className="w-12 h-12 text-brand-green mb-4" />
                 <CardTitle className="font-display text-2xl text-[#0B0B0B]">
-                  Strategy & Channel Marketing
+                  SEO Services
                 </CardTitle>
                 <CardDescription className="text-[#4A4A4A] text-base">
-                  Data-driven strategies across Google Ads, Meta, and more
+                  Organic search optimization for long-term visibility
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Google Ads & Local Service Ads</span>
+                    <span className="text-[#4A4A4A]">Technical SEO audits</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Meta Ads (Facebook & Instagram)</span>
+                    <span className="text-[#4A4A4A]">Local SEO & Google Business Profile</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Multi-channel strategy & optimization</span>
+                    <span className="text-[#4A4A4A]">Content strategy & optimization</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Performance tracking & reporting</span>
+                    <span className="text-[#4A4A4A]">Link building & authority growth</span>
                   </li>
                 </ul>
-                <Link href="/services/strategy">
+                <Link href="/services/seo">
                   <Button className="w-full bg-brand-green hover:bg-brand-green/90 text-white font-display">
                     Learn More <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
+              </CardContent>
+            </Card>
+
+            {/* PPC Google Ads */}
+            <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="border-b-4 border-brand-orange bg-brand-orange/5">
+                <Target className="w-12 h-12 text-brand-orange mb-4" />
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
+                  PPC Google Ads
+                </CardTitle>
+                <CardDescription className="text-[#4A4A4A] text-base">
+                  High-intent search advertising that converts
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Search campaign management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Local Service Ads (LSA)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Shopping & Performance Max</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Display & remarketing campaigns</span>
+                  </li>
+                </ul>
+                <Link href="/services/ppc">
+                  <Button className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white font-display">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Meta Ads / Social Media */}
+            <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="border-b-4 border-brand-purple bg-brand-purple/5">
+                <Share2 className="w-12 h-12 text-brand-purple mb-4" />
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
+                  Meta Ads & Social Media
+                </CardTitle>
+                <CardDescription className="text-[#4A4A4A] text-base">
+                  Facebook, Instagram, and social advertising
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Facebook & Instagram ads</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Lead generation campaigns</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Audience targeting & retargeting</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Creative testing & optimization</span>
+                  </li>
+                </ul>
+                <Link href="/services/meta-ads">
+                  <Button className="w-full bg-brand-purple hover:bg-brand-purple/90 text-white font-display">
+                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Email Marketing & Automation */}
+            <Card className="border-2 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="border-b-4 border-brand-green bg-brand-green/5">
+                <Mail className="w-12 h-12 text-brand-green mb-4" />
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
+                  Email Marketing & Automation
+                </CardTitle>
+                <CardDescription className="text-[#4A4A4A] text-base">
+                  Nurture leads and drive repeat business
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Email campaign strategy & design</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Marketing automation workflows</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">Lead nurturing sequences</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-[#4A4A4A]">List segmentation & personalization</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-brand-green hover:bg-brand-green/90 text-white font-display" disabled>
+                  Coming Soon
+                </Button>
               </CardContent>
             </Card>
 
@@ -77,7 +189,7 @@ export default function Services() {
                   Web Design & Conversion
                 </CardTitle>
                 <CardDescription className="text-[#4A4A4A] text-base">
-                  High-converting landing pages and website optimization
+                  High-converting landing pages and websites
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
@@ -115,7 +227,7 @@ export default function Services() {
                   AI Implementation
                 </CardTitle>
                 <CardDescription className="text-[#4A4A4A] text-base">
-                  Intelligent automation systems that scale your business
+                  Intelligent automation that scales your business
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
@@ -126,11 +238,11 @@ export default function Services() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Automated follow-up systems</span>
+                    <span className="text-[#4A4A4A]">Chatbot & SMS automation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
-                    <span className="text-[#4A4A4A]">Chatbot & SMS automation</span>
+                    <span className="text-[#4A4A4A]">Automated follow-up systems</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0 mt-0.5" />
@@ -144,6 +256,8 @@ export default function Services() {
                 </Link>
               </CardContent>
             </Card>
+
+            {/* Strategy & Channel Marketing - Removed as it's now covered by specific services above */}
           </div>
         </div>
       </section>

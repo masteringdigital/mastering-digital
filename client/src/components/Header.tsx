@@ -14,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, X, Target, Palette, Bot } from "lucide-react";
+import { Menu, X, Target, Palette, Bot, Search, TrendingUp, Share2 } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -60,19 +60,53 @@ export default function Header() {
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4">
+                    <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
                       <li>
-                        <Link href="/services/strategy">
+                        <Link href="/services/seo">
                           <NavigationMenuLink asChild>
                             <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Target className="w-5 h-5 text-brand-green" />
+                              <div className="flex items-center gap-2 mb-1">
+                                <Search className="w-4 h-4 text-brand-green" />
                                 <div className="text-sm font-medium leading-none">
-                                  Strategy & Channel Marketing
+                                  SEO Services
                                 </div>
                               </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                Google Ads, Meta, and multi-channel paid advertising strategies
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                Organic search optimization
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/services/ppc">
+                          <NavigationMenuLink asChild>
+                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                              <div className="flex items-center gap-2 mb-1">
+                                <Target className="w-4 h-4 text-brand-orange" />
+                                <div className="text-sm font-medium leading-none">
+                                  PPC Google Ads
+                                </div>
+                              </div>
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                Search & display advertising
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/services/meta-ads">
+                          <NavigationMenuLink asChild>
+                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                              <div className="flex items-center gap-2 mb-1">
+                                <Share2 className="w-4 h-4 text-brand-purple" />
+                                <div className="text-sm font-medium leading-none">
+                                  Meta Ads & Social
+                                </div>
+                              </div>
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                Facebook & Instagram ads
                               </p>
                             </a>
                           </NavigationMenuLink>
@@ -82,14 +116,14 @@ export default function Header() {
                         <Link href="/services/web-design">
                           <NavigationMenuLink asChild>
                             <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Palette className="w-5 h-5 text-brand-orange" />
+                              <div className="flex items-center gap-2 mb-1">
+                                <Palette className="w-4 h-4 text-brand-orange" />
                                 <div className="text-sm font-medium leading-none">
-                                  Web Design & Conversion
+                                  Web Design & CRO
                                 </div>
                               </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                High-converting landing pages and CRO optimization
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                Landing pages & optimization
                               </p>
                             </a>
                           </NavigationMenuLink>
@@ -99,14 +133,31 @@ export default function Header() {
                         <Link href="/services/ai-implementation">
                           <NavigationMenuLink asChild>
                             <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Bot className="w-5 h-5 text-brand-purple" />
+                              <div className="flex items-center gap-2 mb-1">
+                                <Bot className="w-4 h-4 text-brand-purple" />
                                 <div className="text-sm font-medium leading-none">
                                   AI Implementation
                                 </div>
                               </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                AI-powered lead qualification and automation systems
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                AI automation systems
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/services/strategy">
+                          <NavigationMenuLink asChild>
+                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                              <div className="flex items-center gap-2 mb-1">
+                                <TrendingUp className="w-4 h-4 text-brand-green" />
+                                <div className="text-sm font-medium leading-none">
+                                  Strategy & Consulting
+                                </div>
+                              </div>
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                Multi-channel marketing strategy
                               </p>
                             </a>
                           </NavigationMenuLink>

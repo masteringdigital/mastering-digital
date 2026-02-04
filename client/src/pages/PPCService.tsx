@@ -340,10 +340,13 @@ export default function PPCService() {
               Book a strategy session to discuss your PPC goals and see how we can lower your costs.
             </p>
             <Button
+              asChild
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-display text-xl px-12 py-8"
             >
-              Book a Strategy Session
+              <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                Book a Strategy Session
+              </a>
             </Button>
           </div>
         </div>

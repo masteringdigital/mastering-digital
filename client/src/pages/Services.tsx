@@ -345,10 +345,13 @@ export default function Services() {
               Book a 30-minute strategy session to see how we can help grow your business.
             </p>
             <Button
+              asChild
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-display text-xl px-12 py-8"
             >
-              Book a Strategy Session
+              <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                Book a Strategy Session
+              </a>
             </Button>
           </div>
         </div>

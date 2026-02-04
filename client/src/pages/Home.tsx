@@ -55,11 +55,13 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
-                  onClick={() => scrollToSection("final-cta")}
+                  asChild
                   size="lg"
                   className="bg-primary text-white font-display text-lg px-8 py-6 btn-cta"
                 >
-                  Book a Strategy Session
+                  <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                    Book a Strategy Session
+                  </a>
                 </Button>
                 <Button
                   onClick={() => scrollToSection("results")}
@@ -943,10 +945,13 @@ export default function Home() {
               plan for your business.
             </p>
             <Button
+              asChild
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-display text-xl px-12 py-8"
             >
-              Book a Strategy Session
+              <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                Book a Strategy Session
+              </a>
             </Button>
             <p className="text-white/80 mt-6 text-sm">
               No commitment required. We'll review your current marketing, identify quick wins, and

@@ -208,10 +208,12 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              onClick={() => scrollToSection("final-cta")}
+              asChild
               className="bg-primary text-white font-display px-6 py-3 btn-cta"
             >
-              Book a Strategy Session
+              <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                Book a Strategy Session
+              </a>
             </Button>
           </div>
 
@@ -278,10 +280,12 @@ export default function Header() {
                 Contact
               </button>
               <Button
-                onClick={() => scrollToSection("final-cta")}
+                asChild
                 className="bg-primary text-white font-display w-full btn-cta"
               >
-                Book a Strategy Session
+                <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                  Book a Strategy Session
+                </a>
               </Button>
             </nav>
           </div>

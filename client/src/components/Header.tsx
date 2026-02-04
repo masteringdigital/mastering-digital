@@ -1,13 +1,14 @@
 /*
-DESIGN: Dark SaaS Aesthetic
-- Background: #1A1A1A
-- Font: Inter (400 for nav, 600 for CTA)
-- Accent Purple #7C3AED for CTA
+DESIGN: Professional Modern Marketing
+- Clean navigation with deep blue CTA
+- Montserrat for branding, Open Sans for nav
+- No animations - static and professional
 */
 
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,45 +22,59 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1A1A1A] border-b border-[#2A2A2A]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
       <div className="container">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/TVxNADekNFIUEzTq.jpg"
-              alt="Mastering Digital"
-              className="h-8 w-auto"
-            />
-          </a>
+          <Link href="/">
+            <div className="flex items-center cursor-pointer">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/TVxNADekNFIUEzTq.jpg"
+                alt="Mastering Digital"
+                className="h-12 w-auto"
+              />
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("services")}
-              className="text-sm text-gray-300 hover:text-white transition-colors"
+              className="text-foreground hover:text-primary font-medium"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("industries")}
-              className="text-sm text-gray-300 hover:text-white transition-colors"
+              className="text-foreground hover:text-primary font-medium"
             >
               Industries
             </button>
             <button
               onClick={() => scrollToSection("results")}
-              className="text-sm text-gray-300 hover:text-white transition-colors"
+              className="text-foreground hover:text-primary font-medium"
             >
               Results
+            </button>
+            <button
+              onClick={() => scrollToSection("why-choose-us")}
+              className="text-foreground hover:text-primary font-medium"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-foreground hover:text-primary font-medium"
+            >
+              Contact
             </button>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              onClick={() => scrollToSection("cta")}
-              className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold px-6"
+              onClick={() => scrollToSection("final-cta")}
+              className="bg-primary text-white font-display px-6 py-3 btn-cta"
             >
               Book a Strategy Session
             </Button>
@@ -67,7 +82,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,29 +91,41 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-[#2A2A2A]">
+          <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-sm text-gray-300 hover:text-white text-left"
+                className="text-foreground hover:text-primary font-medium text-left"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("industries")}
-                className="text-sm text-gray-300 hover:text-white text-left"
+                className="text-foreground hover:text-primary font-medium text-left"
               >
                 Industries
               </button>
               <button
                 onClick={() => scrollToSection("results")}
-                className="text-sm text-gray-300 hover:text-white text-left"
+                className="text-foreground hover:text-primary font-medium text-left"
               >
                 Results
               </button>
+              <button
+                onClick={() => scrollToSection("why-choose-us")}
+                className="text-foreground hover:text-primary font-medium text-left"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-foreground hover:text-primary font-medium text-left"
+              >
+                Contact
+              </button>
               <Button
-                onClick={() => scrollToSection("cta")}
-                className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold w-full"
+                onClick={() => scrollToSection("final-cta")}
+                className="bg-primary text-white font-display w-full btn-cta"
               >
                 Book a Strategy Session
               </Button>

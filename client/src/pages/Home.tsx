@@ -1,23 +1,30 @@
 /*
-DESIGN: Dark SaaS Aesthetic
-- Background: #1A1A1A or white sections
-- Font: Inter (H1: 700, H2: 600, Body: 400, Buttons: 600)
-- Accent Purple #7C3AED: CTAs, section labels, icons
-- Accent Cyan #06B6D4: data visuals only
-- Conversion-focused, performance-driven copy
+DESIGN: Professional Modern Marketing
+- Foundation: Black (#0B0B0B), Charcoal (#4A4A4A), Off-White (#F7F7F7)
+- Accents: Green (#6FBF73), Orange (#F5A623), Purple (#5B2C6F)
+- CTA: Deep Blue (#1F3C88)
+- Montserrat headlines, Open Sans body
+- No animations - clean and static
 */
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import {
-  ArrowRight,
   BarChart3,
+  Bot,
   CheckCircle2,
+  Globe,
   LineChart,
+  Mail,
+  Megaphone,
+  Search,
+  Settings,
+  ShoppingCart,
   Target,
+  Users,
   Zap,
 } from "lucide-react";
 
@@ -30,331 +37,283 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1A1A]">
+    <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-16 bg-[#1A1A1A]">
+      <section className="relative min-h-screen flex items-center pt-20 bg-[#F7F7F7]">
         <div className="container">
-          <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Generate More Leads, Book More Appointments, Grow Revenue
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Strategy-led marketing for home services, e-commerce, and multifamily operators spending $5k+/month who need accountability, not excuses.
-            </p>
-            
-            {/* Feature Card */}
-            <Card className="bg-[#222] border-[#333] p-8 max-w-2xl mx-auto">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-white">
-                  Senior strategists. Real reporting. Measurable results.
-                </h3>
-                <p className="text-gray-400">
-                  No junior handoffs. 24/7 dashboard access. AI-powered systems that scale.
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
-                  <div className="text-center">
-                    <Target className="w-8 h-8 text-[#7C3AED] mx-auto mb-2" />
-                    <p className="text-sm text-gray-300">Strategy</p>
-                  </div>
-                  <div className="text-center">
-                    <Zap className="w-8 h-8 text-[#7C3AED] mx-auto mb-2" />
-                    <p className="text-sm text-gray-300">Paid Ads</p>
-                  </div>
-                  <div className="text-center">
-                    <LineChart className="w-8 h-8 text-[#7C3AED] mx-auto mb-2" />
-                    <p className="text-sm text-gray-300">AI Systems</p>
-                  </div>
-                  <div className="text-center">
-                    <BarChart3 className="w-8 h-8 text-[#7C3AED] mx-auto mb-2" />
-                    <p className="text-sm text-gray-300">Analytics</p>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column - 6 cols */}
+            <div className="lg:col-span-6 space-y-6">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-[#0B0B0B] leading-tight">
+                Grow Faster With a Marketing Partner Who Actually Delivers
+              </h1>
+              <p className="text-xl text-[#4A4A4A] leading-relaxed">
+                We help home services companies, e-commerce brands, and multifamily properties
+                generate more leads, book more appointments, and grow revenue.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button
+                  onClick={() => scrollToSection("final-cta")}
+                  size="lg"
+                  className="bg-primary text-white font-display text-lg px-8 py-6 btn-cta"
+                >
+                  Book a Strategy Session
+                </Button>
+                <Button
+                  onClick={() => scrollToSection("results")}
+                  size="lg"
+                  variant="outline"
+                  className="font-display text-lg px-8 py-6 border-2 border-[#0B0B0B] text-[#0B0B0B] hover:bg-[#0B0B0B] hover:text-white"
+                >
+                  See Our Results
+                </Button>
               </div>
-            </Card>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button
-                onClick={() => scrollToSection("cta")}
-                size="lg"
-                className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-lg px-8"
-              >
-                Book a Strategy Session
-              </Button>
-              <Button
-                onClick={() => scrollToSection("results")}
-                size="lg"
-                variant="outline"
-                className="border-2 border-gray-600 text-white hover:bg-gray-800 font-semibold text-lg px-8"
-              >
-                See Our Results
-              </Button>
+            {/* Right Column - 6 cols - Feature Cards */}
+            <div className="lg:col-span-6">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Main Feature Card */}
+                <Card className="col-span-2 border-2 shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="font-display text-2xl text-[#0B0B0B]">
+                      Senior strategists. Real reporting. Actual results.
+                    </CardTitle>
+                    <CardDescription className="text-lg text-[#4A4A4A]">
+                      No junior handoffs. 24/7 dashboard access. AI-powered systems that scale.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                {/* Icon Cards */}
+                <Card className="border-2 hover:border-brand-green">
+                  <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
+                    <Target className="w-10 h-10 text-brand-green" />
+                    <p className="font-display text-[#0B0B0B]">Strategy</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2 hover:border-brand-orange">
+                  <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
+                    <Megaphone className="w-10 h-10 text-brand-orange" />
+                    <p className="font-display text-[#0B0B0B]">Paid Ads</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2 hover:border-brand-purple">
+                  <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
+                    <Bot className="w-10 h-10 text-brand-purple" />
+                    <p className="font-display text-[#0B0B0B]">AI Systems</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2 hover:border-brand-green">
+                  <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
+                    <BarChart3 className="w-10 h-10 text-brand-green" />
+                    <p className="font-display text-[#0B0B0B]">Analytics</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Client Logos Section */}
-      <section className="py-16 bg-white border-y border-gray-200">
-        <div className="container">
-          <div className="text-center mb-12">
-            <p className="text-sm text-gray-500 uppercase tracking-wider">
-              Trusted by Industry Leaders
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-50">
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/NNwRLzCLMqFpoYat.jpg"
-              alt="Lifetime Enclosures"
-              className="h-12 md:h-14 w-auto grayscale"
-            />
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/bdBIEHBVRiVezemY.png"
-              alt="Lifetime Flooring"
-              className="h-12 md:h-14 w-auto grayscale"
-            />
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/SAscemzkqTESLBNO.png"
-              alt="Shoma Group"
-              className="h-12 md:h-14 w-auto grayscale"
-            />
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/VHIlECxTYboCdXqI.jpg"
-              alt="Wristband Resources"
-              className="h-12 md:h-14 w-auto grayscale"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
-      <section id="services" className="py-24 bg-[#1A1A1A]">
+      <section id="services" className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              Services
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              SERVICES
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4">
-              Strategy-Led Marketing That Drives Results
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
+              Full-Service Marketing Built for Growth
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
               We combine strategy, execution, and optimization into one accountable partnership.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Service 1 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-4">
-                <Target className="w-12 h-12 text-[#7C3AED]" />
-                <h3 className="text-2xl font-semibold text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Card 1: Strategy + Channel Marketing */}
+            <Card className="border-2 shadow-sm">
+              <div className="h-2 bg-brand-green"></div>
+              <CardHeader>
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
                   Strategy & Channel Marketing
-                </h3>
-                <p className="text-gray-400">
+                </CardTitle>
+                <CardDescription className="text-lg text-[#4A4A4A]">
                   Reach the right audience and turn clicks into customers.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#4A4A4A] mb-4">
+                  We build the plan and execute across every channel that matters:
                 </p>
-                <ul className="space-y-2 pt-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Discovery & channel strategy</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Discovery & channel strategy</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Google Ads & LSA</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Google Ads & LSA</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Meta / Social Ads</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Meta / Social Ads</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Email & SMS automation</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Email & SMS automation</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>SEO & local SEO</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">SEO & local SEO</span>
                   </li>
                 </ul>
-              </div>
+              </CardContent>
             </Card>
 
-            {/* Service 2 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-4">
-                <Zap className="w-12 h-12 text-[#7C3AED]" />
-                <h3 className="text-2xl font-semibold text-white">
+            {/* Card 2: Web Design & CRO */}
+            <Card className="border-2 shadow-sm">
+              <div className="h-2 bg-brand-orange"></div>
+              <CardHeader>
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
                   Web Design & Conversion
-                </h3>
-                <p className="text-gray-400">
+                </CardTitle>
+                <CardDescription className="text-lg text-[#4A4A4A]">
                   Get a website that converts — not just one that looks good.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#4A4A4A] mb-4">
+                  We build and optimize the pages that turn traffic into leads:
                 </p>
-                <ul className="space-y-2 pt-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Website design & development</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Website design & development</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>E-commerce builds</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">E-commerce builds</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Landing page optimization</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">Landing page optimization</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>A/B testing & CRO</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">A/B testing & CRO</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>GA4 & attribution dashboards</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0B0B0B]">GA4 & attribution dashboards</span>
                   </li>
                 </ul>
-              </div>
+              </CardContent>
             </Card>
 
-            {/* Service 3 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-4">
-                <LineChart className="w-12 h-12 text-[#7C3AED]" />
-                <h3 className="text-2xl font-semibold text-white">
+            {/* Card 3: AI Implementation */}
+            <Card className="border-2 shadow-sm md:col-span-2">
+              <div className="h-2 bg-brand-purple"></div>
+              <CardHeader>
+                <CardTitle className="font-display text-2xl text-[#0B0B0B]">
                   AI Implementation
-                </h3>
-                <p className="text-gray-400">
+                </CardTitle>
+                <CardDescription className="text-lg text-[#4A4A4A]">
                   Move faster with AI systems that actually work.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#4A4A4A] mb-4">
+                  We turn AI into real business systems — not just tools:
                 </p>
-                <ul className="space-y-2 pt-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>AI-powered lead intake & qualification</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Automated follow-up & booking</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>AI-enabled reporting & alerts</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#7C3AED] flex-shrink-0 mt-0.5" />
-                    <span>Platform integrations</span>
-                  </li>
-                </ul>
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-brand-purple mt-0.5 flex-shrink-0" />
+                      <span className="text-[#0B0B0B]">AI-powered lead intake & qualification</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-brand-purple mt-0.5 flex-shrink-0" />
+                      <span className="text-[#0B0B0B]">
+                        Automated follow-up & appointment booking
+                      </span>
+                    </li>
+                  </ul>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-brand-purple mt-0.5 flex-shrink-0" />
+                      <span className="text-[#0B0B0B]">AI-enabled reporting & alerts</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-brand-purple mt-0.5 flex-shrink-0" />
+                      <span className="text-[#0B0B0B]">Platform integrations</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section id="results" className="py-24 bg-white">
+      <section id="results" className="py-24 bg-[#F7F7F7]">
         <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              Results
-            </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
-              Real Clients. Real Growth.
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We measure success by one thing: your results. Here's what we've delivered.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-            {/* Stats */}
-            <div className="space-y-8">
-              <div className="border-l-4 border-[#06B6D4] pl-6">
-                <div className="text-5xl font-bold text-[#06B6D4] mb-2">2.5x</div>
-                <p className="text-gray-600">Average lead increase for home services clients</p>
-              </div>
-              <div className="border-l-4 border-[#06B6D4] pl-6">
-                <div className="text-5xl font-bold text-[#06B6D4] mb-2">42%</div>
-                <p className="text-gray-600">Reduction in cost per lead</p>
-              </div>
-              <div className="border-l-4 border-[#06B6D4] pl-6">
-                <div className="text-5xl font-bold text-[#06B6D4] mb-2">5 min</div>
-                <p className="text-gray-600">Average response time with AI follow-up (down from 4+ hours)</p>
-              </div>
-              <p className="text-sm text-gray-500 italic pt-4">
-                Results vary by industry and ad spend. These represent real client outcomes.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Stats */}
+            <div>
+              <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+                RESULTS
               </p>
+              <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
+                Real Clients. Real Growth.
+              </h2>
+              <p className="text-xl text-[#4A4A4A] mb-12">
+                We measure success by one thing: your results. Here's what we've delivered for
+                clients like you.
+              </p>
+
+              <div className="space-y-8">
+                <div className="border-l-4 border-brand-green pl-6">
+                  <div className="font-display text-5xl text-brand-green mb-2">2.5x</div>
+                  <p className="text-[#0B0B0B]">Average lead increase for home services clients</p>
+                </div>
+
+                <div className="border-l-4 border-brand-orange pl-6">
+                  <div className="font-display text-5xl text-brand-orange mb-2">42%</div>
+                  <p className="text-[#0B0B0B]">Reduction in cost per lead</p>
+                </div>
+
+                <div className="border-l-4 border-brand-green pl-6">
+                  <div className="font-display text-5xl text-brand-green mb-2">5 min</div>
+                  <p className="text-[#0B0B0B]">
+                    Average response time with AI follow-up (down from 4+ hours)
+                  </p>
+                </div>
+              </div>
+
+              <Button
+                size="lg"
+                className="mt-12 bg-primary text-white font-display btn-cta"
+              >
+                View Case Studies
+              </Button>
             </div>
 
-            {/* Dashboard Visual */}
-            <div className="bg-[#1A1A1A] rounded-lg p-8 border border-gray-800">
+            {/* Right Side - Dashboard Visual */}
+            <div className="relative">
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/iYIQFLnPMCEXNFgj.png"
-                alt="Analytics Dashboard"
-                className="w-full rounded"
+                src="https://private-us-east-1.manuscdn.com/sessionFile/gdoMzMLMX7RpezMxgQSeYN/sandbox/92U5pcweAEWTHyokgdIlQO-img-2_1770168185000_na1fn_ZGFzaGJvYXJkLW1vY2t1cA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ2RvTXpNTE1YN1JwZXpNeGdRU2VZTi9zYW5kYm94LzkyVTVwY3dlQUVXVEh5b2tnZElsUU8taW1nLTJfMTc3MDE2ODE4NTAwMF9uYTFmbl9aR0Z6YUdKdllYSmtMVzF2WTJ0MWNBLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Enca8~9SRdvIXOewMx1sFR3MzdQQKHfUi301O~lwhvGOOKk34Xp8SGa29rgP59Gzcogd7iI5nLBCyRsl4z~O4OdvuLp2NTOwz2PNlzQLn8RZUBJOGyzk2K5Nu9wbb59JsOx~95P~GG8PNZXpsAV8ACX~4sECStspdLXcOChj2Jpf9xqzxPKMbritYMhYQ2uKA1KskKv-NiXSj0m~EnZAe8gek7IVf7-FM7xaQhkc2llAI9l3n-5W0LoregSF2LvFW5YK~dWaGOiYjgHSMlDI1IAeU6WhkQmHHVHPa0FDrtRsu2zPpDykOA5ZJ48tf31LXvEQHhsxyvINni0VhpVfMQ__"
+                alt="Marketing Dashboard"
+                className="rounded-lg shadow-2xl"
               />
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold"
-            >
-              View Case Studies
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-[#1A1A1A]">
-        <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              Client Success Stories
-            </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4">
-              What Our Clients Say
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-6">
-                <p className="text-gray-300 leading-relaxed">
-                  "Mastering Digital transformed our lead generation. We went from 15 leads per month to over 40, and our cost per lead dropped by 35%. Their AI follow-up system is a game-changer."
-                </p>
-                <div className="border-t border-[#333] pt-6">
-                  <p className="font-semibold text-white">Michael Thompson</p>
-                  <p className="text-sm text-gray-400">Owner, Lifetime Enclosures</p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Testimonial 2 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-6">
-                <p className="text-gray-300 leading-relaxed">
-                  "We've worked with three agencies before. Mastering Digital is the first one that actually delivered results. Revenue is up 2.5x in six months, and we finally have visibility into what's working."
-                </p>
-                <div className="border-t border-[#333] pt-6">
-                  <p className="font-semibold text-white">Sarah Chen</p>
-                  <p className="text-sm text-gray-400">Marketing Director, Shoma Group</p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Testimonial 3 */}
-            <Card className="bg-[#222] border-[#333] p-8">
-              <div className="space-y-6">
-                <p className="text-gray-300 leading-relaxed">
-                  "The team at Mastering Digital doesn't just run campaigns—they become a true partner. Their strategic approach and transparent reporting gave us confidence to scale our ad spend 3x."
-                </p>
-                <div className="border-t border-[#333] pt-6">
-                  <p className="font-semibold text-white">David Rodriguez</p>
-                  <p className="text-sm text-gray-400">CEO, Wristband Resources</p>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -363,75 +322,115 @@ export default function Home() {
       <section id="industries" className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              Who We Serve
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              WHO WE SERVE
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
               Marketing Built for Your Industry
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We specialize in high-intent industries where leads, speed, and conversion matter most.
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
+              We specialize in high-intent industries where leads, speed, and conversion matter
+              most.
             </p>
           </div>
 
-          <Tabs defaultValue="home-services" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 mb-12">
-              <TabsTrigger value="home-services" className="font-semibold">
+          <Tabs defaultValue="home-services" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-12">
+              <TabsTrigger value="home-services" className="font-display">
                 Home Services
               </TabsTrigger>
-              <TabsTrigger value="ecommerce" className="font-semibold">
+              <TabsTrigger value="ecommerce" className="font-display">
                 E-commerce
               </TabsTrigger>
-              <TabsTrigger value="lease-ups" className="font-semibold">
+              <TabsTrigger value="lease-ups" className="font-display">
                 Lease-Ups
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="home-services" className="space-y-6">
-              <div className="text-center space-y-4">
-                <div className="text-6xl font-bold text-[#7C3AED]">01</div>
-                <h3 className="text-3xl font-semibold text-gray-900">
-                  Fill your schedule with qualified jobs — not tire-kickers.
-                </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  We help HVAC, roofing, flooring, and home improvement companies generate leads, book appointments, and grow revenue with paid ads, local SEO, and AI-powered follow-up.
-                </p>
-                <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold mt-6">
-                  See Home Services Solutions
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+            {/* Home Services Tab */}
+            <TabsContent value="home-services">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="font-display text-6xl text-brand-green/30 mb-4">01</div>
+                  <h3 className="font-display text-3xl text-[#0B0B0B] mb-6">
+                    Fill your schedule with qualified jobs — not tire-kickers.
+                  </h3>
+                  <p className="text-lg text-[#4A4A4A] mb-8 leading-relaxed">
+                    We help HVAC, roofing, flooring, and home improvement companies generate leads,
+                    book appointments, and grow revenue with paid ads, local SEO, and AI-powered
+                    follow-up.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-primary text-white font-display btn-cta"
+                  >
+                    See Home Services Solutions
+                  </Button>
+                </div>
+                <div>
+                  <img
+                    src="https://private-us-east-1.manuscdn.com/sessionFile/gdoMzMLMX7RpezMxgQSeYN/sandbox/92U5pcweAEWTHyokgdIlQO-img-3_1770168187000_na1fn_YWktY2hhdC1ib29raW5n.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ2RvTXpNTE1YN1JwZXpNeGdRU2VZTi9zYW5kYm94LzkyVTVwY3dlQUVXVEh5b2tnZElsUU8taW1nLTNfMTc3MDE2ODE4NzAwMF9uYTFmbl9ZV2t0WTJoaGRDMWliMjlyYVc1bi5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=nFDfcresG5wMFH31o4wToQMehlgEdGXCrveKZV3HhfG9mvS0HSl8RP8CeoYaE5iinyahJ~2Qxl4d0je1NBJAX-a7NPfqOlCeNVpV~Fgi8jBZ7yqrlzaOUb0qn3Ny5-BAsjLyjiHyLWSslTTIuF~FeFrlsNQusKAuaSuJSOCiFzMNUJeWA5gnv7jbadVRKnxvwBuN-PVNmxxG~whCZSBiFP9mhyMFc9AX5KY1ulQJEch0EDzMj~jT3su8yHk7MkgxsbCVMNbmZW5MA~IxlrYC65T3LpudUJL2xFRo3jkIYbBdmjGYUFmlJYfEpvXjmwYdt1FKNx7nXFOyt2Sjcky4rg__"
+                    alt="AI Chat Booking"
+                    className="rounded-lg shadow-xl max-w-sm mx-auto"
+                  />
+                </div>
               </div>
             </TabsContent>
 
-            <TabsContent value="ecommerce" className="space-y-6">
-              <div className="text-center space-y-4">
-                <div className="text-6xl font-bold text-[#7C3AED]">02</div>
-                <h3 className="text-3xl font-semibold text-gray-900">
-                  Scale profitably with data-driven acquisition.
-                </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  We help e-commerce brands increase ROAS, reduce CAC, and scale customer acquisition through performance marketing, conversion optimization, and retention strategies.
-                </p>
-                <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold mt-6">
-                  See E-commerce Solutions
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+            {/* E-commerce Tab */}
+            <TabsContent value="ecommerce">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="order-2 lg:order-1">
+                  <img
+                    src="https://private-us-east-1.manuscdn.com/sessionFile/gdoMzMLMX7RpezMxgQSeYN/sandbox/92U5pcweAEWTHyokgdIlQO-img-4_1770168190000_na1fn_ZWNvbW1lcmNlLWRhc2hib2FyZA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZ2RvTXpNTE1YN1JwZXpNeGdRU2VZTi9zYW5kYm94LzkyVTVwY3dlQUVXVEh5b2tnZElsUU8taW1nLTRfMTc3MDE2ODE5MDAwMF9uYTFmbl9aV052YlcxbGNtTmxMV1JoYzJoaWIyRnlaQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=pXhJ8GOAwNOQonRXr~AkzoTHwp5W1Za4C4uCZHbScIKAtPktNmGNWt~U~J0brZSpqRWUgAEbgS~6J1ctJtVtk0Wx9DvHP4XRs3eMsJaL3NbW5b1FyNTCMd9~gSYs~rHd0b6N4xeVGRh9O3rI6kvq0efXBVxnaSslqFLrzmddz5h9Rox684JMVFx65jqzwtNxbKhO6otsaQWpZDHZI-i7f4hQmA7VaXrsPtPoYtfoPewIJgxq37z7ex8PNWtDkAxBg9Yku4ZXbiybl4I4MtTAcv2VJ~rdHXs1n6JLRzSLFwduDbfJ0E--W6zwr~7UxMuWoDkhlkAdbinyG4Xm3~aTg__"
+                    alt="E-commerce Dashboard"
+                    className="rounded-lg shadow-xl"
+                  />
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="font-display text-6xl text-brand-orange/30 mb-4">02</div>
+                  <h3 className="font-display text-3xl text-[#0B0B0B] mb-6">
+                    Turn traffic into revenue with campaigns that actually convert.
+                  </h3>
+                  <p className="text-lg text-[#4A4A4A] mb-8 leading-relaxed">
+                    We help DTC and e-commerce brands scale profitably with paid social, email/SMS
+                    automation, CRO, and full-funnel strategy.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-primary text-white font-display btn-cta"
+                  >
+                    See E-commerce Solutions
+                  </Button>
+                </div>
               </div>
             </TabsContent>
 
-            <TabsContent value="lease-ups" className="space-y-6">
-              <div className="text-center space-y-4">
-                <div className="text-6xl font-bold text-[#7C3AED]">03</div>
-                <h3 className="text-3xl font-semibold text-gray-900">
-                  Lease up faster with targeted, high-intent campaigns.
-                </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  We help multifamily properties drive qualified tours, reduce vacancy, and hit lease-up targets with geo-targeted ads, conversion-optimized landing pages, and automated follow-up.
-                </p>
-                <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold mt-6">
-                  See Lease-Up Solutions
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+            {/* Lease-Ups Tab */}
+            <TabsContent value="lease-ups">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="font-display text-6xl text-brand-purple/30 mb-4">03</div>
+                  <h3 className="font-display text-3xl text-[#0B0B0B] mb-6">
+                    Lease faster with marketing built for velocity.
+                  </h3>
+                  <p className="text-lg text-[#4A4A4A] mb-8 leading-relaxed">
+                    Lease Ups — our sister company — specializes in lease-up marketing for
+                    multifamily properties. We combine hyper-local paid media, ILS optimization, and
+                    AI-driven follow-up to fill units fast.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-primary text-white font-display btn-cta"
+                  >
+                    Explore Lease Ups
+                  </Button>
+                </div>
+                <div>
+                  <div className="aspect-video bg-[#E5E7EB] rounded-lg flex items-center justify-center shadow-lg">
+                    <p className="text-[#4A4A4A] font-display">Property Listing Mockup</p>
+                  </div>
+                </div>
               </div>
             </TabsContent>
           </Tabs>
@@ -439,70 +438,95 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-[#1A1A1A]">
+      <section id="why-choose-us" className="py-24 bg-[#F7F7F7]">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              Why Mastering Digital
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              WHY MASTERING DIGITAL
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
               Your Growth Partner, Not Just Another Agency
             </h2>
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
+              We're built different — and your results will prove it.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Senior Strategists on Every Account
-              </h3>
-              <p className="text-gray-400">
-                No handoff to junior teams. Your account is managed by experienced strategists who understand your business.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <Users className="w-12 h-12 text-brand-green mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  Senior Strategists on Every Account
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  No handoff to junior teams. Your account is managed by experienced strategists who
+                  understand your business.
+                </p>
+              </CardContent>
             </Card>
 
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                24/7 Reporting Visibility
-              </h3>
-              <p className="text-gray-400">
-                Check your performance anytime with our real-time reporting platform. No waiting for monthly reports.
-              </p>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <BarChart3 className="w-12 h-12 text-brand-orange mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  24/7 Reporting Visibility
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  Check your performance anytime with our real-time reporting platform. No waiting
+                  for monthly reports.
+                </p>
+              </CardContent>
             </Card>
 
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Landing Pages & CRO Built In-House
-              </h3>
-              <p className="text-gray-400">
-                We don't just run ads — we build and optimize the pages that convert.
-              </p>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <Target className="w-12 h-12 text-brand-purple mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  Landing Pages & CRO Built In-House
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  We don't just run ads — we build and optimize the pages that convert.
+                </p>
+              </CardContent>
             </Card>
 
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Tracking & Dashboards Are Standard
-              </h3>
-              <p className="text-gray-400">
-                GA4, GTM, and clear attribution come included. You'll always know what's working.
-              </p>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <Settings className="w-12 h-12 text-brand-green mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  Tracking & Dashboards Are Standard
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  GA4, GTM, and clear attribution come included. You'll always know what's working.
+                </p>
+              </CardContent>
             </Card>
 
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                AI Implementation That Actually Works
-              </h3>
-              <p className="text-gray-400">
-                We turn AI into real systems — lead qualification, automated follow-up, reporting — that save time and scale your operations.
-              </p>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <Bot className="w-12 h-12 text-brand-orange mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  AI Implementation That Actually Works
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  We turn AI into real systems — lead qualification, automated follow-up, reporting
+                  — that save time and scale your operations.
+                </p>
+              </CardContent>
             </Card>
 
-            <Card className="bg-[#222] border-[#333] p-8">
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Accountable Partnership
-              </h3>
-              <p className="text-gray-400">
-                We're invested in your success. Clear communication, transparent reporting, and results you can measure.
-              </p>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <CheckCircle2 className="w-12 h-12 text-brand-purple mb-4" />
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">
+                  Accountable Partnership
+                </h3>
+                <p className="text-[#4A4A4A]">
+                  We're invested in your success. Clear communication, transparent reporting, and
+                  results you can measure.
+                </p>
+              </CardContent>
             </Card>
           </div>
         </div>
@@ -512,74 +536,92 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-sm text-[#7C3AED] uppercase tracking-wider mb-4 font-semibold">
-              How We Work
+            <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
+              HOW WE WORK
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-[#0B0B0B] mb-6">
               A Simple Path From Kickoff to Results
             </h2>
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
+              We follow a proven process that keeps you informed and in control at every stage.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="text-center space-y-4">
-              <div className="text-5xl font-bold text-[#7C3AED]">01</div>
-              <h3 className="text-xl font-semibold text-gray-900">Discover</h3>
-              <p className="text-gray-600">
-                We start with a Strategy Session to understand your goals, challenges, and current marketing.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <div className="font-display text-5xl text-brand-green mb-4">01</div>
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">Discover</h3>
+                <p className="text-[#4A4A4A]">
+                  We start with a Strategy Session to understand your goals, challenges, and current
+                  marketing. You walk away with a clear action plan.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="text-center space-y-4">
-              <div className="text-5xl font-bold text-[#7C3AED]">02</div>
-              <h3 className="text-xl font-semibold text-gray-900">Strategize</h3>
-              <p className="text-gray-600">
-                We build a custom roadmap — channels, messaging, creative, and tech stack — tailored to your business.
-              </p>
-            </div>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <div className="font-display text-5xl text-brand-orange mb-4">02</div>
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">Strategize</h3>
+                <p className="text-[#4A4A4A]">
+                  We build a custom roadmap — channels, messaging, creative, and tech stack —
+                  tailored to your business and budget.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="text-center space-y-4">
-              <div className="text-5xl font-bold text-[#7C3AED]">03</div>
-              <h3 className="text-xl font-semibold text-gray-900">Launch</h3>
-              <p className="text-gray-600">
-                Campaigns go live, landing pages deploy, tracking is installed, and AI systems are activated.
-              </p>
-            </div>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <div className="font-display text-5xl text-brand-purple mb-4">03</div>
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">Launch</h3>
+                <p className="text-[#4A4A4A]">
+                  Campaigns go live, landing pages deploy, tracking is installed, and AI systems are
+                  activated.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="text-center space-y-4">
-              <div className="text-5xl font-bold text-[#7C3AED]">04</div>
-              <h3 className="text-xl font-semibold text-gray-900">Optimize</h3>
-              <p className="text-gray-600">
-                We monitor, test, and improve continuously. You get 24/7 reporting visibility and regular optimization calls.
-              </p>
-            </div>
+            <Card className="border-2 shadow-sm">
+              <CardContent className="pt-6">
+                <div className="font-display text-5xl text-brand-green mb-4">04</div>
+                <h3 className="font-display text-xl text-[#0B0B0B] mb-3">Optimize</h3>
+                <p className="text-[#4A4A4A]">
+                  We monitor, test, and improve continuously. You get 24/7 reporting visibility and
+                  regular optimization calls.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta" className="py-24 bg-[#1A1A1A]">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-semibold text-white">
-              Ready to Grow?
-            </h2>
-            <p className="text-xl text-gray-300">
-              30–45 minutes with a senior strategist. No pitch, no pressure — just a clear action plan for your business.
+      <section id="final-cta" className="py-24 bg-primary relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-4xl md:text-6xl text-white mb-6">Ready to Grow?</h2>
+            <p className="text-xl md:text-2xl text-white/90 mb-8">
+              30–45 minutes with a senior strategist. No pitch, no pressure — just a clear action
+              plan for your business.
             </p>
             <Button
               size="lg"
-              className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-lg px-12 py-6"
+              className="bg-white text-primary hover:bg-white/90 font-display text-xl px-12 py-8"
             >
               Book a Strategy Session
             </Button>
-            <p className="text-sm text-gray-400 pt-4">
-              No commitment required. We'll review your current marketing, identify quick wins, and give you a roadmap — whether we work together or not.
+            <p className="text-white/80 mt-6 text-sm">
+              No commitment required. We'll review your current marketing, identify quick wins, and
+              give you a roadmap — whether we work together or not.
             </p>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Contact Section */}
+      <section id="contact" className="py-0">
+        <Footer />
+      </section>
     </div>
   );
 }

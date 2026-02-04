@@ -181,25 +181,25 @@ export default function Header() {
             </NavigationMenu>
             
             <Link href="/industries">
-              <a className="text-foreground hover:text-primary font-medium">
+              <a className="text-sm text-foreground hover:text-primary font-medium">
                 Industries
               </a>
             </Link>
             <button
               onClick={() => scrollToSection("results")}
-              className="text-foreground hover:text-primary font-medium"
+              className="text-sm text-foreground hover:text-primary font-medium"
             >
               Results
             </button>
             <button
               onClick={() => scrollToSection("why-choose-us")}
-              className="text-foreground hover:text-primary font-medium"
+              className="text-sm text-foreground hover:text-primary font-medium"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary font-medium"
+              className="text-sm text-foreground hover:text-primary font-medium"
             >
               Contact
             </button>

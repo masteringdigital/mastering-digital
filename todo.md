@@ -313,3 +313,9 @@
 - [x] Add 850 Living as additional featured client on Real Estate page multifamily section
 - [x] Verify 850 Living displays correctly on live site
 - [ ] Save checkpoint with 850 Living added to Real Estate page
+
+## Phase 33: Add Ten30 South Beach Case Study (Supplementary Multifamily)
+- [x] Add Ten30 South Beach case study to Results page (after 850 Living)
+- [x] Add Ten30 South Beach as featured client to Real Estate page
+- [x] Verify Ten30 South Beach displays correctly on live site
+- [ ] Save checkpoint with Ten30 South Beach case study added

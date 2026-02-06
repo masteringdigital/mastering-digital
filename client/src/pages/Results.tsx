@@ -427,6 +427,100 @@ export default function Results() {
         </div>
       </section>
 
+      {/* Case Study 5: Ten30 South Beach */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <Card className="border-0 shadow-2xl">
+              <CardHeader className="border-b bg-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="font-bold text-3xl text-gray-900 mb-3">Ten30 South Beach</h2>
+                    <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple text-sm font-semibold rounded-full">
+                      Multifamily • Residential Sales
+                    </span>
+                  </div>
+                  <TrendingUp className="w-12 h-12 text-brand-purple" />
+                </div>
+              </CardHeader>
+              <CardContent className="pt-8">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Sales-focused real estate campaigns require more than leads — they need qualified buyers, showings, and fast contract conversions. Ten30 needed enough demand to keep showing calendars full and move prospects from viewing to signing faster.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-purple font-bold">→</span>
+                          <span>Treated campaign as conversion journey: Discovery → Interest → Showing → Contract</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-purple font-bold">→</span>
+                          <span>Filled showing calendars with ready-to-move prospects</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-purple font-bold">→</span>
+                          <span>Shortened path from interest to contract conversion</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-purple font-bold">→</span>
+                          <span>Created reporting clarity for team to scale what drove sales</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-purple font-bold">→</span>
+                          <span>Used data & analytics as steering wheel, not afterthought</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-purple mb-2">$60M+</div>
+                          <div className="text-sm text-gray-600">Sales Volume</div>
+                          <div className="text-xs text-gray-500 mt-1">9 months</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-purple mb-2">33</div>
+                          <div className="text-sm text-gray-600">Units Sold</div>
+                          <div className="text-xs text-gray-500 mt-1">Campaign Total</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-purple mb-2">10</div>
+                          <div className="text-sm text-gray-600">Units Sold</div>
+                          <div className="text-xs text-gray-500 mt-1">First 15 Days</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-purple mb-2">Full</div>
+                          <div className="text-sm text-gray-600">Showing Calendars</div>
+                          <div className="text-xs text-gray-500 mt-1">Faster Conversions</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-brand-purple/5 p-6 rounded-lg border-l-4 border-brand-purple">
+                      <p className="text-gray-700 italic">
+                        "Ten30 South Beach didn't just attract attention — they filled showing calendars and accelerated contract conversions. 10 units sold in the first 15 days set the tone. 33 units and $60M+ in sales over 9 months proved the system worked."
+                      </p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">

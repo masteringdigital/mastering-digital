@@ -277,6 +277,21 @@ export default function RealEstate() {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="border-0 shadow-xl bg-gradient-to-br from-brand-cyan/5 to-brand-green/5">
+              <CardContent className="pt-8">
+                <p className="text-brand-cyan font-semibold text-sm uppercase tracking-wider mb-2">
+                  FEATURED CLIENT
+                </p>
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">Ten30 South Beach</h3>
+                <p className="text-gray-700 mb-4">
+                  Filled showing calendars and accelerated contract conversions. 10 units sold in first 15 days, 33 units sold in 9 months totaling $60M+ in sales.
+                </p>
+                <Button asChild variant="outline">
+                  <Link href="/results">View Full Case Study</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

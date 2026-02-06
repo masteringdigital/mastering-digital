@@ -197,4 +197,16 @@
 - [x] Update page title and meta tags
 - [x] Update internal links and references
 - [x] Test Who We Are page displays correctly
-- [ ] Save checkpoint with core values and rename
+- [x] Save checkpoint with core values and rename
+
+## Phase 18: Core Values Icons & Who We're Not a Fit For Section
+- [x] Add unique icon to Performance Over Noise core value
+- [x] Add unique icon to Radical Transparency core value
+- [x] Add unique icon to Strategy Before Spend core value
+- [x] Add unique icon to Ownership & Accountability core value
+- [x] Add unique icon to Partnership Not Dependency core value
+- [x] Create "Who We're Not a Fit For" section on Who We Are page
+- [x] Add all 6 "not a fit" criteria with proper formatting
+- [x] Position section appropriately on page (after values, before team)
+- [x] Test visual presentation of icons and new section
+- [ ] Save checkpoint with icons and not a fit section

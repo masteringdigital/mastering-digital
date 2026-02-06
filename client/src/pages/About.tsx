@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CheckCircle2, Users, Target, Zap } from "lucide-react";
+import { CheckCircle2, Users, Target, Zap, TrendingUp, Eye, Shield, Handshake, Users2 } from "lucide-react";
 import { usePageContent } from "@/hooks/usePageContent";
 import { trpc } from "@/lib/trpc";
 
@@ -79,6 +79,9 @@ export default function About() {
           <div className="space-y-8 max-w-4xl mx-auto">
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
+                <div className="w-16 h-16 rounded-full bg-brand-orange/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-8 h-8 text-brand-orange" />
+                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
                   1. Performance Over Noise
                 </h3>
@@ -93,6 +96,9 @@ export default function About() {
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
+                <div className="w-16 h-16 rounded-full bg-brand-cyan/10 flex items-center justify-center mb-4">
+                  <Eye className="w-8 h-8 text-brand-cyan" />
+                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
                   2. Radical Transparency
                 </h3>
@@ -107,6 +113,9 @@ export default function About() {
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
+                <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
+                  <Target className="w-8 h-8 text-brand-blue" />
+                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
                   3. Strategy Before Spend
                 </h3>
@@ -121,6 +130,9 @@ export default function About() {
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
+                <div className="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center mb-4">
+                  <Shield className="w-8 h-8 text-brand-green" />
+                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
                   4. Ownership & Accountability
                 </h3>
@@ -135,6 +147,9 @@ export default function About() {
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
+                <div className="w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
+                  <Handshake className="w-8 h-8 text-brand-purple" />
+                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
                   5. Partnership, Not Dependency
                 </h3>
@@ -150,8 +165,64 @@ export default function About() {
         </div>
       </section>
 
+      {/* Who We're Not a Fit For Section */}
+      <section className="py-24 bg-white border-t border-gray-200">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-bold text-4xl text-gray-900 mb-4 text-center">
+              Who We're Not a Fit For
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 text-center">
+              This section is intentionally direct. It will save you months of friction.
+            </p>
+            
+            <Card className="border-2 border-gray-200 shadow-lg">
+              <CardContent className="pt-8">
+                <p className="text-lg font-semibold text-gray-900 mb-6">
+                  We're probably not a fit if:
+                </p>
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You care more about likes, followers, or posting frequency than revenue</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You want us to "just run ads" without fixing tracking, funnels, or infrastructure</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You're looking for the cheapest option or a short-term experiment</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You expect results without providing access, data, or collaboration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You want high output with minimal strategy or accountability</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gray-400 mt-1">✗</span>
+                    <span className="text-gray-700">You're not open to hearing what isn't working</span>
+                  </li>
+                </ul>
+                <div className="border-t border-gray-200 pt-6">
+                  <p className="text-gray-700 font-medium">
+                    And that's okay.
+                  </p>
+                  <p className="text-gray-600 mt-2">
+                    We'd rather say no early than deliver something we don't believe in.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">

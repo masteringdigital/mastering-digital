@@ -308,3 +308,8 @@
 - [x] Update Who We Serve Multifamily section if needed (optional - keep Shoma Group as primary)
 - [x] Verify 850 Living displays correctly on live site
 - [ ] Save checkpoint with 850 Living case study added
+
+## Phase 32: Add 850 Living to Who We Serve Real Estate Page
+- [x] Add 850 Living as additional featured client on Real Estate page multifamily section
+- [x] Verify 850 Living displays correctly on live site
+- [ ] Save checkpoint with 850 Living added to Real Estate page

@@ -255,7 +255,22 @@ export default function RealEstate() {
                 </p>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">Shoma Group</h3>
                 <p className="text-gray-700 mb-4">
-                  Accelerated lease-up by 6 weeks and reduced cost per lease by 38% through AI-powered tour scheduling and targeted local campaigns. The automated reminder system increased tour show rates from 45% to 78%.
+                  Stabilized leasing velocity with predictable weekly cadence and clear attribution. Follow-up time dropped from hours/days to minutes. Property sold for $81M in March 2025.
+                </p>
+                <Button asChild variant="outline">
+                  <Link href="/results">View Full Case Study</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-xl bg-gradient-to-br from-brand-cyan/5 to-brand-green/5">
+              <CardContent className="pt-8">
+                <p className="text-brand-cyan font-semibold text-sm uppercase tracking-wider mb-2">
+                  FEATURED CLIENT
+                </p>
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">850 Living</h3>
+                <p className="text-gray-700 mb-4">
+                  Closed after-hours gaps and filled tour calendars week over week with cleaner handoffs and leadership-ready dashboards. Property sold for $71.5M in March 2025.
                 </p>
                 <Button asChild variant="outline">
                   <Link href="/results">View Full Case Study</Link>

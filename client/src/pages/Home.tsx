@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import FeaturedClientResults from "@/components/FeaturedClientResults";
+
 import {
   BarChart3,
   Bot,
@@ -403,9 +403,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Featured Client Results Section */}
-      <FeaturedClientResults />
 
       {/* Case Studies Preview Section */}
       <section className="py-24 bg-gray-50">

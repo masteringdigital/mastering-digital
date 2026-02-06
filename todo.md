@@ -277,3 +277,9 @@
 - [x] Ensure 3-column responsive layout (1 column mobile, 2 columns tablet, 3 columns desktop)
 - [x] Test Case Studies section displays correctly
 - [ ] Save checkpoint with 3-card Case Studies section
+
+## Phase 27: Remove Duplicate Case Studies Section
+- [x] Remove FeaturedClientResults component from homepage
+- [x] Keep only the CASE STUDIES section with 3 cards
+- [x] Verify no duplication on live site
+- [ ] Save checkpoint with duplicate section removed

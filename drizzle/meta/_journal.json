@@ -15,6 +15,13 @@
       "when": 1770343187816,
       "tag": "0001_narrow_tony_stark",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1770386886955,
+      "tag": "0002_deep_vampiro",
+      "breakpoints": true
     }
   ]
 }

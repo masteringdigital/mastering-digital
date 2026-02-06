@@ -217,6 +217,42 @@ export const appRouter = router({
       delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteClientLogo(input)),
     }),
 
+    // Page Content
+    pageContent: router({      
+      getPage: publicProcedure.input(z.object({
+        pageId: z.string(),
+        sectionId: z.string().optional(),
+      })).query(({ input }) => db.getPageContent(input.pageId, input.sectionId)),
+      
+      getAll: adminProcedure.query(() => db.getAllPageContent()),
+      
+      getByKey: publicProcedure.input(z.object({
+        pageId: z.string(),
+        sectionId: z.string(),
+        contentKey: z.string(),
+      })).query(({ input }) => db.getContentByKey(input.pageId, input.sectionId, input.contentKey)),
+      
+      upsert: adminProcedure.input(z.object({
+        pageId: z.string(),
+        sectionId: z.string(),
+        contentKey: z.string(),
+        contentValue: z.string(),
+        contentType: z.string().default("text"),
+        displayOrder: z.number().default(0),
+      })).mutation(({ input }) => db.upsertPageContent(input)),
+      
+      bulkUpsert: adminProcedure.input(z.array(z.object({
+        pageId: z.string(),
+        sectionId: z.string(),
+        contentKey: z.string(),
+        contentValue: z.string(),
+        contentType: z.string().default("text"),
+        displayOrder: z.number().default(0),
+      }))).mutation(({ input }) => db.bulkUpsertPageContent(input)),
+      
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deletePageContent(input)),
+    }),
+
     // Site Settings
     settings: router({
       list: adminProcedure.query(() => db.getAllSiteSettings()),

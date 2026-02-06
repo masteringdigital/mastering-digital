@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { trpc } from "@/lib/trpc";
 import { Plus, Edit, Trash2, Loader2, LogOut } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -123,13 +123,18 @@ export default function CMSAdmin() {
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-            <TabsList className="grid w-full grid-cols-5">
+            <TabsList className="grid w-full grid-cols-6">
+              <TabsTrigger value="pages">Page Content</TabsTrigger>
               <TabsTrigger value="team">Team Members</TabsTrigger>
               <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
               <TabsTrigger value="cases">Case Studies</TabsTrigger>
               <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
               <TabsTrigger value="logos">Client Logos</TabsTrigger>
             </TabsList>
+
+            <TabsContent value="pages">
+              <PageContentEditor />
+            </TabsContent>
 
             <TabsContent value="team">
               <TeamMembersManager />
@@ -716,6 +721,299 @@ function TestimonialsManager() {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+// Page Content Editor Component
+function PageContentEditor() {
+  const [selectedPage, setSelectedPage] = useState("home");
+  const [editingContent, setEditingContent] = useState<Record<string, string>>({});
+  const [isSaving, setIsSaving] = useState(false);
+
+  const utils = trpc.useUtils();
+  const { data: pageContent, isLoading } = trpc.cms.pageContent.getPage.useQuery({ pageId: selectedPage });
+
+  const bulkUpsertMutation = trpc.cms.pageContent.bulkUpsert.useMutation({
+    onSuccess: () => {
+      toast.success("Page content saved successfully!");
+      utils.cms.pageContent.getPage.invalidate();
+      setIsSaving(false);
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to save page content");
+      setIsSaving(false);
+    },
+  });
+
+  // Initialize editing content when page data loads
+  useEffect(() => {
+    if (pageContent) {
+      const contentMap: Record<string, string> = {};
+      pageContent.forEach((item) => {
+        const key = `${item.sectionId}.${item.contentKey}`;
+        contentMap[key] = item.contentValue;
+      });
+      setEditingContent(contentMap);
+    }
+  }, [pageContent]);
+
+  const handleContentChange = (sectionId: string, contentKey: string, value: string) => {
+    const key = `${sectionId}.${contentKey}`;
+    setEditingContent((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleSave = () => {
+    setIsSaving(true);
+    const updates = Object.entries(editingContent).map(([key, value]) => {
+      const [sectionId, contentKey] = key.split(".");
+      const existing = pageContent?.find(
+        (item) => item.sectionId === sectionId && item.contentKey === contentKey
+      );
+      return {
+        pageId: selectedPage,
+        sectionId,
+        contentKey,
+        contentValue: value,
+        contentType: existing?.contentType || "text",
+        displayOrder: existing?.displayOrder || 0,
+      };
+    });
+    bulkUpsertMutation.mutate(updates);
+  };
+
+  // Define page structure with sections and fields
+  const pageStructure: Record<string, Array<{ section: string; label: string; fields: Array<{ key: string; label: string; type: "text" | "textarea" | "image" }> }>> = {
+    home: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "headline", label: "Main Headline", type: "text" },
+          { key: "subheadline", label: "Subheadline", type: "textarea" },
+          { key: "cta_primary", label: "Primary CTA Text", type: "text" },
+          { key: "cta_secondary", label: "Secondary CTA Text", type: "text" },
+          { key: "feature_card_title", label: "Feature Card Title", type: "text" },
+          { key: "feature_card_desc", label: "Feature Card Description", type: "textarea" },
+          { key: "card1_label", label: "Card 1 Label (Strategy)", type: "text" },
+          { key: "card2_label", label: "Card 2 Label (Paid Ads)", type: "text" },
+          { key: "card3_label", label: "Card 3 Label (AI Systems)", type: "text" },
+          { key: "card4_label", label: "Card 4 Label (Analytics)", type: "text" },
+        ],
+      },
+      {
+        section: "partners",
+        label: "Certified Partners Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "logo1_url", label: "Logo 1 URL (Google)", type: "image" },
+          { key: "logo2_url", label: "Logo 2 URL (Meta)", type: "image" },
+          { key: "logo3_url", label: "Logo 3 URL (Shopify)", type: "image" },
+          { key: "logo4_url", label: "Logo 4 URL (Klaviyo)", type: "image" },
+        ],
+      },
+      {
+        section: "services",
+        label: "Services Overview Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+          { key: "service1_label", label: "Service 1 Label", type: "text" },
+          { key: "service1_title", label: "Service 1 Title", type: "text" },
+          { key: "service1_desc", label: "Service 1 Description", type: "textarea" },
+          { key: "service2_label", label: "Service 2 Label", type: "text" },
+          { key: "service2_title", label: "Service 2 Title", type: "text" },
+          { key: "service2_desc", label: "Service 2 Description", type: "textarea" },
+          { key: "service3_label", label: "Service 3 Label", type: "text" },
+          { key: "service3_title", label: "Service 3 Title", type: "text" },
+          { key: "service3_desc", label: "Service 3 Description", type: "textarea" },
+        ],
+      },
+      {
+        section: "results",
+        label: "Results Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+      {
+        section: "industries",
+        label: "Industries Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+          { key: "industry1_title", label: "Industry 1 Title (Home Services)", type: "text" },
+          { key: "industry1_desc", label: "Industry 1 Description", type: "textarea" },
+          { key: "industry2_title", label: "Industry 2 Title (E-commerce)", type: "text" },
+          { key: "industry2_desc", label: "Industry 2 Description", type: "textarea" },
+          { key: "industry3_title", label: "Industry 3 Title (Lease-Ups)", type: "text" },
+          { key: "industry3_desc", label: "Industry 3 Description", type: "textarea" },
+        ],
+      },
+      {
+        section: "final_cta",
+        label: "Final CTA Section",
+        fields: [
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+          { key: "cta_text", label: "CTA Button Text", type: "text" },
+          { key: "disclaimer", label: "Disclaimer Text", type: "textarea" },
+        ],
+      },
+    ],
+    about: [
+      {
+        section: "hero",
+        label: "About Hero",
+        fields: [
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+      {
+        section: "team",
+        label: "Team Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    services: [
+      {
+        section: "hero",
+        label: "Services Hero",
+        fields: [
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    results: [
+      {
+        section: "hero",
+        label: "Results Hero",
+        fields: [
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    contact: [
+      {
+        section: "hero",
+        label: "Contact Hero",
+        fields: [
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+  };
+
+  const currentStructure = pageStructure[selectedPage] || [];
+
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Page Content Editor</CardTitle>
+            <CardDescription>Edit text, headlines, and images across your website</CardDescription>
+          </div>
+          <Button onClick={handleSave} disabled={isSaving || bulkUpsertMutation.isPending}>
+            {isSaving || bulkUpsertMutation.isPending ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Saving...
+              </>
+            ) : (
+              "Save Changes"
+            )}
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        {/* Page Selector */}
+        <div className="space-y-2">
+          <Label>Select Page</Label>
+          <div className="flex gap-2">
+            {["home", "about", "services", "results", "contact"].map((page) => (
+              <Button
+                key={page}
+                variant={selectedPage === page ? "default" : "outline"}
+                onClick={() => setSelectedPage(page)}
+              >
+                {page.charAt(0).toUpperCase() + page.slice(1)}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {isLoading ? (
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+          </div>
+        ) : (
+          <div className="space-y-8">
+            {currentStructure.map((section) => (
+              <Card key={section.section} className="border-2">
+                <CardHeader className="bg-gray-50">
+                  <CardTitle className="text-lg">{section.label}</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6 space-y-4">
+                  {section.fields.map((field) => {
+                    const key = `${section.section}.${field.key}`;
+                    const value = editingContent[key] || "";
+                    
+                    return (
+                      <div key={field.key} className="space-y-2">
+                        <Label htmlFor={key}>{field.label}</Label>
+                        {field.type === "textarea" ? (
+                          <Textarea
+                            id={key}
+                            value={value}
+                            onChange={(e) => handleContentChange(section.section, field.key, e.target.value)}
+                            rows={4}
+                            placeholder={`Enter ${field.label.toLowerCase()}...`}
+                          />
+                        ) : field.type === "image" ? (
+                          <Input
+                            id={key}
+                            type="url"
+                            value={value}
+                            onChange={(e) => handleContentChange(section.section, field.key, e.target.value)}
+                            placeholder="https://example.com/image.jpg"
+                          />
+                        ) : (
+                          <Input
+                            id={key}
+                            value={value}
+                            onChange={(e) => handleContentChange(section.section, field.key, e.target.value)}
+                            placeholder={`Enter ${field.label.toLowerCase()}...`}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            ))}
+            
+            {currentStructure.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500">No content sections defined for this page yet.</p>
+              </div>
+            )}
           </div>
         )}
       </CardContent>

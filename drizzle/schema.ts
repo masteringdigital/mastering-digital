@@ -146,3 +146,21 @@ export const siteSettings = mysqlTable("site_settings", {
 
 export type SiteSetting = typeof siteSettings.$inferSelect;
 export type InsertSiteSetting = typeof siteSettings.$inferInsert;
+
+/**
+ * Page content for WordPress-style editing
+ * Stores all editable content sections across the website
+ */
+export const pageContent = mysqlTable("page_content", {
+  id: int("id").autoincrement().primaryKey(),
+  pageId: varchar("pageId", { length: 100 }).notNull(), // e.g., 'home', 'about', 'services', 'results', 'contact'
+  sectionId: varchar("sectionId", { length: 100 }).notNull(), // e.g., 'hero', 'services-overview', 'team'
+  contentKey: varchar("contentKey", { length: 100 }).notNull(), // e.g., 'headline', 'subheadline', 'paragraph1', 'image1'
+  contentValue: text("contentValue").notNull(), // The actual content (text or image URL)
+  contentType: varchar("contentType", { length: 50 }).default("text").notNull(), // 'text', 'html', 'image', 'url'
+  displayOrder: int("displayOrder").default(0).notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PageContent = typeof pageContent.$inferSelect;
+export type InsertPageContent = typeof pageContent.$inferInsert;

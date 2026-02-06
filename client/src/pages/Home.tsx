@@ -10,6 +10,7 @@ DESIGN: Mastering Digital - Complete Specification Implementation
 */
 
 import { useAuth } from "@/_core/hooks/useAuth";
+import { usePageContent } from "@/hooks/usePageContent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -32,6 +33,9 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
+  
+  // Load page content from database
+  const { getContent, isLoading: contentLoading } = usePageContent("home");
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -51,11 +55,10 @@ export default function Home() {
             {/* Left Column */}
             <div className="lg:col-span-6 space-y-6">
               <h1 className="font-bold text-5xl md:text-6xl text-white leading-tight">
-                Grow Faster With a Marketing Partner Who Actually Delivers
+                {getContent("hero", "headline", "Grow Faster With a Marketing Partner Who Actually Delivers")}
               </h1>
               <p className="text-xl text-white/90 leading-relaxed">
-                We help home services companies, e-commerce brands, and multifamily properties
-                generate more leads, book more appointments, and grow revenue.
+                {getContent("hero", "subheadline", "We help home services companies, e-commerce brands, and multifamily properties generate more leads, book more appointments, and grow revenue.")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
@@ -64,7 +67,7 @@ export default function Home() {
                   className="bg-white text-brand-blue hover:bg-white/90 font-semibold text-lg px-8 py-6"
                 >
                   <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
-                    Book a Strategy Session
+                    {getContent("hero", "cta_primary", "Book a Strategy Session")}
                   </a>
                 </Button>
                 <Button
@@ -73,7 +76,7 @@ export default function Home() {
                   variant="outline"
                   className="font-semibold text-lg px-8 py-6 border-2 border-white text-white hover:bg-white hover:text-brand-blue"
                 >
-                  See Our Results
+                  {getContent("hero", "cta_secondary", "See Our Results")}
                 </Button>
               </div>
             </div>
@@ -85,10 +88,10 @@ export default function Home() {
                 <Card className="col-span-2 border-0 shadow-2xl bg-white/95 backdrop-blur">
                   <CardHeader>
                     <CardTitle className="font-bold text-2xl text-gray-900">
-                      Senior strategists. Real reporting. Actual results.
+                      {getContent("hero", "feature_card_title", "Senior strategists. Real reporting. Actual results.")}
                     </CardTitle>
                     <CardDescription className="text-lg text-gray-600">
-                      No junior handoffs. 24/7 dashboard access. AI-powered systems that scale.
+                      {getContent("hero", "feature_card_desc", "No junior handoffs. 24/7 dashboard access. AI-powered systems that scale.")}
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -99,7 +102,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center">
                       <Settings className="w-6 h-6 text-brand-purple" />
                     </div>
-                    <p className="font-semibold text-gray-900">Strategy</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card1_label", "Strategy")}</p>
                   </CardContent>
                 </Card>
 
@@ -108,7 +111,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full bg-brand-orange/10 flex items-center justify-center">
                       <Megaphone className="w-6 h-6 text-brand-orange" />
                     </div>
-                    <p className="font-semibold text-gray-900">Paid Ads</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card2_label", "Paid Ads")}</p>
                   </CardContent>
                 </Card>
 
@@ -117,7 +120,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full bg-brand-cyan/10 flex items-center justify-center">
                       <Cpu className="w-6 h-6 text-brand-cyan" />
                     </div>
-                    <p className="font-semibold text-gray-900">AI Systems</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card3_label", "AI Systems")}</p>
                   </CardContent>
                 </Card>
 
@@ -126,7 +129,7 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center">
                       <LineChart className="w-6 h-6 text-brand-green" />
                     </div>
-                    <p className="font-semibold text-gray-900">Analytics</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card4_label", "Analytics")}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -140,24 +143,24 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-              CERTIFIED PARTNERS
+              {getContent("partners", "section_label", "CERTIFIED PARTNERS")}
             </p>
             <h2 className="font-bold text-3xl text-gray-900">
-              Trusted by Leading Platforms
+              {getContent("partners", "headline", "Trusted by Leading Platforms")}
             </h2>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png" alt="Google Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("partners", "logo1_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png")} alt="Google Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png" alt="Meta Business Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("partners", "logo2_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png")} alt="Meta Business Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png" alt="Shopify Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("partners", "logo3_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png")} alt="Shopify Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png" alt="Klaviyo Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("partners", "logo4_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png")} alt="Klaviyo Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
           </div>
         </div>
@@ -168,13 +171,13 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-              SERVICES
+              {getContent("services", "section_label", "SERVICES")}
             </p>
             <h2 className="font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-              Full-Service Marketing Built for Growth
+              {getContent("services", "headline", "Full-Service Marketing Built for Growth")}
             </h2>
             <p className="text-xl text-gray-600">
-              We combine strategy, execution, and optimization into one accountable partnership.
+              {getContent("services", "description", "We combine strategy, execution, and optimization into one accountable partnership.")}
             </p>
           </div>
 
@@ -184,15 +187,15 @@ export default function Home() {
               <div className="h-2 bg-brand-blue"></div>
               <CardHeader className="bg-brand-blue/5">
                 <p className="text-brand-blue font-semibold text-xs uppercase tracking-wider mb-2">
-                  STRATEGY & CHANNEL MARKETING
+                  {getContent("services", "service1_label", "STRATEGY & CHANNEL MARKETING")}
                 </p>
                 <CardTitle className="font-bold text-2xl text-gray-900">
-                  Reach the right audience and turn clicks into customers.
+                  {getContent("services", "service1_title", "Reach the right audience and turn clicks into customers.")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-6">
-                  We build the plan and execute across every channel that matters:
+                  {getContent("services", "service1_desc", "We build the plan and execute across every channel that matters:")}
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
@@ -224,15 +227,15 @@ export default function Home() {
               <div className="h-2 bg-brand-purple"></div>
               <CardHeader className="bg-brand-purple/5">
                 <p className="text-brand-purple font-semibold text-xs uppercase tracking-wider mb-2">
-                  WEB DESIGN & CONVERSION
+                  {getContent("services", "service2_label", "WEB DESIGN & CONVERSION")}
                 </p>
                 <CardTitle className="font-bold text-2xl text-gray-900">
-                  Get a website that converts — not just one that looks good.
+                  {getContent("services", "service2_title", "Get a website that converts — not just one that looks good.")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-6">
-                  We build and optimize the pages that turn traffic into leads:
+                  {getContent("services", "service2_desc", "We build and optimize the pages that turn traffic into leads:")}
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
@@ -264,15 +267,15 @@ export default function Home() {
               <div className="h-2 bg-brand-cyan"></div>
               <CardHeader className="bg-brand-cyan/5">
                 <p className="text-brand-cyan font-semibold text-xs uppercase tracking-wider mb-2">
-                  AI IMPLEMENTATION
+                  {getContent("services", "service3_label", "AI IMPLEMENTATION")}
                 </p>
                 <CardTitle className="font-bold text-2xl text-gray-900">
-                  Move faster with AI systems that actually work.
+                  {getContent("services", "service3_title", "Move faster with AI systems that actually work.")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-6">
-                  We turn AI into real business systems — not just tools:
+                  {getContent("services", "service3_desc", "We turn AI into real business systems — not just tools:")}
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
@@ -321,15 +324,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left Side - Stats */}
             <div>
-              <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-                RESULTS
-              </p>
-              <h2 className="font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-                Real Clients. Real Growth.
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                We measure success by one thing: your results. Here's what we've delivered for clients like you.
-              </p>
+               <p className="text-brand-orange font-semibold text-sm uppercase tracking-wider mb-2">
+              {getContent("results", "section_label", "RESULTS")}
+            </p>
+            <h2 className="font-bold text-4xl md:text-5xl text-gray-900 mb-4">
+              {getContent("results", "headline", "Real Numbers. Real Growth.")}
+            </h2>
+            <p className="text-xl text-gray-600">
+              {getContent("results", "description", "We don't just run ads — we build systems that deliver measurable ROI.")}
+            </p>
 
               <div className="space-y-6">
                 <div className="border-l-4 border-brand-orange pl-6">
@@ -534,13 +537,13 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-              INDUSTRIES
+              {getContent("industries", "section_label", "INDUSTRIES")}
             </p>
             <h2 className="font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-              Specialized Marketing for Your Industry
+              {getContent("industries", "headline", "Specialized Marketing for Your Industry")}
             </h2>
             <p className="text-xl text-gray-600">
-              We understand the unique challenges and opportunities in each market.
+              {getContent("industries", "description", "We understand the unique challenges and opportunities in each market.")}
             </p>
           </div>
 
@@ -552,10 +555,10 @@ export default function Home() {
                   <HomeIcon className="w-8 h-8 text-brand-orange" />
                 </div>
                 <CardTitle className="font-bold text-2xl text-gray-900 mb-2">
-                  Home Services
+                  {getContent("industries", "industry1_title", "Home Services")}
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  HVAC, plumbing, electrical, roofing, and more
+                  {getContent("industries", "industry1_desc", "HVAC, plumbing, electrical, roofing, and more")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -590,10 +593,10 @@ export default function Home() {
                   <ShoppingCart className="w-8 h-8 text-brand-green" />
                 </div>
                 <CardTitle className="font-bold text-2xl text-gray-900 mb-2">
-                  E-commerce
+                  {getContent("industries", "industry2_title", "E-commerce")}
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Shopify, WooCommerce, and custom stores
+                  {getContent("industries", "industry2_desc", "Shopify, WooCommerce, and custom stores")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -628,10 +631,10 @@ export default function Home() {
                   <Building2 className="w-8 h-8 text-brand-cyan" />
                 </div>
                 <CardTitle className="font-bold text-2xl text-gray-900 mb-2">
-                  Lease-Ups
+                  {getContent("industries", "industry3_title", "Lease-Ups")}
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Multifamily properties and new developments
+                  {getContent("industries", "industry3_desc", "Multifamily properties and new developments")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -666,10 +669,9 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-bold text-4xl md:text-5xl text-white mb-6">Ready to Grow?</h2>
+            <h2 className="font-bold text-4xl md:text-5xl text-white mb-6">{getContent("final_cta", "headline", "Ready to Grow?")}</h2>
             <p className="text-xl text-white/90 mb-8">
-              30–45 minutes with a senior strategist. No pitch, no pressure — just a clear action
-              plan for your business.
+              {getContent("final_cta", "description", "30–45 minutes with a senior strategist. No pitch, no pressure — just a clear action plan for your business.")}
             </p>
             <Button
               asChild
@@ -677,12 +679,11 @@ export default function Home() {
               className="bg-white text-brand-blue hover:bg-white/90 font-semibold text-xl px-12 py-8"
             >
               <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
-                Book a Strategy Session
+                {getContent("final_cta", "cta_text", "Book a Strategy Session")}
               </a>
             </Button>
             <p className="text-white/80 mt-6 text-sm">
-              No commitment required. We'll review your current marketing, identify quick wins, and
-              give you a roadmap — whether we work together or not.
+              {getContent("final_cta", "disclaimer", "No commitment required. We'll review your current marketing, identify quick wins, and give you a roadmap — whether we work together or not.")}
             </p>
           </div>
         </div>

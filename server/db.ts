@@ -1,4 +1,4 @@
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
@@ -9,12 +9,14 @@ import {
   portfolioItems,
   clientLogos,
   siteSettings,
+  pageContent,
   InsertTeamMember,
   InsertTestimonial,
   InsertCaseStudy,
   InsertPortfolioItem,
   InsertClientLogo,
   InsertSiteSetting,
+  InsertPageContent,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -327,4 +329,88 @@ export async function upsertSiteSetting(setting: InsertSiteSetting) {
   await db.insert(siteSettings).values(setting).onDuplicateKeyUpdate({
     set: { settingValue: setting.settingValue },
   });
+}
+
+// Page Content
+export async function getPageContent(pageId: string, sectionId?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  if (sectionId) {
+    return await db
+      .select()
+      .from(pageContent)
+      .where(and(
+        eq(pageContent.pageId, pageId),
+        eq(pageContent.sectionId, sectionId)
+      ))
+      .orderBy(pageContent.displayOrder);
+  }
+  
+  return await db
+    .select()
+    .from(pageContent)
+    .where(eq(pageContent.pageId, pageId))
+    .orderBy(pageContent.displayOrder);
+}
+
+export async function getAllPageContent() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(pageContent).orderBy(pageContent.pageId, pageContent.sectionId, pageContent.displayOrder);
+}
+
+export async function getContentByKey(pageId: string, sectionId: string, contentKey: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db
+    .select()
+    .from(pageContent)
+    .where(and(
+      eq(pageContent.pageId, pageId),
+      eq(pageContent.sectionId, sectionId),
+      eq(pageContent.contentKey, contentKey)
+    ))
+    .limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function upsertPageContent(content: InsertPageContent) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  // Check if content exists
+  const existing = await getContentByKey(content.pageId, content.sectionId, content.contentKey);
+  
+  if (existing) {
+    // Update existing
+    await db
+      .update(pageContent)
+      .set({ 
+        contentValue: content.contentValue,
+        contentType: content.contentType,
+        displayOrder: content.displayOrder,
+      })
+      .where(eq(pageContent.id, existing.id));
+    return existing.id;
+  } else {
+    // Insert new
+    const result = await db.insert(pageContent).values(content);
+    return result[0].insertId;
+  }
+}
+
+export async function bulkUpsertPageContent(contents: InsertPageContent[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  for (const content of contents) {
+    await upsertPageContent(content);
+  }
+}
+
+export async function deletePageContent(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(pageContent).where(eq(pageContent.id, id));
 }

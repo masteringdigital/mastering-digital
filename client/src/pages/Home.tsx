@@ -22,10 +22,10 @@ import {
   Building2,
   ShoppingCart,
   Home as HomeIcon,
-  Settings,
-  Megaphone,
-  Cpu,
-  LineChart,
+  Users,
+  Activity,
+  Target,
+  Sparkles,
   ArrowRight,
 } from "lucide-react";
 
@@ -49,7 +49,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 bg-gradient-to-br from-brand-blue via-brand-blue to-[#2A4A6F]">
+      <section className="relative min-h-[60vh] flex items-center pt-20 pb-12 bg-gradient-to-br from-brand-blue via-brand-blue to-[#2A4A6F]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column */}
@@ -88,48 +88,48 @@ export default function Home() {
                 <Card className="col-span-2 border-0 shadow-2xl bg-white/95 backdrop-blur">
                   <CardHeader>
                     <CardTitle className="font-bold text-2xl text-gray-900">
-                      {getContent("hero", "feature_card_title", "Senior strategists. Real reporting. Actual results.")}
+                      {getContent("hero", "feature_card_title", "Dedicated experts. Real reporting. Actual results.")}
                     </CardTitle>
                     <CardDescription className="text-lg text-gray-600">
-                      {getContent("hero", "feature_card_desc", "No junior handoffs. 24/7 dashboard access. AI-powered systems that scale.")}
+                      {getContent("hero", "feature_card_desc", "Your account is managed by the people who build the strategy. 24/7 dashboard access. AI-powered systems that scale.")}
                     </CardDescription>
                   </CardHeader>
                 </Card>
 
-                {/* Icon Cards - 2x2 Grid */}
+                {/* Positioning Tiles - 2x2 Grid */}
                 <Card className="border-0 shadow-lg bg-white/90 backdrop-blur hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center">
-                      <Settings className="w-6 h-6 text-brand-purple" />
+                    <div className="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-brand-blue" />
                     </div>
-                    <p className="font-semibold text-gray-900">{getContent("hero", "card1_label", "Strategy")}</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card1_label", "Dedicated Experts")}</p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-0 shadow-lg bg-white/90 backdrop-blur hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-brand-orange/10 flex items-center justify-center">
-                      <Megaphone className="w-6 h-6 text-brand-orange" />
+                    <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                      <Activity className="w-6 h-6 text-brand-purple" />
                     </div>
-                    <p className="font-semibold text-gray-900">{getContent("hero", "card2_label", "Paid Ads")}</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card2_label", "Real-Time Reporting")}</p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-0 shadow-lg bg-white/90 backdrop-blur hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-brand-cyan/10 flex items-center justify-center">
-                      <Cpu className="w-6 h-6 text-brand-cyan" />
+                      <Target className="w-6 h-6 text-brand-cyan" />
                     </div>
-                    <p className="font-semibold text-gray-900">{getContent("hero", "card3_label", "AI Systems")}</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card3_label", "Tracking Standard")}</p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-0 shadow-lg bg-white/90 backdrop-blur hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center">
-                      <LineChart className="w-6 h-6 text-brand-green" />
+                    <div className="w-12 h-12 rounded-full bg-brand-orange/10 flex items-center justify-center">
+                      <Sparkles className="w-6 h-6 text-brand-orange" />
                     </div>
-                    <p className="font-semibold text-gray-900">{getContent("hero", "card4_label", "Analytics")}</p>
+                    <p className="font-semibold text-gray-900">{getContent("hero", "card4_label", "AI That Works")}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -138,15 +138,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certified Partners Section */}
+      {/* Platforms We Work With Section */}
       <section className="py-16 bg-white border-b">
         <div className="container">
           <div className="text-center mb-12">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-              {getContent("partners", "section_label", "CERTIFIED PARTNERS")}
+              {getContent("partners", "section_label", "PLATFORMS WE WORK WITH")}
             </p>
             <h2 className="font-bold text-3xl text-gray-900">
-              {getContent("partners", "headline", "Trusted by Leading Platforms")}
+              {getContent("partners", "headline", "Built on Trusted Platforms")}
             </h2>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
@@ -190,33 +190,33 @@ export default function Home() {
                   {getContent("services", "service1_label", "STRATEGY & CHANNEL MARKETING")}
                 </p>
                 <CardTitle className="font-bold text-2xl text-gray-900">
-                  {getContent("services", "service1_title", "Reach the right audience and turn clicks into customers.")}
+                  {getContent("services", "service1_title", "Strategic planning and oversight for every channel.")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <p className="text-gray-600 mb-6">
-                  {getContent("services", "service1_desc", "We build the plan and execute across every channel that matters:")}
+                  {getContent("services", "service1_desc", "We lead strategy, measurement, and optimization. Execution is flexible based on your needs:")}
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Discovery & channel strategy</span>
+                    <span className="text-gray-700">Google Ads Strategy & Oversight</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Google Ads & LSA</span>
+                    <span className="text-gray-700">Meta Strategy & Creative Direction</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Meta / Social Ads</span>
+                    <span className="text-gray-700">Testing & Optimization Framework</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">Email & SMS automation</span>
+                    <span className="text-gray-700">Tracking Standards + Reporting</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">SEO & local SEO</span>
+                    <span className="text-gray-700">Channel Strategy & Roadmapping</span>
                   </li>
                 </ul>
               </CardContent>
@@ -671,7 +671,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-bold text-4xl md:text-5xl text-white mb-6">{getContent("final_cta", "headline", "Ready to Grow?")}</h2>
             <p className="text-xl text-white/90 mb-8">
-              {getContent("final_cta", "description", "30–45 minutes with a senior strategist. No pitch, no pressure — just a clear action plan for your business.")}
+              {getContent("final_cta", "description", "30–45 minutes with a dedicated expert. No pitch, no pressure — just a clear action plan for your business.")}
             </p>
             <Button
               asChild

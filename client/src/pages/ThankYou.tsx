@@ -36,7 +36,7 @@ export default function ThankYou() {
                     Book a Strategy Session
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Skip the wait and talk to us now. 30-45 minutes with a senior strategist.
+                    Skip the wait and talk to us now. 30-45 minutes with a dedicated expert.
                   </p>
                   <Button
                     asChild

@@ -78,7 +78,7 @@ export default function Contact() {
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-2">Book a Strategy Session</h3>
                 <p className="text-gray-600 mb-4">
-                  30-45 minutes with a senior strategist. No pitch, just a clear plan.
+                  30-45 minutes with a dedicated expert. No pitch, just a clear plan.
                 </p>
                 <Button
                   asChild

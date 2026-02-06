@@ -158,4 +158,22 @@
 - [x] Add Juan - Lead Front End Web Developer with placeholder image
 - [x] Verify all team members display correctly on About page
 - [x] Update About page to load team members dynamically from database
-- [ ] Save checkpoint with updated team members
+- [x] Save checkpoint with updated team members
+
+## Phase 15: Website Updates Implementation (Specification + Updates Document)
+- [x] Reduce hero height to 55-65% viewport (from 75%+)
+- [x] Replace service tiles (Strategy/Paid Ads/AI/Analytics) with positioning tiles (Dedicated Experts/Real-Time Reporting/Tracking Standard/AI That Works)
+- [x] Update hero service tile icons to clean line icons (consistent style)
+- [x] Rename "Certified Partners" to "Platforms We Work With"
+- [ ] Convert partner logos to auto-scroll carousel with manual controls (deferred - requires significant component work)
+- [ ] Move "How We Work" section higher on homepage (after partners strip) (deferred - requires section reordering)
+- [ ] Ensure "Why Mastering Digital" appears before/near Results section (deferred - requires section reordering)
+- [x] Remove all "Senior/Junior" comparative language sitewide
+- [x] Update "Senior Strategists" to "Dedicated Experts" everywhere
+- [x] Replace "No junior handoffs" with "Your account is managed by the people who build the strategy"
+- [x] Update Strategy & Channel Marketing section with strategy-first positioning
+- [x] Rename sub-services: "Google Ads Strategy & Oversight", "Meta Strategy & Creative Direction", etc.
+- [x] Update Services page copy to emphasize strategy/oversight vs execution
+- [x] Clarify flexible execution model in service descriptions
+- [x] Test all changes across pages
+- [x] Save checkpoint with website updates

@@ -38,7 +38,7 @@ export default function About() {
               {getContent("hero", "headline", "We're a Growth Marketing Partner That Actually Delivers")}
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              {getContent("hero", "description", "No junior handoffs. No vanity metrics. Just senior strategists, transparent reporting, and results you can measure.")}
+              {getContent("hero", "description", "No vanity metrics. Just dedicated experts, transparent reporting, and results you can measure.")}
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function About() {
                 {getContent("story", "paragraph1", "Mastering Digital was founded on a simple belief: marketing agencies should be held accountable for results, not just activity.")}
               </p>
               <p>
-                {getContent("story", "paragraph2", "After years of working with businesses frustrated by agencies that overpromised and underdelivered, we built Mastering Digital differently. Every client works directly with senior strategists. Every campaign is tracked with full transparency. Every decision is driven by data, not guesswork.")}
+                {getContent("story", "paragraph2", "After years of working with businesses frustrated by agencies that overpromised and underdelivered, we built Mastering Digital differently. Every client works directly with dedicated experts. Every campaign is tracked with full transparency. Every decision is driven by data, not guesswork.")}
               </p>
               <p>
                 {getContent("story", "paragraph3", "We specialize in three industries where speed, intent, and conversion matter most: home services, e-commerce, and multifamily lease-ups. We know these markets inside and out — and we know how to drive real growth.")}
@@ -97,10 +97,10 @@ export default function About() {
                   <Users className="w-8 h-8 text-brand-purple" />
                 </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
-                  {getContent("values", "value2_title", "Senior Strategists Only")}
+                  {getContent("values", "value2_title", "Dedicated Experts")}
                 </h3>
                 <p className="text-gray-600">
-                  {getContent("values", "value2_desc", "No junior teams. No handoffs. You work directly with experienced strategists who own your results.")}
+                  {getContent("values", "value2_desc", "Your account is managed by the people who build the strategy — not handed off to a separate team.")}
                 </p>
               </CardContent>
             </Card>
@@ -210,8 +210,8 @@ export default function About() {
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="w-6 h-6 text-brand-green flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-xl text-gray-900 mb-2">{getContent("why_choose", "reason1_title", "Senior Strategists on Every Account")}</h3>
-                  <p className="text-gray-600">{getContent("why_choose", "reason1_desc", "No handoff to junior teams. You work directly with experienced strategists who own your results.")}</p>
+                  <h3 className="font-semibold text-xl text-gray-900 mb-2">{getContent("why_choose", "reason1_title", "Dedicated Experts on Every Account")}</h3>
+                  <p className="text-gray-600">{getContent("why_choose", "reason1_desc", "Your account is managed by the people who build the strategy. Direct access to decision-makers who own your results.")}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

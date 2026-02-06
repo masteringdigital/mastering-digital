@@ -281,7 +281,7 @@ export default function Services() {
               What Makes Our Services Different
             </h2>
             <p className="text-xl text-[#4A4A4A]">
-              We're not a typical agency. Every service we offer is backed by senior strategists, transparent reporting, and a commitment to measurable results.
+              We're not a typical agency. Every service we offer is backed by dedicated experts, transparent reporting, and a commitment to measurable results.
             </p>
           </div>
 
@@ -292,10 +292,10 @@ export default function Services() {
                   <CheckCircle2 className="w-8 h-8 text-brand-green" />
                 </div>
                 <h3 className="font-display text-lg text-[#0B0B0B] mb-2">
-                  No Junior Handoffs
+                  Dedicated Experts
                 </h3>
                 <p className="text-sm text-[#4A4A4A]">
-                  Senior strategists manage your account from day one
+                  Your account is managed by the people who build the strategy
                 </p>
               </CardContent>
             </Card>

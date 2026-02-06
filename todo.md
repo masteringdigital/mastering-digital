@@ -146,4 +146,16 @@
 - [x] Update service page components to use usePageContent hook
 - [x] Replace all hardcoded text with dynamic content (hero sections for all 7 pages)
 - [x] Test service pages content editing
-- [ ] Save checkpoint with service pages editable content
+- [x] Save checkpoint with service pages editable content
+
+## Phase 14: Team Members Update
+- [x] Upload team member headshots to S3 (Sofia M., Frida A., Leo Barros, Johny)
+- [x] Add Sofia M. - Paid Media Specialist to database
+- [x] Add Frida A. - Content Marketing to database
+- [x] Add Leo Barros to database (update existing or create new)
+- [x] Add Felipe M. - Creative Director with placeholder image
+- [x] Add Carlos - Lead Back End Web Developer with placeholder image
+- [x] Add Juan - Lead Front End Web Developer with placeholder image
+- [x] Verify all team members display correctly on About page
+- [x] Update About page to load team members dynamically from database
+- [ ] Save checkpoint with updated team members

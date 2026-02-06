@@ -4,17 +4,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircle2, Users, Target, Zap } from "lucide-react";
 import { usePageContent } from "@/hooks/usePageContent";
+import { trpc } from "@/lib/trpc";
 
 export default function About() {
   const { getContent, isLoading } = usePageContent("about");
+  const { data: teamMembers = [], isLoading: teamLoading } = trpc.cms.teamMembers.listAll.useQuery();
 
-  if (isLoading) {
+  if (isLoading || teamLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-500">Loading...</p>
       </div>
     );
   }
+
+  // Filter active team members and sort by display order
+  const activeTeamMembers = teamMembers
+    .filter((member: any) => member.isActive)
+    .sort((a: any, b: any) => (a.displayOrder || 0) - (b.displayOrder || 0));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -131,47 +138,63 @@ export default function About() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Michael Schott */}
-            <Card className="border-0 shadow-lg text-center">
-              <CardContent className="pt-8">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-blue to-brand-purple mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">MS</span>
-                </div>
-                <h3 className="font-bold text-2xl text-gray-900 mb-1">Michael Schott</h3>
-                <p className="text-brand-blue font-semibold mb-3">Co-Founder & Strategist</p>
-                <p className="text-gray-600">
-                  15+ years in digital marketing with expertise in paid acquisition and conversion optimization.
-                </p>
-              </CardContent>
-            </Card>
+            {activeTeamMembers.map((member: any, index: number) => {
+              // Generate gradient colors based on index
+              const gradients = [
+                "from-brand-blue to-brand-purple",
+                "from-brand-purple to-brand-cyan",
+                "from-brand-cyan to-brand-green",
+                "from-brand-orange to-brand-blue",
+                "from-brand-green to-brand-purple",
+                "from-brand-blue to-brand-cyan",
+                "from-brand-purple to-brand-orange",
+                "from-brand-cyan to-brand-blue",
+              ];
+              const gradient = gradients[index % gradients.length];
 
-            {/* Johny Schott */}
-            <Card className="border-0 shadow-lg text-center">
-              <CardContent className="pt-8">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">JS</span>
-                </div>
-                <h3 className="font-bold text-2xl text-gray-900 mb-1">Johny Schott</h3>
-                <p className="text-brand-purple font-semibold mb-3">Co-Founder & Creative Director</p>
-                <p className="text-gray-600">
-                  Specializes in web design, UX optimization, and building high-converting landing pages.
-                </p>
-              </CardContent>
-            </Card>
+              // Generate initials from name
+              const initials = member.name
+                .split(" ")
+                .map((n: string) => n[0])
+                .join("")
+                .toUpperCase()
+                .slice(0, 2);
 
-            {/* Leo Barros */}
-            <Card className="border-0 shadow-lg text-center">
-              <CardContent className="pt-8">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-cyan to-brand-green mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">LB</span>
-                </div>
-                <h3 className="font-bold text-2xl text-gray-900 mb-1">Leo Barros</h3>
-                <p className="text-brand-cyan font-semibold mb-3">AI & Automation Specialist</p>
-                <p className="text-gray-600">
-                  Builds AI-powered systems for lead qualification, follow-up automation, and reporting.
-                </p>
-              </CardContent>
-            </Card>
+              return (
+                <Card key={member.id} className="border-0 shadow-lg text-center">
+                  <CardContent className="pt-8">
+                    {member.imageUrl ? (
+                      <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img
+                          src={member.imageUrl}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${gradient} mx-auto mb-4 flex items-center justify-center`}>
+                        <span className="text-4xl font-bold text-white">{initials}</span>
+                      </div>
+                    )}
+                    <h3 className="font-bold text-2xl text-gray-900 mb-1">{member.name}</h3>
+                    <p className="text-brand-blue font-semibold mb-3">{member.role}</p>
+                    {member.bio && (
+                      <p className="text-gray-600">{member.bio}</p>
+                    )}
+                    {member.linkedinUrl && (
+                      <a
+                        href={member.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-4 text-brand-blue hover:text-brand-purple transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

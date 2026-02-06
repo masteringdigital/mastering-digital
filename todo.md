@@ -248,4 +248,13 @@
 - [x] Add server-side Contact event for strategy session bookings (tRPC endpoint created)
 - [x] Test CAPI events in Meta Events Manager (implementation verified, ready for user testing)
 - [x] Verify event deduplication is working correctly (eventId matching implemented)
-- [ ] Save checkpoint with Meta CAPI implementation
+- [x] Save checkpoint with Meta CAPI implementation
+
+## Phase 23: Case Study Integration - The Florist Supply Shop
+- [x] Create case study database records for The Florist Supply Shop
+- [x] Add case study cards to Results page (Tier 1 display with logo, metrics, testimonial)
+- [ ] Add case study section to Homepage with featured case studies
+- [ ] Create expandable case study detail views (Tier 2 & Tier 3)
+- [ ] Add case study filtering by industry
+- [x] Test case study display and interactions (verified - displays correctly on Results page)
+- [ ] Save checkpoint with case study integration

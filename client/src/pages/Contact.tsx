@@ -66,7 +66,8 @@ export default function Contact() {
             }, 1000);
           }
         } catch (e) {
-          // Ignore parsing errors
+          // Ignore parsing errors - continue
+          console.debug('Form message parsing error:', e);
         }
       }
     };

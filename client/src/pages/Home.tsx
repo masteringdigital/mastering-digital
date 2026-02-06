@@ -141,11 +141,19 @@ export default function Home() {
               Trusted by Leading Platforms
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png" alt="Google Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png" alt="Meta Business Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png" alt="Shopify Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png" alt="Klaviyo Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png" alt="Google Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png" alt="Meta Business Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png" alt="Shopify Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png" alt="Klaviyo Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
           </div>
         </div>
       </section>

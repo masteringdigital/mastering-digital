@@ -165,8 +165,64 @@ export default function About() {
         </div>
       </section>
 
-      {/* Who We're Not a Fit For Section */}
+      {/* Who We Work Best With Section */}
       <section className="py-24 bg-white border-t border-gray-200">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-bold text-4xl text-gray-900 mb-4 text-center">
+              Who We Work Best With
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 text-center">
+              We partner with businesses that are ready to grow strategically and value accountability.
+            </p>
+            
+            <Card className="border-2 border-brand-green/20 shadow-lg bg-gradient-to-br from-white to-brand-green/5">
+              <CardContent className="pt-8">
+                <p className="text-lg font-semibold text-gray-900 mb-6">
+                  You're a great fit if you:
+                </p>
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Value revenue, leads, and measurable growth over vanity metrics</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Understand that strategy and infrastructure come before scaling spend</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Are ready to invest in long-term growth, not short-term experiments</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Provide access to data, systems, and decision-makers for true collaboration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Want strategic guidance backed by execution accountability</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">Are open to honest feedback and willing to adjust based on data</span>
+                  </li>
+                </ul>
+                <div className="border-t border-gray-200 pt-6">
+                  <p className="text-gray-700 font-medium">
+                    Sound like you?
+                  </p>
+                  <p className="text-gray-600 mt-2">
+                    Let's talk. We build partnerships with businesses that are serious about growth and value transparency.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We're Not a Fit For Section */}
+      <section className="py-24 bg-gray-50 border-t border-gray-200">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-bold text-4xl text-gray-900 mb-4 text-center">

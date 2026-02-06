@@ -209,4 +209,13 @@
 - [x] Add all 6 "not a fit" criteria with proper formatting
 - [x] Position section appropriately on page (after values, before team)
 - [x] Test visual presentation of icons and new section
-- [ ] Save checkpoint with icons and not a fit section
+- [x] Save checkpoint with icons and not a fit section
+
+## Phase 19: Who We Work Best With Section
+- [x] Create "Who We Work Best With" section on Who We Are page
+- [x] Add ideal client characteristics with positive framing (6 criteria)
+- [x] Position section before "Not a Fit" section
+- [x] Use checkmark icons for positive criteria
+- [x] Match design style with Not a Fit section for visual balance (green gradient card)
+- [x] Test section display and positioning
+- [ ] Save checkpoint with Who We Work Best With section

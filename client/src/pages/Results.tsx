@@ -333,6 +333,100 @@ export default function Results() {
         </div>
       </section>
 
+      {/* Case Study 4: 850 Living */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <Card className="border-0 shadow-2xl">
+              <CardHeader className="border-b bg-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="font-bold text-3xl text-gray-900 mb-3">850 Living</h2>
+                    <span className="inline-block px-4 py-2 bg-brand-cyan/10 text-brand-cyan text-sm font-semibold rounded-full">
+                      Multifamily • Lease-Ups
+                    </span>
+                  </div>
+                  <TrendingUp className="w-12 h-12 text-brand-cyan" />
+                </div>
+              </CardHeader>
+              <CardContent className="pt-8">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        After-hours gaps were costing 850 Living opportunities. Leads came in, but follow-through slowed overnight and on weekends. Tour calendars looked uneven because momentum broke outside office hours, and teams spent weekdays trying to "catch up" instead of converting the next wave.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-cyan font-bold">→</span>
+                          <span>Built systems to protect after-hours window and create cleaner visibility</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-cyan font-bold">→</span>
+                          <span>Captured interest consistently across all hours</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-cyan font-bold">→</span>
+                          <span>Reduced missed connections after hours with faster follow-up</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-cyan font-bold">→</span>
+                          <span>Improved internal handoffs so prospects didn't get lost</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-cyan font-bold">→</span>
+                          <span>Built leadership-ready dashboards for weekly decision-making</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">$71.5M</div>
+                          <div className="text-sm text-gray-600">Property Sale</div>
+                          <div className="text-xs text-gray-500 mt-1">March 2025</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">230</div>
+                          <div className="text-sm text-gray-600">Units</div>
+                          <div className="text-xs text-gray-500 mt-1">Community Size</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">Weekly</div>
+                          <div className="text-sm text-gray-600">Calendars Filled</div>
+                          <div className="text-xs text-gray-500 mt-1">Tour Activity</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">Gaps</div>
+                          <div className="text-sm text-gray-600">After-Hours</div>
+                          <div className="text-xs text-gray-500 mt-1">Closed</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-brand-cyan/5 p-6 rounded-lg border-l-4 border-brand-cyan">
+                      <p className="text-gray-700 italic">
+                        "850 Living stopped missing the moment. By closing after-hours gaps and building cleaner handoffs, they turned inconsistent tour flow into calendars filled week over week. The property sold for $71.5M in March 2025."
+                      </p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">

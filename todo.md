@@ -302,3 +302,9 @@
 - [x] Update Who We Serve Multifamily Featured Client section
 - [x] Verify all changes display correctly on live site
 - [ ] Save checkpoint with updated Shoma Group case study
+
+## Phase 31: Add 850 Living Case Study (Supplementary Multifamily)
+- [x] Add 850 Living case study to Results page (after Shoma Group)
+- [x] Update Who We Serve Multifamily section if needed (optional - keep Shoma Group as primary)
+- [x] Verify 850 Living displays correctly on live site
+- [ ] Save checkpoint with 850 Living case study added

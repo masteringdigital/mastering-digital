@@ -325,3 +325,10 @@
 - [x] Add The Color House Miami as featured client to E-commerce page
 - [x] Verify The Color House Miami displays correctly on live site
 - [ ] Save checkpoint with The Color House Miami case study added
+
+## Phase 35: Add Lawrence Air Systems Case Study (Second Home Services)
+- [x] Add Lawrence Air Systems case study to Results page
+- [x] Add Lawrence Air Systems to Homepage Case Studies section (expand to 4 cards)
+- [x] Add Lawrence Air Systems as featured client to Home Services page
+- [x] Verify all changes display correctly on live site
+- [ ] Save checkpoint with Lawrence Air Systems case study added

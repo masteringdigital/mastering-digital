@@ -611,6 +611,62 @@ export default function Results() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Lawrence Air Systems */}
+            <Card className="border-0 shadow-lg overflow-hidden">
+              <div className="h-2 bg-brand-orange"></div>
+              <CardHeader className="bg-brand-orange/5">
+                <p className="text-brand-orange font-semibold text-xs uppercase tracking-wider mb-2">
+                  Home Services • HVAC
+                </p>
+                <CardTitle className="font-bold text-2xl text-gray-900">
+                  Lawrence Air Systems
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">The Challenge</h3>
+                    <p className="text-gray-700">
+                      HVAC businesses struggle with inconsistent referrals and fierce competition. Lawrence Air Systems needed to build massive awareness and capture local intent when homeowners are ready to act — showing up in feeds, search results, and the moment someone asks "Who can fix this?"
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Our Approach</h3>
+                    <p className="text-gray-700">
+                      Flooded the top of the funnel with consistent social presence (organic + paid), scaled Facebook Ads for reach and clicks, and built SEO traction around service + location keywords.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-brand-orange">+1663%</p>
+                      <p className="text-sm text-gray-700 mt-1">Organic Reach</p>
+                    </div>
+                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-brand-orange">+1711%</p>
+                      <p className="text-sm text-gray-700 mt-1">Ad Clicks</p>
+                    </div>
+                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-brand-orange">+817%</p>
+                      <p className="text-sm text-gray-700 mt-1">Ad Impressions</p>
+                    </div>
+                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-brand-orange">13</p>
+                      <p className="text-sm text-gray-700 mt-1">Keywords Top 10</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-brand-orange/5 p-6 rounded-lg border-l-4 border-brand-orange">
+                    <p className="text-gray-700 italic">
+                      "Lawrence Air Systems built massive local awareness: 1.66M organic impressions, 3.43M paid impressions, and 43K ad clicks. Meanwhile, SEO groundwork put 13 keywords in the Top 10 — including multiple #1 positions on local service terms."
+                    </p>
+                    <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

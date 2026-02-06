@@ -262,6 +262,21 @@ export default function HomeServices() {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="border-0 shadow-xl bg-gradient-to-br from-brand-blue/5 to-brand-purple/5">
+              <CardContent className="pt-8">
+                <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
+                  FEATURED CLIENT
+                </p>
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">Lawrence Air Systems</h3>
+                <p className="text-gray-700 mb-4">
+                  Built massive local awareness with +1663% organic reach and +1711% ad clicks through integrated social and paid strategy. SEO groundwork put 13 keywords in Top 10 with multiple #1 rankings on local service terms.
+                </p>
+                <Button asChild variant="outline">
+                  <Link href="/results">View Full Case Study</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

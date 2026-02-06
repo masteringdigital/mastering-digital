@@ -419,7 +419,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Case Study 1: Lifetime Enclosures */}
             <Card className="border-0 shadow-lg">
               <CardHeader className="border-b">
@@ -579,6 +579,61 @@ export default function Home() {
                   asChild
                   variant="outline"
                   className="w-full mt-6 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white"
+                >
+                  <a href="/results">View Case Study →</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 4: Lawrence Air Systems */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="border-b">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="font-bold text-2xl text-gray-900 mb-2">Lawrence Air Systems</h3>
+                    <span className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange text-sm font-semibold rounded-full">
+                      Home Services • HVAC
+                    </span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
+                    <p className="text-gray-600">
+                      HVAC businesses struggle with inconsistent referrals and fierce competition. Needed massive awareness and local intent capture when homeowners are ready to act.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
+                    <p className="text-gray-600">
+                      Flooded top of funnel with consistent social presence (organic + paid), scaled Facebook Ads, and built SEO traction around service + location keywords.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+1663%</div>
+                      <div className="text-sm text-gray-600">Organic Reach</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+1711%</div>
+                      <div className="text-sm text-gray-600">Ad Clicks</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+817%</div>
+                      <div className="text-sm text-gray-600">Ad Impressions</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-orange mb-1">13</div>
+                      <div className="text-sm text-gray-600">Keywords Top 10</div>
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full mt-6 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
                 >
                   <a href="/results">View Case Study →</a>
                 </Button>

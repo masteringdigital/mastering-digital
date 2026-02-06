@@ -136,15 +136,7 @@ export default function CMSAdmin() {
             </TabsContent>
 
             <TabsContent value="testimonials">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Testimonials</CardTitle>
-                  <CardDescription>Manage client testimonials and reviews</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-500">Testimonials manager coming soon...</p>
-                </CardContent>
-              </Card>
+              <TestimonialsManager />
             </TabsContent>
 
             <TabsContent value="cases">
@@ -438,6 +430,287 @@ function TeamMembersManager() {
                     <Edit className="h-4 w-4" />
                   </Button>
                   <Button variant="outline" size="sm" onClick={() => handleDelete(member.id)} disabled={deleteMutation.isPending}>
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+// Testimonials Manager Component
+function TestimonialsManager() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [editingTestimonial, setEditingTestimonial] = useState<any>(null);
+  const [formData, setFormData] = useState({
+    clientName: "",
+    clientTitle: "",
+    clientCompany: "",
+    testimonialText: "",
+    rating: 5,
+    photoUrl: "",
+    displayOrder: 0,
+    isActive: true,
+  });
+
+  const utils = trpc.useUtils();
+  const { data: testimonials, isLoading } = trpc.cms.testimonials.listAll.useQuery();
+
+  const createMutation = trpc.cms.testimonials.create.useMutation({
+    onSuccess: () => {
+      toast.success("Testimonial added successfully!");
+      utils.cms.testimonials.listAll.invalidate();
+      resetForm();
+      setIsDialogOpen(false);
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to add testimonial");
+    },
+  });
+
+  const updateMutation = trpc.cms.testimonials.update.useMutation({
+    onSuccess: () => {
+      toast.success("Testimonial updated successfully!");
+      utils.cms.testimonials.listAll.invalidate();
+      resetForm();
+      setIsDialogOpen(false);
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to update testimonial");
+    },
+  });
+
+  const deleteMutation = trpc.cms.testimonials.delete.useMutation({
+    onSuccess: () => {
+      toast.success("Testimonial deleted successfully!");
+      utils.cms.testimonials.listAll.invalidate();
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to delete testimonial");
+    },
+  });
+
+  const resetForm = () => {
+    setFormData({
+      clientName: "",
+      clientTitle: "",
+      clientCompany: "",
+      testimonialText: "",
+      rating: 5,
+      photoUrl: "",
+      displayOrder: 0,
+      isActive: true,
+    });
+    setEditingTestimonial(null);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingTestimonial) {
+      updateMutation.mutate({ id: editingTestimonial.id, ...formData });
+    } else {
+      createMutation.mutate(formData);
+    }
+  };
+
+  const handleEdit = (testimonial: any) => {
+    setEditingTestimonial(testimonial);
+    setFormData({
+      clientName: testimonial.clientName,
+      clientTitle: testimonial.clientTitle || "",
+      clientCompany: testimonial.clientCompany || "",
+      testimonialText: testimonial.testimonialText,
+      rating: testimonial.rating || 5,
+      photoUrl: testimonial.photoUrl || "",
+      displayOrder: testimonial.order || 0,
+      isActive: testimonial.isActive,
+    });
+    setIsDialogOpen(true);
+  };
+
+  const handleDelete = (id: number) => {
+    if (confirm("Are you sure you want to delete this testimonial?")) {
+      deleteMutation.mutate(id);
+    }
+  };
+
+  return (
+    <Card>
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <CardTitle>Testimonials</CardTitle>
+          <CardDescription>Manage client testimonials and reviews</CardDescription>
+        </div>
+        <Dialog open={isDialogOpen} onOpenChange={(open) => {
+          setIsDialogOpen(open);
+          if (!open) resetForm();
+        }}>
+          <DialogTrigger asChild>
+            <Button>
+              <Plus className="mr-2 h-4 w-4" />
+              Add Testimonial
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>{editingTestimonial ? "Edit Testimonial" : "Add Testimonial"}</DialogTitle>
+              <DialogDescription>
+                {editingTestimonial ? "Update the testimonial information" : "Add a new client testimonial"}
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="clientName">Client Name *</Label>
+                  <Input
+                    id="clientName"
+                    value={formData.clientName}
+                    onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="clientTitle">Client Title</Label>
+                  <Input
+                    id="clientTitle"
+                    value={formData.clientTitle}
+                    onChange={(e) => setFormData({ ...formData, clientTitle: e.target.value })}
+                    placeholder="e.g., CEO, Marketing Director"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="clientCompany">Company</Label>
+                <Input
+                  id="clientCompany"
+                  value={formData.clientCompany}
+                  onChange={(e) => setFormData({ ...formData, clientCompany: e.target.value })}
+                  placeholder="Company name"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="testimonialText">Testimonial Content *</Label>
+                <Textarea
+                  id="testimonialText"
+                  value={formData.testimonialText}
+                  onChange={(e) => setFormData({ ...formData, testimonialText: e.target.value })}
+                  rows={6}
+                  required
+                  placeholder="Enter the testimonial text..."
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="photoUrl">Client Photo URL</Label>
+                <Input
+                  id="photoUrl"
+                  type="url"
+                  value={formData.photoUrl}
+                  onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
+                  placeholder="https://example.com/photo.jpg"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="rating">Rating (1-5)</Label>
+                  <Input
+                    id="rating"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value={formData.rating}
+                    onChange={(e) => setFormData({ ...formData, rating: parseInt(e.target.value) || 5 })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="displayOrder">Display Order</Label>
+                  <Input
+                    id="displayOrder"
+                    type="number"
+                    value={formData.displayOrder}
+                    onChange={(e) => setFormData({ ...formData, displayOrder: parseInt(e.target.value) || 0 })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="isActive">Active</Label>
+                  <div className="flex items-center space-x-2 pt-2">
+                    <Switch
+                      id="isActive"
+                      checked={formData.isActive}
+                      onCheckedChange={(checked) => setFormData({ ...formData, isActive: checked })}
+                    />
+                    <Label htmlFor="isActive" className="cursor-pointer">
+                      {formData.isActive ? "Active" : "Inactive"}
+                    </Label>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-end gap-2 pt-4">
+                <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+                  {(createMutation.isPending || updateMutation.isPending) ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Saving...
+                    </>
+                  ) : (
+                    editingTestimonial ? "Update" : "Create"
+                  )}
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
+      </CardHeader>
+      <CardContent>
+        {isLoading ? (
+          <div className="flex items-center justify-center py-8">
+            <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+          </div>
+        ) : !testimonials || testimonials.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No testimonials yet. Click "Add Testimonial" to get started.</p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="flex items-start justify-between p-4 border rounded-lg hover:bg-gray-50">
+                <div className="flex gap-4 flex-1">
+                  {testimonial.photoUrl && (
+                    <img src={testimonial.photoUrl} alt={testimonial.clientName} className="w-16 h-16 rounded-full object-cover flex-shrink-0" />
+                  )}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-semibold text-lg">{testimonial.clientName}</h3>
+                      <div className="flex items-center">
+                        {Array.from({ length: testimonial.rating || 5 }).map((_, i) => (
+                          <span key={i} className="text-yellow-400">★</span>
+                        ))}
+                      </div>
+                    </div>
+                    {(testimonial.clientTitle || testimonial.clientCompany) && (
+                      <p className="text-gray-600 text-sm">
+                        {testimonial.clientTitle}{testimonial.clientTitle && testimonial.clientCompany ? " at " : ""}{testimonial.clientCompany}
+                      </p>
+                    )}
+                    <p className="text-gray-700 mt-2 line-clamp-3">{testimonial.testimonialText}</p>
+                    <div className="flex gap-2 mt-2">
+                      <span className={`text-xs px-2 py-1 rounded ${testimonial.isActive ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}`}>
+                        {testimonial.isActive ? "Active" : "Inactive"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-2 flex-shrink-0 ml-4">
+                  <Button variant="outline" size="sm" onClick={() => handleEdit(testimonial)}>
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => handleDelete(testimonial.id)} disabled={deleteMutation.isPending}>
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>

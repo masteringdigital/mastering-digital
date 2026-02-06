@@ -64,4 +64,14 @@
 - [x] Add adminLogin tRPC procedure
 - [x] Test login functionality with vitest
 - [x] Verify login UI displays correctly
-- [ ] Create checkpoint with simple auth
+- [x] Create checkpoint with simple auth
+
+## Phase 8: Testimonials Manager
+- [x] Create TestimonialsManager component with full CRUD UI
+- [x] Add form for creating/editing testimonials
+- [x] Implement list view with edit and delete actions
+- [x] Add toast notifications for user feedback
+- [x] Integrate with existing tRPC testimonials endpoints
+- [x] Fix field names to match database schema (clientTitle, testimonialText)
+- [x] Test testimonials CRUD operations with vitest
+- [ ] Save checkpoint with testimonials manager

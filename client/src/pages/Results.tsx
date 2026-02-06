@@ -72,32 +72,32 @@ export default function Results() {
                     <div>
                       <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
                       <p className="text-gray-700 leading-relaxed">
-                        Lifetime Enclosures was spending $8,000/month on Google Ads but only generating 15–20 qualified leads per month. Their cost per lead was $400+, and their sales team was overwhelmed with low-quality inquiries. They needed more volume and better lead quality — fast.
+                        Local home-improvement demand is unforgiving—people don't browse forever. They choose the business that shows up at the right moment with enough proof to feel safe. Lifetime Enclosures needed a measurable local lead engine where the numbers tie directly to business actions: calls, direction requests, and quote-ready traffic.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-xl text-gray-900 mb-3">What We Did</h3>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li className="flex items-start gap-2">
                           <span className="text-brand-orange font-bold">→</span>
-                          <span>Rebuilt Google Ads account structure with tighter keyword targeting</span>
+                          <span>Prioritized Google Business Profile as the primary lead channel (not just a brochure)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-orange font-bold">→</span>
-                          <span>Launched Google Local Services Ads for instant credibility</span>
+                          <span>Optimized for mobile-first behavior (75% of impressions came from mobile)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-orange font-bold">→</span>
-                          <span>Redesigned landing pages with clear CTAs and trust signals</span>
+                          <span>Used Google Ads as a precision tool to capture demand that doesn't convert through local pack</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-orange font-bold">→</span>
-                          <span>Implemented AI-powered lead qualification and instant follow-up</span>
+                          <span>Optimized for high-intent actions: calls, directions, and website clicks</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-orange font-bold">→</span>
-                          <span>Set up GA4 tracking and real-time reporting dashboard</span>
+                          <span>Set up real-time reporting to track local visibility and lead actions</span>
                         </li>
                       </ul>
                     </div>
@@ -108,33 +108,33 @@ export default function Results() {
                       <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-orange mb-2">2.7x</div>
-                          <div className="text-sm text-gray-600">Lead increase</div>
-                          <div className="text-xs text-gray-500 mt-1">15 → 40 leads/month</div>
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+184%</div>
+                          <div className="text-sm text-gray-600">GBP Impressions</div>
+                          <div className="text-xs text-gray-500 mt-1">Local Visibility Surge</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-orange mb-2">35%</div>
-                          <div className="text-sm text-gray-600">Lower CPL</div>
-                          <div className="text-xs text-gray-500 mt-1">$400 → $260</div>
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+130%</div>
+                          <div className="text-sm text-gray-600">Calls</div>
+                          <div className="text-xs text-gray-500 mt-1">Direct Lead Actions</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-orange mb-2">5min</div>
-                          <div className="text-sm text-gray-600">Response time</div>
-                          <div className="text-xs text-gray-500 mt-1">Down from 4+ hours</div>
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+158%</div>
+                          <div className="text-sm text-gray-600">Website Clicks</div>
+                          <div className="text-xs text-gray-500 mt-1">Quote-Ready Traffic</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-orange mb-2">$180k</div>
-                          <div className="text-sm text-gray-600">Added revenue</div>
-                          <div className="text-xs text-gray-500 mt-1">First 6 months</div>
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+78%</div>
+                          <div className="text-sm text-gray-600">Conversion Rate</div>
+                          <div className="text-xs text-gray-500 mt-1">Google Ads Efficiency</div>
                         </div>
                       </div>
                     </div>
 
                     <div className="bg-brand-orange/5 p-6 rounded-lg border-l-4 border-brand-orange">
                       <p className="text-gray-700 italic">
-                        "Mastering Digital didn't just get us more leads — they got us better leads. Our close rate went up, our sales team is happier, and we're finally seeing real ROI from our ad spend."
+                        "Lifetime Enclosures went from 'hard to find' to 'hard to ignore.' Google Business Profile impressions surged +184%, calls increased +130%, and website clicks grew +158%. Meanwhile, Google Ads conversion rate jumped +78% while spend actually decreased — proving that better strategy beats bigger budgets."
                       </p>
-                      <p className="text-gray-900 font-semibold mt-3">— Owner, Lifetime Enclosures</p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
                     </div>
                   </div>
                 </div>

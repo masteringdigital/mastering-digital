@@ -123,7 +123,7 @@ export default function WhoWeServe() {
                     FEATURED CLIENT
                   </p>
                   <p className="text-gray-700 mb-4">
-                    <strong>Lifetime Enclosures</strong> — Increased qualified leads by 2.5x while reducing cost per appointment by 42% through optimized Google Ads and AI lead qualification.
+                    <strong>Lifetime Enclosures</strong> — Achieved +184% local visibility surge with +130% calls and +158% website clicks through optimized Google Business Profile and precision Google Ads strategy.
                   </p>
                   <Button asChild variant="outline" size="sm">
                     <Link href="/results">

@@ -437,31 +437,31 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
                     <p className="text-gray-600">
-                      Low lead volume and high cost per lead were limiting growth. Needed to scale qualified appointments.
+                      Local home-improvement demand is unforgiving. Needed a measurable local lead engine where numbers tie directly to business actions: calls, directions, and quote-ready traffic.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
                     <p className="text-gray-600">
-                      Rebuilt Google Ads strategy, optimized landing pages, and implemented AI-powered lead follow-up.
+                      Prioritized Google Business Profile as primary lead channel, optimized for mobile-first behavior, and used Google Ads as precision tool for demand capture.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">2.7x</div>
-                      <div className="text-sm text-gray-600">Lead increase</div>
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+184%</div>
+                      <div className="text-sm text-gray-600">GBP Impressions</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">35%</div>
-                      <div className="text-sm text-gray-600">Lower CPL</div>
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+130%</div>
+                      <div className="text-sm text-gray-600">Calls</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">5min</div>
-                      <div className="text-sm text-gray-600">Response time</div>
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+158%</div>
+                      <div className="text-sm text-gray-600">Website Clicks</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">$180k</div>
-                      <div className="text-sm text-gray-600">Added revenue</div>
+                      <div className="text-3xl font-bold text-brand-orange mb-1">+78%</div>
+                      <div className="text-sm text-gray-600">Conversion Rate</div>
                     </div>
                   </div>
                 </div>

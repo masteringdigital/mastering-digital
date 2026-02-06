@@ -611,8 +611,14 @@ export default function Results() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
 
-            {/* Lawrence Air Systems */}
+      {/* Case Study 7: Lawrence Air Systems */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
             <Card className="border-0 shadow-lg overflow-hidden">
               <div className="h-2 bg-brand-orange"></div>
               <CardHeader className="bg-brand-orange/5">

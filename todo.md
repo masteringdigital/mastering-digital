@@ -332,3 +332,10 @@
 - [x] Add Lawrence Air Systems as featured client to Home Services page
 - [x] Verify all changes display correctly on live site
 - [ ] Save checkpoint with Lawrence Air Systems case study added
+
+
+## Phase 36: Fix Results Page Case Study Spacing
+- [x] Fix spacing and padding between case study cards on Results page
+- [x] Ensure consistent vertical spacing between all case studies
+- [x] Verify spacing looks correct on live site
+- [ ] Save checkpoint with spacing fixes

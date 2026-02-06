@@ -18,6 +18,33 @@ export default function Contact() {
     };
   }, []);
 
+  // Listen for form submission and redirect to thank you page
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // GoHighLevel sends a message when form is submitted
+      if (event.data && typeof event.data === 'string') {
+        try {
+          const data = JSON.parse(event.data);
+          // Check if it's a form submission success message
+          if (data.type === 'hsFormCallback' && data.eventName === 'onFormSubmitted') {
+            // Redirect to thank you page after short delay
+            setTimeout(() => {
+              window.location.href = '/thank-you';
+            }, 1000);
+          }
+        } catch (e) {
+          // Ignore parsing errors
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

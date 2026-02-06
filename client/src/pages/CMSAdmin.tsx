@@ -959,6 +959,72 @@ function PageContentEditor() {
         ],
       },
     ],
+    ppc: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    meta_ads: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    seo: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    web_design: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    ai: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
+    strategy: [
+      {
+        section: "hero",
+        label: "Hero Section",
+        fields: [
+          { key: "section_label", label: "Section Label", type: "text" },
+          { key: "headline", label: "Headline", type: "text" },
+          { key: "description", label: "Description", type: "textarea" },
+        ],
+      },
+    ],
     contact: [
       {
         section: "hero",

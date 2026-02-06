@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Palette, Layout, Smartphone, Zap, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function WebDesignService() {
+  const { getContent, isLoading } = usePageContent("web_design");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,10 +26,10 @@ export default function WebDesignService() {
           <div className="max-w-4xl mx-auto text-center">
             <Palette className="w-16 h-16 text-brand-orange mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              Web Design & Conversion Optimization
+              {getContent("hero", "headline", "Web Design & Conversion Optimization")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              High-converting landing pages and website experiences designed to turn visitors into customers.
+              {getContent("hero", "description", "High-converting landing pages and website experiences designed to turn visitors into customers.")}
             </p>
           </div>
         </div>

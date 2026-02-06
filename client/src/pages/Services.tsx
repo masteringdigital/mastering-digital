@@ -4,8 +4,19 @@ import { Target, Palette, Bot, ArrowRight, CheckCircle2, Search, TrendingUp, Sha
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function Services() {
+  const { getContent, isLoading } = usePageContent("services");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,13 +26,13 @@ export default function Services() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-brand-purple font-display text-sm uppercase tracking-wider mb-4">
-              OUR SERVICES
+              {getContent("hero", "section_label", "OUR SERVICES")}
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              Comprehensive Digital Marketing Services
+              {getContent("hero", "headline", "Comprehensive Digital Marketing Services")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              From SEO and paid advertising to AI automation and email marketing, we provide end-to-end digital marketing solutions that drive measurable growth.
+              {getContent("hero", "description", "From SEO and paid advertising to AI automation and email marketing, we provide end-to-end digital marketing solutions that drive measurable growth.")}
             </p>
           </div>
         </div>

@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Search, TrendingUp, MapPin, FileText, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function SEOService() {
+  const { getContent, isLoading } = usePageContent("seo");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,10 +26,10 @@ export default function SEOService() {
           <div className="max-w-4xl mx-auto text-center">
             <Search className="w-16 h-16 text-brand-green mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              SEO Services
+              {getContent("hero", "headline", "SEO Services")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              Increase organic visibility, drive qualified traffic, and dominate local search results with data-driven SEO strategies that deliver long-term growth.
+              {getContent("hero", "description", "Increase organic visibility, drive qualified traffic, and dominate local search results with data-driven SEO strategies that deliver long-term growth.")}
             </p>
           </div>
         </div>

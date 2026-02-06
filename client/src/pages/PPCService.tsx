@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Search, ShoppingBag, Eye, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function PPCService() {
+  const { getContent, isLoading } = usePageContent("ppc");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,10 +26,10 @@ export default function PPCService() {
           <div className="max-w-4xl mx-auto text-center">
             <Target className="w-16 h-16 text-brand-orange mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              PPC Google Ads Management
+              {getContent("hero", "headline", "PPC Google Ads Management")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              Drive high-intent traffic and qualified leads with expertly managed Google Ads campaigns that maximize ROI and minimize wasted spend.
+              {getContent("hero", "description", "Drive high-intent traffic and qualified leads with expertly managed Google Ads campaigns that maximize ROI and minimize wasted spend.")}
             </p>
           </div>
         </div>

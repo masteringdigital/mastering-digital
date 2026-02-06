@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Bot, MessageSquare, Zap, Brain, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function AIService() {
+  const { getContent, isLoading } = usePageContent("ai");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,10 +26,10 @@ export default function AIService() {
           <div className="max-w-4xl mx-auto text-center">
             <Bot className="w-16 h-16 text-brand-purple mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              AI Implementation & Automation
+              {getContent("hero", "headline", "AI Implementation & Automation")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              Intelligent automation systems that qualify leads, follow up instantly, and scale your operations without adding headcount.
+              {getContent("hero", "description", "Intelligent automation systems that qualify leads, follow up instantly, and scale your operations without adding headcount.")}
             </p>
           </div>
         </div>

@@ -3,8 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Share2, Users, Target, TrendingUp, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePageContent } from "@/hooks/usePageContent";
 
 export default function MetaAdsService() {
+  const { getContent, isLoading } = usePageContent("meta_ads");
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -15,10 +26,10 @@ export default function MetaAdsService() {
           <div className="max-w-4xl mx-auto text-center">
             <Share2 className="w-16 h-16 text-brand-purple mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
-              Meta Ads & Social Media Marketing
+              {getContent("hero", "headline", "Meta Ads & Social Media Marketing")}
             </h1>
             <p className="text-xl text-[#4A4A4A] leading-relaxed">
-              Reach your ideal customers on Facebook, Instagram, and other social platforms with targeted campaigns that drive awareness, engagement, and conversions.
+              {getContent("hero", "description", "Reach your ideal customers on Facebook, Instagram, and other social platforms with targeted campaigns that drive awareness, engagement, and conversions.")}
             </p>
           </div>
         </div>

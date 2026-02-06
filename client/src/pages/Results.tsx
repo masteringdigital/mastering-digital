@@ -166,32 +166,32 @@ export default function Results() {
                     <div>
                       <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
                       <p className="text-gray-700 leading-relaxed">
-                        Shoma Group was launching a new 250-unit multifamily property in South Florida. They needed to hit 95% occupancy within 90 days to meet investor expectations. Traditional marketing wasn't fast enough, and their leasing team was overwhelmed with unqualified inquiries.
+                        Leasing teams don't need another "busy season" — they need a week that feels manageable. Shoma Group faced uneven tour activity, slow follow-ups that caused prospects to cool off, and limited attribution making it hard to answer: "What's working?" The issue wasn't simply lead volume — it was inconsistency.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-xl text-gray-900 mb-3">What We Did</h3>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li className="flex items-start gap-2">
                           <span className="text-brand-cyan font-bold">→</span>
-                          <span>Launched geo-targeted Google & Meta campaigns within 48 hours</span>
+                          <span>Tightened geo/keyword focus and audience targeting for consistency</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-cyan font-bold">→</span>
-                          <span>Built high-converting landing pages with virtual tours</span>
+                          <span>Improved speed-to-lead with SMS + call routing (hours/days → minutes)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-cyan font-bold">→</span>
-                          <span>Deployed AI chatbot for 24/7 tour booking and lead qualification</span>
+                          <span>Layered retargeting to recapture high-intent prospects</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-cyan font-bold">→</span>
-                          <span>Created automated email/SMS nurture sequences</span>
+                          <span>Built weekly scorecards for clear attribution and optimization</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-cyan font-bold">→</span>
-                          <span>Set up real-time occupancy tracking dashboard</span>
+                          <span>Prioritized CRM lead queues to prevent drop-offs</span>
                         </li>
                       </ul>
                     </div>
@@ -202,33 +202,33 @@ export default function Results() {
                       <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-cyan mb-2">95%</div>
-                          <div className="text-sm text-gray-600">Leased</div>
-                          <div className="text-xs text-gray-500 mt-1">In 90 days</div>
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">$81M</div>
+                          <div className="text-sm text-gray-600">Property Sale</div>
+                          <div className="text-xs text-gray-500 mt-1">March 2025</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-cyan mb-2">3.2x</div>
-                          <div className="text-sm text-gray-600">Tour bookings</div>
-                          <div className="text-xs text-gray-500 mt-1">vs. previous property</div>
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">304</div>
+                          <div className="text-sm text-gray-600">Units</div>
+                          <div className="text-xs text-gray-500 mt-1">Community Size</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-cyan mb-2">24/7</div>
-                          <div className="text-sm text-gray-600">AI response</div>
-                          <div className="text-xs text-gray-500 mt-1">Instant qualification</div>
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">Minutes</div>
+                          <div className="text-sm text-gray-600">Follow-Up Time</div>
+                          <div className="text-xs text-gray-500 mt-1">Down from hours/days</div>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                          <div className="text-4xl font-bold text-brand-cyan mb-2">$2.1M</div>
-                          <div className="text-sm text-gray-600">Annual value</div>
-                          <div className="text-xs text-gray-500 mt-1">From lease-up</div>
+                          <div className="text-4xl font-bold text-brand-cyan mb-2">Predictable</div>
+                          <div className="text-sm text-gray-600">Weekly Cadence</div>
+                          <div className="text-xs text-gray-500 mt-1">Tour Activity</div>
                         </div>
                       </div>
                     </div>
 
                     <div className="bg-brand-cyan/5 p-6 rounded-lg border-l-4 border-brand-cyan">
                       <p className="text-gray-700 italic">
-                        "We hit our lease-up goals faster than any property we've launched. The AI booking system was a game-changer — our leasing team could focus on closing deals instead of answering the same questions all day."
+                        "Shoma Group transformed from reactive leasing swings to a predictable weekly rhythm. Follow-up time dropped from hours/days to minutes, tour activity stabilized, and leadership finally had clear attribution. The property sold for $81M in March 2025."
                       </p>
-                      <p className="text-gray-900 font-semibold mt-3">— Marketing Director, Shoma Group</p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
                     </div>
                   </div>
                 </div>

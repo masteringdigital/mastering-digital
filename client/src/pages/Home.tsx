@@ -492,31 +492,31 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
                     <p className="text-gray-600">
-                      New property launch needed rapid lease-up velocity. Traditional marketing wasn't fast enough.
+                      Uneven tour activity, slow follow-ups, and limited attribution made leasing unpredictable. Needed operational stability and clear reporting.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
                     <p className="text-gray-600">
-                      Multi-channel paid strategy + AI chatbot for 24/7 tour booking + automated nurture sequences.
+                      Tightened targeting, improved speed-to-lead with SMS + call routing, and built weekly scorecards for clear attribution.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">95%</div>
-                      <div className="text-sm text-gray-600">Leased in 90 days</div>
+                      <div className="text-3xl font-bold text-brand-cyan mb-1">$81M</div>
+                      <div className="text-sm text-gray-600">Property Sale</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">3.2x</div>
-                      <div className="text-sm text-gray-600">Tour bookings</div>
+                      <div className="text-3xl font-bold text-brand-cyan mb-1">304</div>
+                      <div className="text-sm text-gray-600">Units</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">24/7</div>
-                      <div className="text-sm text-gray-600">AI response</div>
+                      <div className="text-3xl font-bold text-brand-cyan mb-1">Minutes</div>
+                      <div className="text-sm text-gray-600">Follow-Up Time</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">$2.1M</div>
-                      <div className="text-sm text-gray-600">Annual value</div>
+                      <div className="text-3xl font-bold text-brand-cyan mb-1">Predictable</div>
+                      <div className="text-sm text-gray-600">Weekly Cadence</div>
                     </div>
                   </div>
                 </div>

@@ -343,7 +343,7 @@ export default function WhoWeServe() {
                     FEATURED CLIENT
                   </p>
                   <p className="text-gray-700 mb-4">
-                    <strong>Shoma Group</strong> — Accelerated lease-up by 6 weeks and reduced cost per lease by 38% through AI-powered tour scheduling and targeted local campaigns.
+                    <strong>Shoma Group</strong> — Stabilized leasing velocity with predictable weekly cadence and clear attribution. Follow-up time dropped from hours/days to minutes. Property sold for $81M in March 2025.
                   </p>
                   <Button asChild variant="outline" size="sm">
                     <Link href="/results">

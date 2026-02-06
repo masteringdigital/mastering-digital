@@ -295,3 +295,10 @@
 - [x] Update Who We Serve Home Services Featured Client section
 - [x] Verify all changes display correctly on live site
 - [ ] Save checkpoint with updated Lifetime Enclosures case study
+
+## Phase 30: Update Shoma Group Case Study
+- [x] Update Results page with new Shoma Group metrics ($81M property sale, 304 units, predictable weekly cadence, minutes follow-up time)
+- [x] Update Homepage Case Studies card with new metrics
+- [x] Update Who We Serve Multifamily Featured Client section
+- [x] Verify all changes display correctly on live site
+- [ ] Save checkpoint with updated Shoma Group case study

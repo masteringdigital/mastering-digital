@@ -25,8 +25,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/industries" className="text-white/80 hover:text-white text-sm transition-colors">
-                  Industries
+                <a href="/who-we-serve" className="text-white/80 hover:text-white text-sm transition-colors">
+                  Who We Serve
                 </a>
               </li>
               <li>
@@ -47,23 +47,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Industries */}
+          {/* Column 3: Who We Serve */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Industries</h3>
+            <h3 className="font-semibold text-white mb-4">Who We Serve</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/industries#home-services" className="text-white/80 hover:text-white text-sm transition-colors">
+                <a href="/who-we-serve/home-services" className="text-white/80 hover:text-white text-sm transition-colors">
                   Home Services
                 </a>
               </li>
               <li>
-                <a href="/industries#ecommerce" className="text-white/80 hover:text-white text-sm transition-colors">
+                <a href="/who-we-serve/ecommerce" className="text-white/80 hover:text-white text-sm transition-colors">
                   E-commerce
                 </a>
               </li>
               <li>
-                <a href="/industries#lease-ups" className="text-white/80 hover:text-white text-sm transition-colors">
-                  Lease-Ups
+                <a href="/who-we-serve/real-estate" className="text-white/80 hover:text-white text-sm transition-colors">
+                  Multifamily Real Estate
                 </a>
               </li>
             </ul>

@@ -98,7 +98,7 @@ export default function Header() {
               onMouseLeave={() => setIndustriesOpen(false)}
             >
               <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors flex items-center gap-1">
-                Industries
+                Who We Serve
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div 
@@ -107,26 +107,34 @@ export default function Header() {
                 }`}
               >
                 <a
-                  href="/industries#home-services"
+                  href="/who-we-serve/home-services"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
                 >
                   <div className="font-semibold">Home Services</div>
                   <div className="text-xs text-gray-500 mt-1">HVAC, plumbing, roofing</div>
                 </a>
                 <a
-                  href="/industries#ecommerce"
+                  href="/who-we-serve/ecommerce"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
                 >
                   <div className="font-semibold">E-commerce</div>
                   <div className="text-xs text-gray-500 mt-1">Shopify & online stores</div>
                 </a>
                 <a
-                  href="/industries#lease-ups"
+                  href="/who-we-serve/real-estate"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
                 >
-                  <div className="font-semibold">Lease-Ups</div>
-                  <div className="text-xs text-gray-500 mt-1">Multifamily properties</div>
+                  <div className="font-semibold">Multifamily Real Estate</div>
+                  <div className="text-xs text-gray-500 mt-1">Lease-ups & properties</div>
                 </a>
+                <div className="border-t border-gray-200 mt-2 pt-2">
+                  <a
+                    href="/who-we-serve"
+                    className="block px-4 py-2 text-sm font-semibold text-brand-blue hover:bg-gray-50 transition-colors"
+                  >
+                    View All Industries →
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -190,16 +198,19 @@ export default function Header() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Industries</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3">Who We Serve</h3>
                   <div className="flex flex-col gap-2 pl-4">
-                    <a href="/industries#home-services" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
+                    <a href="/who-we-serve/home-services" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
                       Home Services
                     </a>
-                    <a href="/industries#ecommerce" className="text-gray-700 hover:text-brand-green" onClick={() => setIsOpen(false)}>
+                    <a href="/who-we-serve/ecommerce" className="text-gray-700 hover:text-brand-green" onClick={() => setIsOpen(false)}>
                       E-commerce
                     </a>
-                    <a href="/industries#lease-ups" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
-                      Lease-Ups
+                    <a href="/who-we-serve/real-estate" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
+                      Multifamily Real Estate
+                    </a>
+                    <a href="/who-we-serve" className="text-brand-blue font-semibold" onClick={() => setIsOpen(false)}>
+                      View All Industries →
                     </a>
                   </div>
                 </div>

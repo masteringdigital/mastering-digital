@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { trpc } from "@/lib/trpc";
 import { Plus, Edit, Trash2, Loader2, LogOut } from "lucide-react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -124,13 +124,14 @@ export default function CMSAdmin() {
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-            <TabsList className="grid w-full grid-cols-6">
+            <TabsList className="grid w-full grid-cols-7">
               <TabsTrigger value="pages">Page Content</TabsTrigger>
               <TabsTrigger value="team">Team Members</TabsTrigger>
               <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
               <TabsTrigger value="cases">Case Studies</TabsTrigger>
               <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
               <TabsTrigger value="logos">Client Logos</TabsTrigger>
+              <TabsTrigger value="admins">Admin Users</TabsTrigger>
             </TabsList>
 
             <TabsContent value="pages">
@@ -179,6 +180,10 @@ export default function CMSAdmin() {
                   <p className="text-gray-500">Client logos manager coming soon...</p>
                 </CardContent>
               </Card>
+            </TabsContent>
+
+            <TabsContent value="admins">
+              <AdminUsersManager />
             </TabsContent>
           </Tabs>
         </div>
@@ -1010,6 +1015,218 @@ function PageContentEditor() {
           </div>
         )}
       </CardContent>
+    </Card>
+  );
+}
+
+// ============================================================================
+// Admin Users Manager
+// ============================================================================
+
+function AdminUsersManager() {
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [editingUser, setEditingUser] = React.useState<any>(null);
+  const [formData, setFormData] = React.useState({
+    username: "",
+    password: "",
+    email: "",
+    isActive: true,
+  });
+
+  const { data: adminUsers, isLoading } = trpc.cms.adminUsers.list.useQuery();
+  const createMutation = trpc.cms.adminUsers.create.useMutation();
+  const updateMutation = trpc.cms.adminUsers.update.useMutation();
+  const deleteMutation = trpc.cms.adminUsers.delete.useMutation();
+  const utils = trpc.useUtils();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      if (editingUser) {
+        // Update existing user
+        const updateData: any = {
+          id: editingUser.id,
+          username: formData.username !== editingUser.username ? formData.username : undefined,
+          email: formData.email !== editingUser.email ? formData.email : undefined,
+          isActive: formData.isActive,
+        };
+        
+        // Only include password if it's been changed
+        if (formData.password) {
+          updateData.password = formData.password;
+        }
+        
+        await updateMutation.mutateAsync(updateData);
+        toast.success("Admin user updated successfully");
+      } else {
+        // Create new user
+        await createMutation.mutateAsync({
+          username: formData.username,
+          password: formData.password,
+          email: formData.email || undefined,
+        });
+        toast.success("Admin user created successfully");
+      }
+      
+      utils.cms.adminUsers.list.invalidate();
+      setDialogOpen(false);
+      resetForm();
+    } catch (error: any) {
+      toast.error(error.message || "Failed to save admin user");
+    }
+  };
+
+  const handleEdit = (user: any) => {
+    setEditingUser(user);
+    setFormData({
+      username: user.username,
+      password: "",
+      email: user.email || "",
+      isActive: user.isActive,
+    });
+    setDialogOpen(true);
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Are you sure you want to delete this admin user?")) return;
+    
+    try {
+      await deleteMutation.mutateAsync(id);
+      toast.success("Admin user deleted successfully");
+      utils.cms.adminUsers.list.invalidate();
+    } catch (error: any) {
+      toast.error(error.message || "Failed to delete admin user");
+    }
+  };
+
+  const resetForm = () => {
+    setEditingUser(null);
+    setFormData({
+      username: "",
+      password: "",
+      email: "",
+      isActive: true,
+    });
+  };
+
+  if (isLoading) {
+    return (
+      <Card>
+        <CardContent className="pt-6">
+          <p className="text-center text-gray-500">Loading admin users...</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <div>
+            <CardTitle>Admin Users</CardTitle>
+            <CardDescription>Manage CMS administrator accounts</CardDescription>
+          </div>
+          <Button onClick={() => { resetForm(); setDialogOpen(true); }}>
+            Add Admin User
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        {!adminUsers || adminUsers.length === 0 ? (
+          <p className="text-gray-500">No admin users yet. Click "Add Admin User" to get started.</p>
+        ) : (
+          <div className="space-y-4">
+            {adminUsers.map((user: any) => (
+              <div key={user.id} className="flex items-center justify-between p-4 border rounded-lg">
+                <div className="flex-1">
+                  <h3 className="font-semibold">{user.username}</h3>
+                  {user.email && <p className="text-sm text-gray-600">{user.email}</p>}
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className={`text-xs px-2 py-1 rounded ${user.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
+                      {user.isActive ? 'Active' : 'Inactive'}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      Created: {new Date(user.createdAt).toLocaleDateString()}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" onClick={() => handleEdit(user)}>
+                    Edit
+                  </Button>
+                  <Button variant="destructive" size="sm" onClick={() => handleDelete(user.id)}>
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </CardContent>
+
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{editingUser ? "Edit Admin User" : "Add Admin User"}</DialogTitle>
+            <DialogDescription>
+              {editingUser ? "Update admin user details" : "Create a new admin user account"}
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="text-sm font-medium">Username *</label>
+              <Input
+                value={formData.username}
+                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                placeholder="Enter username"
+                required
+                minLength={3}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">
+                Password {editingUser ? "(leave blank to keep current)" : "*"}
+              </label>
+              <Input
+                type="password"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                placeholder={editingUser ? "Enter new password" : "Enter password"}
+                required={!editingUser}
+                minLength={6}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Email</label>
+              <Input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="Enter email (optional)"
+              />
+            </div>
+            {editingUser && (
+              <div className="flex items-center gap-2">
+                <Switch
+                  checked={formData.isActive}
+                  onCheckedChange={(checked) => setFormData({ ...formData, isActive: checked })}
+                />
+                <label className="text-sm font-medium">Active</label>
+              </div>
+            )}
+            <DialogFooter>
+              <Button type="button" variant="outline" onClick={() => setDialogOpen(false)}>
+                Cancel
+              </Button>
+              <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+                {editingUser ? "Update" : "Create"}
+              </Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
     </Card>
   );
 }

@@ -3,6 +3,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
   users,
+  adminUsers,
   teamMembers,
   testimonials,
   caseStudies,
@@ -10,6 +11,7 @@ import {
   clientLogos,
   siteSettings,
   pageContent,
+  InsertAdminUser,
   InsertTeamMember,
   InsertTestimonial,
   InsertCaseStudy,
@@ -413,4 +415,48 @@ export async function deletePageContent(id: number) {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   await db.delete(pageContent).where(eq(pageContent.id, id));
+}
+
+// ============================================================================
+// Admin Users
+// ============================================================================
+
+export async function getAllAdminUsers() {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  return await db.select().from(adminUsers).orderBy(desc(adminUsers.createdAt));
+}
+
+export async function getAdminUserByUsername(username: string) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  const results = await db.select().from(adminUsers).where(eq(adminUsers.username, username)).limit(1);
+  return results[0] || null;
+}
+
+export async function getAdminUserById(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  const results = await db.select().from(adminUsers).where(eq(adminUsers.id, id)).limit(1);
+  return results[0] || null;
+}
+
+export async function createAdminUser(data: InsertAdminUser) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  const result = await db.insert(adminUsers).values(data);
+  return result;
+}
+
+export async function updateAdminUser(id: number, data: Partial<InsertAdminUser>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  await db.update(adminUsers).set(data).where(eq(adminUsers.id, id));
+  return await getAdminUserById(id);
+}
+
+export async function deleteAdminUser(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not initialized');
+  await db.delete(adminUsers).where(eq(adminUsers.id, id));
 }

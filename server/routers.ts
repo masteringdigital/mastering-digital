@@ -7,6 +7,7 @@ import * as db from "./db";
 import { TRPCError } from "@trpc/server";
 import { storagePut } from "./storage";
 import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 // Admin-only procedure
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -63,23 +64,30 @@ export const appRouter = router({
       return { url, key: fileKey };
     }),
 
-    // Simple admin login
+    // Admin login - checks database
     adminLogin: publicProcedure.input(z.object({
       username: z.string(),
       password: z.string(),
-    })).mutation(({ input }) => {
-      const adminUsername = process.env.ADMIN_USERNAME;
-      const adminPassword = process.env.ADMIN_PASSWORD;
+    })).mutation(async ({ input }) => {
+      // Check database for admin user
+      const adminUser = await db.getAdminUserByUsername(input.username);
       
-      if (!adminUsername || !adminPassword) {
-        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Admin credentials not configured' });
-      }
-      
-      if (input.username !== adminUsername || input.password !== adminPassword) {
+      if (!adminUser) {
         throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Invalid username or password' });
       }
       
-      return { success: true };
+      if (!adminUser.isActive) {
+        throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Account is disabled' });
+      }
+      
+      // Verify password
+      const isValidPassword = await bcrypt.compare(input.password, adminUser.passwordHash);
+      
+      if (!isValidPassword) {
+        throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Invalid username or password' });
+      }
+      
+      return { success: true, userId: adminUser.id, username: adminUser.username };
     }),
     // Team Members
     teamMembers: router({
@@ -284,6 +292,52 @@ export const appRouter = router({
       }))).mutation(({ input }) => db.bulkUpsertPageContent(input)),
       
       delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deletePageContent(input)),
+    }),
+
+    // Admin Users Management
+    adminUsers: router({
+      list: adminProcedure.query(() => db.getAllAdminUsers()),
+      get: adminProcedure.input(z.number()).query(({ input }) => db.getAdminUserById(input)),
+      create: adminProcedure.input(z.object({
+        username: z.string().min(3).max(100),
+        password: z.string().min(6),
+        email: z.string().email().optional(),
+      })).mutation(async ({ input }) => {
+        // Check if username already exists
+        const existing = await db.getAdminUserByUsername(input.username);
+        if (existing) {
+          throw new TRPCError({ code: 'BAD_REQUEST', message: 'Username already exists' });
+        }
+        
+        // Hash password
+        const passwordHash = await bcrypt.hash(input.password, 10);
+        
+        // Create user
+        return await db.createAdminUser({
+          username: input.username,
+          passwordHash,
+          email: input.email || null,
+          isActive: true,
+        });
+      }),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        username: z.string().min(3).max(100).optional(),
+        password: z.string().min(6).optional(),
+        email: z.string().email().optional(),
+        isActive: z.boolean().optional(),
+      })).mutation(async ({ input }) => {
+        const { id, password, ...rest } = input;
+        
+        // If password is provided, hash it
+        const updateData: any = { ...rest };
+        if (password) {
+          updateData.passwordHash = await bcrypt.hash(password, 10);
+        }
+        
+        return await db.updateAdminUser(id, updateData);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteAdminUser(input)),
     }),
 
     // Site Settings

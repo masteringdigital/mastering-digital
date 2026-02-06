@@ -113,4 +113,15 @@
 - [x] Update Client Logos manager to use ImageUpload component
 - [x] Test image upload end-to-end
 - [x] Write vitest tests for image upload
-- [ ] Save checkpoint with S3 image upload
+- [x] Save checkpoint with S3 image upload
+
+## Phase 11: Multi-User Admin System
+- [x] Create admin_users table in database schema
+- [x] Add password hashing with bcrypt (bcryptjs installed)
+- [x] Push database schema changes
+- [x] Update adminLogin procedure to check database
+- [x] Create admin user management interface (list, add, edit, delete)
+- [x] Add initial admin user seeding (created 2 admin users: admin, mike)
+- [x] Test multi-user authentication (2 users created and working)
+- [x] Write vitest tests for admin user management
+- [ ] Save checkpoint with multi-user admin system

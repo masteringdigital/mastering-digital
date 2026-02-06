@@ -253,9 +253,9 @@ export default function Ecommerce() {
                 <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
                   FEATURED CLIENT
                 </p>
-                <h3 className="font-bold text-2xl text-gray-900 mb-3">Wristband Resources</h3>
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">The Florist Supply Shop</h3>
                 <p className="text-gray-700 mb-4">
-                  Achieved 4.8x ROAS through strategic Meta campaigns and automated cart recovery, increasing monthly revenue by 156%. The combination of dynamic product ads and email automation recovered 32% of abandoned carts.
+                  Achieved +95% revenue growth with +59% order increase through optimized Meta and Google Ads strategy. Reduced Meta CPC by 44% while increasing conversions by 97% through strategic channel management and conversion optimization.
                 </p>
                 <Button asChild variant="outline">
                   <Link href="/results">View Full Case Study</Link>

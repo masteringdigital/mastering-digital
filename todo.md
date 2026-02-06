@@ -124,4 +124,18 @@
 - [x] Add initial admin user seeding (created 2 admin users: admin, mike)
 - [x] Test multi-user authentication (2 users created and working)
 - [x] Write vitest tests for admin user management
-- [ ] Save checkpoint with multi-user admin system
+- [x] Save checkpoint with multi-user admin system
+
+## Phase 12: About Page Editable Content
+- [x] Add About page structure to CMS page content editor
+- [x] Define all editable sections (hero, story, values, team intro, why choose, CTA)
+- [x] Update About page component to use usePageContent hook
+- [x] Replace all hardcoded text with dynamic content
+- [x] Replace hero section with dynamic content
+- [x] Replace Our Story section with dynamic content
+- [x] Replace Core Values section with dynamic content
+- [x] Replace Team Introduction section with dynamic content
+- [x] Replace Why Choose Us section with dynamic content
+- [x] Replace Final CTA section with dynamic content
+- [x] Test About page content editing
+- [ ] Save checkpoint with About page editable content

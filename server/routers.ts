@@ -5,6 +5,8 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
 import { TRPCError } from "@trpc/server";
+import { storagePut } from "./storage";
+import crypto from "crypto";
 
 // Admin-only procedure
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -30,6 +32,37 @@ export const appRouter = router({
 
   // CMS Routers - Public procedures for frontend display
   cms: router({
+    // Image upload
+    uploadImage: adminProcedure.input(z.object({
+      file: z.string(), // base64 encoded image
+      filename: z.string(),
+      contentType: z.string(),
+    })).mutation(async ({ input }) => {
+      // Validate file size (max 5MB)
+      const buffer = Buffer.from(input.file, 'base64');
+      const fileSizeInMB = buffer.length / (1024 * 1024);
+      
+      if (fileSizeInMB > 5) {
+        throw new TRPCError({ code: 'BAD_REQUEST', message: 'File size exceeds 5MB limit' });
+      }
+      
+      // Validate content type
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+      if (!allowedTypes.includes(input.contentType)) {
+        throw new TRPCError({ code: 'BAD_REQUEST', message: 'Invalid file type. Only JPG, PNG, WEBP, and GIF are allowed' });
+      }
+      
+      // Generate unique filename
+      const randomSuffix = crypto.randomBytes(8).toString('hex');
+      const ext = input.filename.split('.').pop();
+      const fileKey = `cms-uploads/${Date.now()}-${randomSuffix}.${ext}`;
+      
+      // Upload to S3
+      const { url } = await storagePut(fileKey, buffer, input.contentType);
+      
+      return { url, key: fileKey };
+    }),
+
     // Simple admin login
     adminLogin: publicProcedure.input(z.object({
       username: z.string(),

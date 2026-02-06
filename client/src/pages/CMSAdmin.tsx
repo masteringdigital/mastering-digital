@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ImageUpload } from "@/components/ImageUpload";
 
 export default function CMSAdmin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -335,13 +336,10 @@ function TeamMembersManager() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="photoUrl">Photo URL</Label>
-                <Input
-                  id="photoUrl"
-                  type="url"
+                <ImageUpload
+                  label="Photo"
                   value={formData.photoUrl}
-                  onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                  placeholder="https://example.com/photo.jpg"
+                  onChange={(url) => setFormData({ ...formData, photoUrl: url })}
                 />
               </div>
               <div className="space-y-2">
@@ -609,13 +607,10 @@ function TestimonialsManager() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="photoUrl">Client Photo URL</Label>
-                <Input
-                  id="photoUrl"
-                  type="url"
+                <ImageUpload
+                  label="Client Photo"
                   value={formData.photoUrl}
-                  onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                  placeholder="https://example.com/photo.jpg"
+                  onChange={(url) => setFormData({ ...formData, photoUrl: url })}
                 />
               </div>
               <div className="grid grid-cols-3 gap-4">
@@ -987,12 +982,10 @@ function PageContentEditor() {
                             placeholder={`Enter ${field.label.toLowerCase()}...`}
                           />
                         ) : field.type === "image" ? (
-                          <Input
-                            id={key}
-                            type="url"
+                          <ImageUpload
+                            label={field.label}
                             value={value}
-                            onChange={(e) => handleContentChange(section.section, field.key, e.target.value)}
-                            placeholder="https://example.com/image.jpg"
+                            onChange={(url) => handleContentChange(section.section, field.key, url)}
                           />
                         ) : (
                           <Input

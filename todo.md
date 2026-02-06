@@ -99,4 +99,18 @@
 - [x] Replace all industries section content with dynamic content
 - [x] Replace all final CTA section content with dynamic content
 - [x] Test content editing across all pages
-- [ ] Save checkpoint with page content editor
+- [x] Save checkpoint with page content editor
+
+## Phase 10: S3 Image Upload Feature
+- [x] Create tRPC procedure for image upload with S3 integration
+- [x] Add file size validation (max 5MB)
+- [x] Add image format validation (jpg, png, webp, gif)
+- [x] Create reusable ImageUpload component
+- [x] Add image preview functionality
+- [x] Update Team Members manager to use ImageUpload component
+- [x] Update Testimonials manager to use ImageUpload component
+- [x] Update Page Content editor to use ImageUpload component
+- [x] Update Client Logos manager to use ImageUpload component
+- [x] Test image upload end-to-end
+- [x] Write vitest tests for image upload
+- [ ] Save checkpoint with S3 image upload

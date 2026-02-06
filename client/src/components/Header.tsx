@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
@@ -25,111 +25,109 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             {/* Services Dropdown */}
             <div
-              className="relative group"
+              className="relative"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
+              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors flex items-center gap-1">
                 Services
+                <ChevronDown className="w-4 h-4" />
               </button>
-              {servicesOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
+              <div 
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 transition-all ${
+                  servicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+              >
+                <a
+                  href="/services/strategy"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors"
                 >
+                  <div className="font-semibold">Strategy & Channel Marketing</div>
+                  <div className="text-xs text-gray-500 mt-1">Multi-channel growth strategy</div>
+                </a>
+                <a
+                  href="/services/web-design"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
+                >
+                  <div className="font-semibold">Web Design & Conversion</div>
+                  <div className="text-xs text-gray-500 mt-1">High-converting websites</div>
+                </a>
+                <a
+                  href="/services/ai"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
+                >
+                  <div className="font-semibold">AI Implementation</div>
+                  <div className="text-xs text-gray-500 mt-1">Automation that works</div>
+                </a>
+                <a
+                  href="/services/ppc"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
+                >
+                  <div className="font-semibold">PPC Google Ads</div>
+                  <div className="text-xs text-gray-500 mt-1">Paid search campaigns</div>
+                </a>
+                <a
+                  href="/services/seo"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
+                >
+                  <div className="font-semibold">SEO Services</div>
+                  <div className="text-xs text-gray-500 mt-1">Organic growth strategy</div>
+                </a>
+                <a
+                  href="/services/meta-ads"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
+                >
+                  <div className="font-semibold">Meta Ads & Social</div>
+                  <div className="text-xs text-gray-500 mt-1">Social media advertising</div>
+                </a>
+                <div className="border-t border-gray-200 mt-2 pt-2">
                   <a
-                    href="/services/strategy"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors"
+                    href="/services"
+                    className="block px-4 py-2 text-sm font-semibold text-brand-blue hover:bg-gray-50 transition-colors"
                   >
-                    <div className="font-semibold">Strategy & Channel Marketing</div>
-                    <div className="text-xs text-gray-500 mt-1">Multi-channel growth strategy</div>
+                    View All Services →
                   </a>
-                  <a
-                    href="/services/web-design"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
-                  >
-                    <div className="font-semibold">Web Design & Conversion</div>
-                    <div className="text-xs text-gray-500 mt-1">High-converting websites</div>
-                  </a>
-                  <a
-                    href="/services/ai"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
-                  >
-                    <div className="font-semibold">AI Implementation</div>
-                    <div className="text-xs text-gray-500 mt-1">Automation that works</div>
-                  </a>
-                  <a
-                    href="/services/ppc"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
-                  >
-                    <div className="font-semibold">PPC Google Ads</div>
-                    <div className="text-xs text-gray-500 mt-1">Paid search campaigns</div>
-                  </a>
-                  <a
-                    href="/services/seo"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
-                  >
-                    <div className="font-semibold">SEO Services</div>
-                    <div className="text-xs text-gray-500 mt-1">Organic growth strategy</div>
-                  </a>
-                  <a
-                    href="/services/meta-ads"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
-                  >
-                    <div className="font-semibold">Meta Ads & Social</div>
-                    <div className="text-xs text-gray-500 mt-1">Social media advertising</div>
-                  </a>
-                  <div className="border-t border-gray-200 mt-2 pt-2">
-                    <a
-                      href="/services"
-                      className="block px-4 py-2 text-sm font-semibold text-brand-blue hover:bg-gray-50 transition-colors"
-                    >
-                      View All Services →
-                    </a>
-                  </div>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Industries Dropdown */}
             <div
-              className="relative group"
+              className="relative"
               onMouseEnter={() => setIndustriesOpen(true)}
               onMouseLeave={() => setIndustriesOpen(false)}
             >
-              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
+              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors flex items-center gap-1">
                 Industries
+                <ChevronDown className="w-4 h-4" />
               </button>
-              {industriesOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2"
-                  onMouseEnter={() => setIndustriesOpen(true)}
-                  onMouseLeave={() => setIndustriesOpen(false)}
+              <div 
+                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 transition-all ${
+                  industriesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+              >
+                <a
+                  href="/industries#home-services"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
                 >
-                  <a
-                    href="/industries#home-services"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
-                  >
-                    <div className="font-semibold">Home Services</div>
-                    <div className="text-xs text-gray-500 mt-1">HVAC, plumbing, roofing</div>
-                  </a>
-                  <a
-                    href="/industries#ecommerce"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
-                  >
-                    <div className="font-semibold">E-commerce</div>
-                    <div className="text-xs text-gray-500 mt-1">Shopify & online stores</div>
-                  </a>
-                  <a
-                    href="/industries#lease-ups"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
-                  >
-                    <div className="font-semibold">Lease-Ups</div>
-                    <div className="text-xs text-gray-500 mt-1">Multifamily properties</div>
-                  </a>
-                </div>
-              )}
+                  <div className="font-semibold">Home Services</div>
+                  <div className="text-xs text-gray-500 mt-1">HVAC, plumbing, roofing</div>
+                </a>
+                <a
+                  href="/industries#ecommerce"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
+                >
+                  <div className="font-semibold">E-commerce</div>
+                  <div className="text-xs text-gray-500 mt-1">Shopify & online stores</div>
+                </a>
+                <a
+                  href="/industries#lease-ups"
+                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
+                >
+                  <div className="font-semibold">Lease-Ups</div>
+                  <div className="text-xs text-gray-500 mt-1">Multifamily properties</div>
+                </a>
+              </div>
             </div>
 
             <a href="/results" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">

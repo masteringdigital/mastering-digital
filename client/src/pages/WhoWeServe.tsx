@@ -169,7 +169,7 @@ export default function WhoWeServe() {
                     FEATURED CLIENT
                   </p>
                   <p className="text-gray-700 mb-4">
-                    <strong>Wristband Resources</strong> — Achieved 4.8x ROAS through strategic Meta campaigns and automated cart recovery, increasing monthly revenue by 156%.
+                    <strong>The Florist Supply Shop</strong> — Achieved +95% revenue growth and +59% order increase while reducing Meta CPC by 44% through optimized channel strategy and conversion rate optimization.
                   </p>
                   <Button asChild variant="outline" size="sm">
                     <Link href="/results">

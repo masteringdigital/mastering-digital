@@ -283,3 +283,8 @@
 - [x] Keep only the CASE STUDIES section with 3 cards
 - [x] Verify no duplication on live site
 - [ ] Save checkpoint with duplicate section removed
+
+## Phase 28: Fix Who We Serve E-commerce Page Featured Client
+- [x] Update E-commerce page FEATURED CLIENT section from "Wristband Resources" to "The Florist Supply Shop"
+- [x] Verify fix displays correctly on live site
+- [ ] Save checkpoint with Who We Serve E-commerce fix

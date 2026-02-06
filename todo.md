@@ -56,3 +56,12 @@
 - [ ] Write vitest tests for CMS procedures
 - [ ] Create seed data for initial content
 - [ ] Create final checkpoint with CMS
+
+## Phase 7: Simple Admin Authentication
+- [x] Create simple username/password authentication for CMS admin
+- [x] Add login form to CMS admin page
+- [x] Store admin credentials securely (via environment variables)
+- [x] Add adminLogin tRPC procedure
+- [x] Test login functionality with vitest
+- [x] Verify login UI displays correctly
+- [ ] Create checkpoint with simple auth

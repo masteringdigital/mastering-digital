@@ -30,6 +30,24 @@ export const appRouter = router({
 
   // CMS Routers - Public procedures for frontend display
   cms: router({
+    // Simple admin login
+    adminLogin: publicProcedure.input(z.object({
+      username: z.string(),
+      password: z.string(),
+    })).mutation(({ input }) => {
+      const adminUsername = process.env.ADMIN_USERNAME;
+      const adminPassword = process.env.ADMIN_PASSWORD;
+      
+      if (!adminUsername || !adminPassword) {
+        throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Admin credentials not configured' });
+      }
+      
+      if (input.username !== adminUsername || input.password !== adminPassword) {
+        throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Invalid username or password' });
+      }
+      
+      return { success: true };
+    }),
     // Team Members
     teamMembers: router({
       list: publicProcedure.query(() => db.getActiveTeamMembers()),

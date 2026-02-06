@@ -1,4 +1,3 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,34 +7,97 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { trpc } from "@/lib/trpc";
-import { Plus, Edit, Trash2, Loader2 } from "lucide-react";
+import { Plus, Edit, Trash2, Loader2, LogOut } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function CMSAdmin() {
-  const { user, loading: authLoading } = useAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [activeTab, setActiveTab] = useState("team");
 
-  if (authLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-blue" />
-      </div>
-    );
-  }
+  // Login mutation
+  const loginMutation = trpc.cms.adminLogin.useMutation({
+    onSuccess: () => {
+      setIsAuthenticated(true);
+      toast.success("Login successful!");
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Invalid credentials");
+    },
+    onSettled: () => {
+      setIsLoggingIn(false);
+    },
+  });
 
-  if (!user || user.role !== "admin") {
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoggingIn(true);
+    loginMutation.mutate({ username, password });
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setUsername("");
+    setPassword("");
+    toast.success("Logged out successfully");
+  };
+
+  // Show login form if not authenticated
+  if (!isAuthenticated) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="container py-24">
-          <Card>
-            <CardHeader>
-              <CardTitle>Access Denied</CardTitle>
-              <CardDescription>You need admin privileges to access this page.</CardDescription>
+        <div className="flex-1 flex items-center justify-center bg-gray-50 py-12 px-4">
+          <Card className="w-full max-w-md">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-2xl font-bold text-center">CMS Admin Login</CardTitle>
+              <CardDescription className="text-center">
+                Enter your credentials to access the content management system
+              </CardDescription>
             </CardHeader>
+            <CardContent>
+              <form onSubmit={handleLogin} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="username">Username</Label>
+                  <Input
+                    id="username"
+                    type="text"
+                    placeholder="Enter username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    disabled={isLoggingIn}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    disabled={isLoggingIn}
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={isLoggingIn}>
+                  {isLoggingIn ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Logging in...
+                    </>
+                  ) : (
+                    "Login"
+                  )}
+                </Button>
+              </form>
+            </CardContent>
           </Card>
         </div>
         <Footer />
@@ -43,44 +105,85 @@ export default function CMSAdmin() {
     );
   }
 
+  // Show CMS interface if authenticated
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="container py-24">
-        <div className="mb-8">
-          <h1 className="font-bold text-4xl text-gray-900 mb-2">Content Management System</h1>
-          <p className="text-xl text-gray-600">Manage your website content</p>
+      <div className="flex-1 bg-gray-50 py-12">
+        <div className="container">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900">Content Management System</h1>
+              <p className="text-gray-600 mt-2">Manage your website content</p>
+            </div>
+            <Button variant="outline" onClick={handleLogout}>
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </Button>
+          </div>
+
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+            <TabsList className="grid w-full grid-cols-5">
+              <TabsTrigger value="team">Team Members</TabsTrigger>
+              <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
+              <TabsTrigger value="cases">Case Studies</TabsTrigger>
+              <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
+              <TabsTrigger value="logos">Client Logos</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="team">
+              <TeamMembersManager />
+            </TabsContent>
+
+            <TabsContent value="testimonials">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Testimonials</CardTitle>
+                  <CardDescription>Manage client testimonials and reviews</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-500">Testimonials manager coming soon...</p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="cases">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Case Studies</CardTitle>
+                  <CardDescription>Manage your case studies and success stories</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-500">Case studies manager coming soon...</p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="portfolio">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Portfolio</CardTitle>
+                  <CardDescription>Manage your portfolio items and projects</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-500">Portfolio manager coming soon...</p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="logos">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Client Logos</CardTitle>
+                  <CardDescription>Manage client and partner logos</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-500">Client logos manager coming soon...</p>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
-
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="team">Team Members</TabsTrigger>
-            <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
-            <TabsTrigger value="cases">Case Studies</TabsTrigger>
-            <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
-            <TabsTrigger value="logos">Client Logos</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="team">
-            <TeamMembersManager />
-          </TabsContent>
-
-          <TabsContent value="testimonials">
-            <TestimonialsManager />
-          </TabsContent>
-
-          <TabsContent value="cases">
-            <CaseStudiesManager />
-          </TabsContent>
-
-          <TabsContent value="portfolio">
-            <PortfolioManager />
-          </TabsContent>
-
-          <TabsContent value="logos">
-            <ClientLogosManager />
-          </TabsContent>
-        </Tabs>
       </div>
       <Footer />
     </div>
@@ -89,26 +192,6 @@ export default function CMSAdmin() {
 
 // Team Members Manager Component
 function TeamMembersManager() {
-  const { data: members, isLoading, refetch } = trpc.cms.teamMembers.listAll.useQuery();
-  const createMember = trpc.cms.teamMembers.create.useMutation({
-    onSuccess: () => {
-      toast.success("Team member added successfully");
-      refetch();
-    },
-  });
-  const updateMember = trpc.cms.teamMembers.update.useMutation({
-    onSuccess: () => {
-      toast.success("Team member updated successfully");
-      refetch();
-    },
-  });
-  const deleteMember = trpc.cms.teamMembers.delete.useMutation({
-    onSuccess: () => {
-      toast.success("Team member deleted successfully");
-      refetch();
-    },
-  });
-
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingMember, setEditingMember] = useState<any>(null);
   const [formData, setFormData] = useState({
@@ -117,20 +200,46 @@ function TeamMembersManager() {
     bio: "",
     photoUrl: "",
     linkedinUrl: "",
-    order: 0,
+    displayOrder: 0,
     isActive: true,
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (editingMember) {
-      await updateMember.mutateAsync({ id: editingMember.id, ...formData });
-    } else {
-      await createMember.mutateAsync(formData);
-    }
-    setIsDialogOpen(false);
-    resetForm();
-  };
+  const utils = trpc.useUtils();
+  const { data: members, isLoading } = trpc.cms.teamMembers.listAll.useQuery();
+
+  const createMutation = trpc.cms.teamMembers.create.useMutation({
+    onSuccess: () => {
+      toast.success("Team member added successfully!");
+      utils.cms.teamMembers.listAll.invalidate();
+      resetForm();
+      setIsDialogOpen(false);
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to add team member");
+    },
+  });
+
+  const updateMutation = trpc.cms.teamMembers.update.useMutation({
+    onSuccess: () => {
+      toast.success("Team member updated successfully!");
+      utils.cms.teamMembers.listAll.invalidate();
+      resetForm();
+      setIsDialogOpen(false);
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to update team member");
+    },
+  });
+
+  const deleteMutation = trpc.cms.teamMembers.delete.useMutation({
+    onSuccess: () => {
+      toast.success("Team member deleted successfully!");
+      utils.cms.teamMembers.listAll.invalidate();
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to delete team member");
+    },
+  });
 
   const resetForm = () => {
     setFormData({
@@ -139,56 +248,68 @@ function TeamMembersManager() {
       bio: "",
       photoUrl: "",
       linkedinUrl: "",
-      order: 0,
+      displayOrder: 0,
       isActive: true,
     });
     setEditingMember(null);
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (editingMember) {
+      updateMutation.mutate({ id: editingMember.id, ...formData });
+    } else {
+      createMutation.mutate(formData);
+    }
+  };
+
   const handleEdit = (member: any) => {
     setEditingMember(member);
     setFormData({
-      name: member.name || "",
-      role: member.role || "",
+      name: member.name,
+      role: member.role,
       bio: member.bio || "",
       photoUrl: member.photoUrl || "",
       linkedinUrl: member.linkedinUrl || "",
-      order: member.order || 0,
-      isActive: member.isActive ?? true,
+      displayOrder: member.order || 0,
+      isActive: member.isActive,
     });
     setIsDialogOpen(true);
   };
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center py-12">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-blue" />
-      </div>
-    );
-  }
+  const handleDelete = (id: number) => {
+    if (confirm("Are you sure you want to delete this team member?")) {
+      deleteMutation.mutate(id);
+    }
+  };
 
   return (
     <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <div>
-            <CardTitle>Team Members</CardTitle>
-            <CardDescription>Manage your team members displayed on the About page</CardDescription>
-          </div>
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-            <DialogTrigger asChild>
-              <Button onClick={resetForm}>
-                <Plus className="w-4 h-4 mr-2" />
-                Add Member
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle>{editingMember ? "Edit Team Member" : "Add Team Member"}</DialogTitle>
-                <DialogDescription>Fill in the details for the team member</DialogDescription>
-              </DialogHeader>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <CardTitle>Team Members</CardTitle>
+          <CardDescription>Manage your team members displayed on the About page</CardDescription>
+        </div>
+        <Dialog open={isDialogOpen} onOpenChange={(open) => {
+          setIsDialogOpen(open);
+          if (!open) resetForm();
+        }}>
+          <DialogTrigger asChild>
+            <Button>
+              <Plus className="mr-2 h-4 w-4" />
+              Add Member
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>{editingMember ? "Edit Team Member" : "Add Team Member"}</DialogTitle>
+              <DialogDescription>
+                {editingMember ? "Update the team member information" : "Add a new team member to your website"}
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
                   <Label htmlFor="name">Name *</Label>
                   <Input
                     id="name"
@@ -197,7 +318,7 @@ function TeamMembersManager() {
                     required
                   />
                 </div>
-                <div>
+                <div className="space-y-2">
                   <Label htmlFor="role">Role *</Label>
                   <Input
                     id="role"
@@ -206,155 +327,125 @@ function TeamMembersManager() {
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="bio">Bio</Label>
-                  <Textarea
-                    id="bio"
-                    value={formData.bio}
-                    onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-                    rows={4}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="photoUrl">Photo URL</Label>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="bio">Bio</Label>
+                <Textarea
+                  id="bio"
+                  value={formData.bio}
+                  onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
+                  rows={4}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="photoUrl">Photo URL</Label>
+                <Input
+                  id="photoUrl"
+                  type="url"
+                  value={formData.photoUrl}
+                  onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
+                  placeholder="https://example.com/photo.jpg"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="linkedinUrl">LinkedIn URL</Label>
+                <Input
+                  id="linkedinUrl"
+                  type="url"
+                  value={formData.linkedinUrl}
+                  onChange={(e) => setFormData({ ...formData, linkedinUrl: e.target.value })}
+                  placeholder="https://linkedin.com/in/username"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="displayOrder">Display Order</Label>
                   <Input
-                    id="photoUrl"
-                    value={formData.photoUrl}
-                    onChange={(e) => setFormData({ ...formData, photoUrl: e.target.value })}
-                    placeholder="https://example.com/photo.jpg"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="linkedinUrl">LinkedIn URL</Label>
-                  <Input
-                    id="linkedinUrl"
-                    value={formData.linkedinUrl}
-                    onChange={(e) => setFormData({ ...formData, linkedinUrl: e.target.value })}
-                    placeholder="https://linkedin.com/in/..."
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="order">Display Order</Label>
-                  <Input
-                    id="order"
+                    id="displayOrder"
                     type="number"
-                    value={formData.order}
-                    onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) })}
+                    value={formData.displayOrder}
+                    onChange={(e) => setFormData({ ...formData, displayOrder: parseInt(e.target.value) || 0 })}
                   />
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Switch
-                    id="isActive"
-                    checked={formData.isActive}
-                    onCheckedChange={(checked) => setFormData({ ...formData, isActive: checked })}
-                  />
+                <div className="space-y-2">
                   <Label htmlFor="isActive">Active</Label>
+                  <div className="flex items-center space-x-2 pt-2">
+                    <Switch
+                      id="isActive"
+                      checked={formData.isActive}
+                      onCheckedChange={(checked) => setFormData({ ...formData, isActive: checked })}
+                    />
+                    <Label htmlFor="isActive" className="cursor-pointer">
+                      {formData.isActive ? "Active" : "Inactive"}
+                    </Label>
+                  </div>
                 </div>
-                <div className="flex justify-end gap-2">
-                  <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
-                    Cancel
-                  </Button>
-                  <Button type="submit" disabled={createMember.isPending || updateMember.isPending}>
-                    {(createMember.isPending || updateMember.isPending) && (
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    )}
-                    {editingMember ? "Update" : "Create"}
-                  </Button>
-                </div>
-              </form>
-            </DialogContent>
-          </Dialog>
-        </div>
+              </div>
+              <div className="flex justify-end gap-2 pt-4">
+                <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+                  {(createMutation.isPending || updateMutation.isPending) ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Saving...
+                    </>
+                  ) : (
+                    editingMember ? "Update" : "Create"
+                  )}
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {members?.map((member) => (
-            <Card key={member.id}>
-              <CardContent className="pt-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
+        {isLoading ? (
+          <div className="flex items-center justify-center py-8">
+            <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
+          </div>
+        ) : !members || members.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No team members yet. Click "Add Member" to get started.</p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {members.map((member) => (
+              <div key={member.id} className="flex items-start justify-between p-4 border rounded-lg hover:bg-gray-50">
+                <div className="flex gap-4">
+                  {member.photoUrl && (
+                    <img src={member.photoUrl} alt={member.name} className="w-16 h-16 rounded-full object-cover" />
+                  )}
+                  <div>
                     <h3 className="font-semibold text-lg">{member.name}</h3>
                     <p className="text-gray-600">{member.role}</p>
-                    {member.bio && <p className="text-sm text-gray-500 mt-2">{member.bio}</p>}
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                      <span>Order: {member.order}</span>
-                      <span className={member.isActive ? "text-green-600" : "text-red-600"}>
+                    {member.bio && <p className="text-sm text-gray-500 mt-1">{member.bio}</p>}
+                    <div className="flex gap-2 mt-2">
+                      {member.linkedinUrl && (
+                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">
+                          LinkedIn
+                        </a>
+                      )}
+                      <span className={`text-xs px-2 py-1 rounded ${member.isActive ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}`}>
                         {member.isActive ? "Active" : "Inactive"}
                       </span>
                     </div>
                   </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" onClick={() => handleEdit(member)}>
-                      <Edit className="w-4 h-4" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => {
-                        if (confirm("Are you sure you want to delete this team member?")) {
-                          deleteMember.mutate(member.id);
-                        }
-                      }}
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </Button>
-                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-          {(!members || members.length === 0) && (
-            <div className="text-center py-12 text-gray-500">
-              No team members yet. Click "Add Member" to get started.
-            </div>
-          )}
-        </div>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" onClick={() => handleEdit(member)}>
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => handleDelete(member.id)} disabled={deleteMutation.isPending}>
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </CardContent>
-    </Card>
-  );
-}
-
-// Placeholder components for other managers (to be implemented similarly)
-function TestimonialsManager() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Testimonials</CardTitle>
-        <CardDescription>Manage client testimonials (Coming soon)</CardDescription>
-      </CardHeader>
-    </Card>
-  );
-}
-
-function CaseStudiesManager() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Case Studies</CardTitle>
-        <CardDescription>Manage case studies (Coming soon)</CardDescription>
-      </CardHeader>
-    </Card>
-  );
-}
-
-function PortfolioManager() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Portfolio</CardTitle>
-        <CardDescription>Manage portfolio items (Coming soon)</CardDescription>
-      </CardHeader>
-    </Card>
-  );
-}
-
-function ClientLogosManager() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Client Logos</CardTitle>
-        <CardDescription>Manage client logos (Coming soon)</CardDescription>
-      </CardHeader>
     </Card>
   );
 }

@@ -101,8 +101,12 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4">
                   Send us an email and we'll respond within 24 hours.
                 </p>
-                <a href="mailto:info@masteringdigital.com" className="text-brand-purple font-semibold hover:underline">
-                  info@masteringdigital.com
+                <a href="mailto:roi@masteringdigital.com" className="text-brand-purple font-semibold hover:underline">
+                  roi@masteringdigital.com
+                </a>
+                <br />
+                <a href="tel:+13053767910" className="text-brand-purple font-semibold hover:underline">
+                  305-376-7910
                 </a>
               </CardContent>
             </Card>

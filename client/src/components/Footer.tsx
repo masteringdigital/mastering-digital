@@ -74,8 +74,13 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:info@masteringdigital.com" className="text-white/80 hover:text-white text-sm transition-colors">
-                  info@masteringdigital.com
+                <a href="mailto:roi@masteringdigital.com" className="text-white/80 hover:text-white text-sm transition-colors">
+                  roi@masteringdigital.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+13053767910" className="text-white/80 hover:text-white text-sm transition-colors">
+                  305-376-7910
                 </a>
               </li>
             </ul>

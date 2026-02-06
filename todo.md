@@ -339,3 +339,10 @@
 - [x] Ensure consistent vertical spacing between all case studies
 - [x] Verify spacing looks correct on live site
 - [ ] Save checkpoint with spacing fixes
+
+
+## Phase 37: Remove Lawrence Air Systems from Homepage & Reformat Results Card
+- [x] Remove Lawrence Air Systems from Homepage Case Studies section (revert to 3 cards)
+- [x] Reformat Lawrence Air Systems card on Results page to match other case study card layout (2-column with metrics on right)
+- [x] Verify changes display correctly on live site
+- [ ] Save checkpoint with Lawrence Air Systems adjustments

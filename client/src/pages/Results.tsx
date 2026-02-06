@@ -619,56 +619,80 @@ export default function Results() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <Card className="border-0 shadow-lg overflow-hidden">
-              <div className="h-2 bg-brand-orange"></div>
-              <CardHeader className="bg-brand-orange/5">
-                <p className="text-brand-orange font-semibold text-xs uppercase tracking-wider mb-2">
-                  Home Services • HVAC
-                </p>
-                <CardTitle className="font-bold text-2xl text-gray-900">
-                  Lawrence Air Systems
-                </CardTitle>
+            <Card className="border-0 shadow-2xl">
+              <CardHeader className="border-b bg-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="font-bold text-3xl text-gray-900 mb-3">Lawrence Air Systems</h2>
+                    <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange text-sm font-semibold rounded-full">
+                      Home Services • HVAC
+                    </span>
+                  </div>
+                  <TrendingUp className="w-12 h-12 text-brand-orange" />
+                </div>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">The Challenge</h3>
-                    <p className="text-gray-700">
-                      HVAC businesses struggle with inconsistent referrals and fierce competition. Lawrence Air Systems needed to build massive awareness and capture local intent when homeowners are ready to act — showing up in feeds, search results, and the moment someone asks "Who can fix this?"
-                    </p>
-                  </div>
+              <CardContent className="pt-8">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        HVAC businesses struggle with inconsistent referrals and fierce competition. Lawrence Air Systems needed to build massive awareness and capture local intent when homeowners are ready to act — showing up in feeds, search results, and the moment someone asks "Who can fix this?"
+                      </p>
+                    </div>
 
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Our Approach</h3>
-                    <p className="text-gray-700">
-                      Flooded the top of the funnel with consistent social presence (organic + paid), scaled Facebook Ads for reach and clicks, and built SEO traction around service + location keywords.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-brand-orange">+1663%</p>
-                      <p className="text-sm text-gray-700 mt-1">Organic Reach</p>
-                    </div>
-                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-brand-orange">+1711%</p>
-                      <p className="text-sm text-gray-700 mt-1">Ad Clicks</p>
-                    </div>
-                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-brand-orange">+817%</p>
-                      <p className="text-sm text-gray-700 mt-1">Ad Impressions</p>
-                    </div>
-                    <div className="bg-brand-orange/10 p-4 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-brand-orange">13</p>
-                      <p className="text-sm text-gray-700 mt-1">Keywords Top 10</p>
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-orange font-bold">→</span>
+                          <span>Flooded top of funnel with consistent social presence (organic + paid)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-orange font-bold">→</span>
+                          <span>Scaled Facebook Ads for reach and clicks</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-orange font-bold">→</span>
+                          <span>Built SEO traction around service + location keywords</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
 
-                  <div className="bg-brand-orange/5 p-6 rounded-lg border-l-4 border-brand-orange">
-                    <p className="text-gray-700 italic">
-                      "Lawrence Air Systems built massive local awareness: 1.66M organic impressions, 3.43M paid impressions, and 43K ad clicks. Meanwhile, SEO groundwork put 13 keywords in the Top 10 — including multiple #1 positions on local service terms."
-                    </p>
-                    <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+1663%</div>
+                          <div className="text-sm text-gray-600">Organic Reach</div>
+                          <div className="text-xs text-gray-500 mt-1">Facebook</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+1711%</div>
+                          <div className="text-sm text-gray-600">Ad Clicks</div>
+                          <div className="text-xs text-gray-500 mt-1">Facebook Ads</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-orange mb-2">+817%</div>
+                          <div className="text-sm text-gray-600">Ad Impressions</div>
+                          <div className="text-xs text-gray-500 mt-1">Facebook Ads</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-orange mb-2">13</div>
+                          <div className="text-sm text-gray-600">Keywords Top 10</div>
+                          <div className="text-xs text-gray-500 mt-1">SEO</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-brand-orange/5 p-6 rounded-lg border-l-4 border-brand-orange">
+                      <p className="text-gray-700 italic">
+                        "Lawrence Air Systems built massive local awareness: 1.66M organic impressions, 3.43M paid impressions, and 43K ad clicks. Meanwhile, SEO groundwork put 13 keywords in the Top 10 — including multiple #1 positions on local service terms."
+                      </p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>

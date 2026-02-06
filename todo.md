@@ -319,3 +319,9 @@
 - [x] Add Ten30 South Beach as featured client to Real Estate page
 - [x] Verify Ten30 South Beach displays correctly on live site
 - [ ] Save checkpoint with Ten30 South Beach case study added
+
+## Phase 34: Add The Color House Miami Case Study (Supplementary E-commerce)
+- [x] Add The Color House Miami case study to Results page (after The Florist Supply Shop)
+- [x] Add The Color House Miami as featured client to E-commerce page
+- [x] Verify The Color House Miami displays correctly on live site
+- [ ] Save checkpoint with The Color House Miami case study added

@@ -521,6 +521,100 @@ export default function Results() {
         </div>
       </section>
 
+      {/* Case Study 6: The Color House Miami */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <Card className="border-0 shadow-2xl">
+              <CardHeader className="border-b bg-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="font-bold text-3xl text-gray-900 mb-3">The Color House Miami</h2>
+                    <span className="inline-block px-4 py-2 bg-brand-green/10 text-brand-green text-sm font-semibold rounded-full">
+                      E-commerce • Photo & Fine Art Printing
+                    </span>
+                  </div>
+                  <TrendingUp className="w-12 h-12 text-brand-green" />
+                </div>
+              </CardHeader>
+              <CardContent className="pt-8">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">The Challenge</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Local creative businesses lose not because they're bad, but because they're invisible at the wrong moment. The Color House Miami had the craftsmanship but wasn't visible when customers were ready to buy. Website clicks, calls, and direction requests were all flat.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Our Approach</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-green font-bold">→</span>
+                          <span>Focused on winning the micro-moment when someone is ready to act</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-green font-bold">→</span>
+                          <span>Shifted from vanity metrics to intent signals: clicks, calls, direction requests</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-green font-bold">→</span>
+                          <span>Optimized Google Business Profile for mobile-first behavior (72% mobile views)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-green font-bold">→</span>
+                          <span>Improved local SEO keyword rankings for service-related searches</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-green font-bold">→</span>
+                          <span>Leveraged 4.5-star rating and 41 reviews as conversion accelerator</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-4">The Results</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-green mb-2">+918%</div>
+                          <div className="text-sm text-gray-600">Call Clicks</div>
+                          <div className="text-xs text-gray-500 mt-1">6 months</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-green mb-2">+895%</div>
+                          <div className="text-sm text-gray-600">Direction Requests</div>
+                          <div className="text-xs text-gray-500 mt-1">Intent to Visit</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-green mb-2">+601%</div>
+                          <div className="text-sm text-gray-600">Website Clicks</div>
+                          <div className="text-xs text-gray-500 mt-1">Demand Capture</div>
+                        </div>
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                          <div className="text-4xl font-bold text-brand-green mb-2">+86%</div>
+                          <div className="text-sm text-gray-600">GBP Impressions</div>
+                          <div className="text-xs text-gray-500 mt-1">Local Visibility</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-brand-green/5 p-6 rounded-lg border-l-4 border-brand-green">
+                      <p className="text-gray-700 italic">
+                        "The Color House Miami went from invisible to undeniable. Call clicks surged +918%, direction requests grew +895%, and website clicks increased +601% — all in 6 months. More visibility is nice. More calls and direction requests is revenue."
+                      </p>
+                      <p className="text-gray-900 font-semibold mt-3">— Mastering Digital Case Study</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">

@@ -262,6 +262,21 @@ export default function Ecommerce() {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="border-0 shadow-xl bg-gradient-to-br from-brand-purple/5 to-brand-cyan/5">
+              <CardContent className="pt-8">
+                <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
+                  FEATURED CLIENT
+                </p>
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">The Color House Miami</h3>
+                <p className="text-gray-700 mb-4">
+                  Turned local searches into real-world actions through SEO and Google Business Profile optimization. Call clicks surged +918%, direction requests grew +895%, and website clicks increased +601% in just 6 months.
+                </p>
+                <Button asChild variant="outline">
+                  <Link href="/results">View Full Case Study</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

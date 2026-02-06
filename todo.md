@@ -269,4 +269,11 @@
 ## Phase 25: E-commerce Page Featured Client Fix
 - [x] Update Featured Client section from "Wristband Resources" to "The Florist Supply Shop"
 - [x] Test E-commerce page displays correct client name (verified - displays correctly)
-- [ ] Save checkpoint with E-commerce page fix
+- [x] Save checkpoint with E-commerce page fix
+
+## Phase 26: Case Studies Section - 3 Card Display
+- [x] Update Case Studies section on homepage to display 3 cards
+- [x] Add The Florist Supply Shop case study to the grid
+- [x] Ensure 3-column responsive layout (1 column mobile, 2 columns tablet, 3 columns desktop)
+- [x] Test Case Studies section displays correctly
+- [ ] Save checkpoint with 3-card Case Studies section

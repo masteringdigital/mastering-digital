@@ -422,7 +422,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Case Study 1: Lifetime Enclosures */}
             <Card className="border-0 shadow-lg">
               <CardHeader className="border-b">
@@ -527,6 +527,61 @@ export default function Home() {
                   asChild
                   variant="outline"
                   className="w-full mt-6 border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white"
+                >
+                  <a href="/results">View Case Study →</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 3: The Florist Supply Shop */}
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="border-b">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="font-bold text-2xl text-gray-900 mb-2">The Florist Supply Shop</h3>
+                    <span className="inline-block px-3 py-1 bg-brand-purple/10 text-brand-purple text-sm font-semibold rounded-full">
+                      E-commerce • DTC
+                    </span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
+                    <p className="text-gray-600">
+                      Rising acquisition costs and declining ROAS made it difficult to scale profitably. Needed to optimize channel strategy and reduce customer acquisition cost.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
+                    <p className="text-gray-600">
+                      Optimized Meta and Google Ads strategy with conversion rate optimization and strategic channel management.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-purple mb-1">+95%</div>
+                      <div className="text-sm text-gray-600">Revenue growth</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-purple mb-1">+59%</div>
+                      <div className="text-sm text-gray-600">Order increase</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-purple mb-1">-44%</div>
+                      <div className="text-sm text-gray-600">Meta CPC</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded">
+                      <div className="text-3xl font-bold text-brand-purple mb-1">+97%</div>
+                      <div className="text-sm text-gray-600">Conversions</div>
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full mt-6 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white"
                 >
                   <a href="/results">View Case Study →</a>
                 </Button>

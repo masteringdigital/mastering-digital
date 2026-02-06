@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/about" className="text-white/80 hover:text-white text-sm transition-colors">
-                  About
+                  Who We Are
                 </a>
               </li>
               <li>

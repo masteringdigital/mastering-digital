@@ -142,7 +142,7 @@ export default function Header() {
               Results
             </a>
             <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
-              About
+              Who We Are
             </a>
             <a href="/contact" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Contact
@@ -219,7 +219,7 @@ export default function Header() {
                   Results
                 </a>
                 <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
-                  About
+                  Who We Are
                 </a>
                 <a href="/contact" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
                   Contact

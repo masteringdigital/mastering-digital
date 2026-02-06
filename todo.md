@@ -188,4 +188,13 @@
 - [x] Update all internal links and references
 - [x] Add routes to App.tsx for all new pages
 - [x] Test all pages and navigation
-- [ ] Save checkpoint with Who We Serve pages
+- [x] Save checkpoint with Who We Serve pages
+
+## Phase 17: About Page Core Values & Rename to Who We Are
+- [x] Update About page with new core values section (5 values: Performance Over Noise, Radical Transparency, Strategy Before Spend, Ownership & Accountability, Partnership Not Dependency)
+- [x] Rename "About" to "Who We Are" in Header navigation
+- [x] Rename "About" to "Who We Are" in Footer navigation
+- [x] Update page title and meta tags
+- [x] Update internal links and references
+- [x] Test Who We Are page displays correctly
+- [ ] Save checkpoint with core values and rename

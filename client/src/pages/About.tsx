@@ -32,7 +32,7 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-brand-cyan font-semibold text-sm uppercase tracking-wider mb-4 text-white/80">
-              {getContent("hero", "section_label", "ABOUT US")}
+              {getContent("hero", "section_label", "WHO WE ARE")}
             </p>
             <h1 className="font-bold text-5xl md:text-6xl text-white mb-6">
               {getContent("hero", "headline", "We're a Growth Marketing Partner That Actually Delivers")}
@@ -76,45 +76,73 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-8 max-w-4xl mx-auto">
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
-                <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-4">
-                  <Target className="w-8 h-8 text-brand-blue" />
-                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
-                  {getContent("values", "value1_title", "Results Over Activity")}
+                  1. Performance Over Noise
                 </h3>
+                <p className="text-gray-700 font-medium mb-2">
+                  We prioritize outcomes, not activity.
+                </p>
                 <p className="text-gray-600">
-                  {getContent("values", "value1_desc", "We measure success by your growth — leads, appointments, revenue. Not impressions or clicks.")}
+                  Leads, revenue, and growth matter more than likes, impressions, or busywork. Every strategy, channel, and recommendation is evaluated through one lens: does it drive real business results?
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
-                <div className="w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mb-4">
-                  <Users className="w-8 h-8 text-brand-purple" />
-                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
-                  {getContent("values", "value2_title", "Dedicated Experts")}
+                  2. Radical Transparency
                 </h3>
+                <p className="text-gray-700 font-medium mb-2">
+                  We operate with honesty, clarity, and zero hidden agendas.
+                </p>
                 <p className="text-gray-600">
-                  {getContent("values", "value2_desc", "Your account is managed by the people who build the strategy — not handed off to a separate team.")}
+                  No percentage of ad spend. No inflated scopes. No vague reporting. Clients always know what we're doing, why we're doing it, and what's working (or not).
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-0 shadow-lg">
               <CardContent className="pt-8">
-                <div className="w-16 h-16 rounded-full bg-brand-cyan/10 flex items-center justify-center mb-4">
-                  <Zap className="w-8 h-8 text-brand-cyan" />
-                </div>
                 <h3 className="font-bold text-2xl text-gray-900 mb-3">
-                  {getContent("values", "value3_title", "Transparency Always")}
+                  3. Strategy Before Spend
                 </h3>
+                <p className="text-gray-700 font-medium mb-2">
+                  Marketing dollars should be earned, not wasted.
+                </p>
                 <p className="text-gray-600">
-                  {getContent("values", "value3_desc", "24/7 dashboard access. Real-time reporting. You always know what's working and what's not.")}
+                  We don't scale campaigns until foundations are solid. Infrastructure, tracking, messaging, and conversion paths come first—because spending more on broken systems never works.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardContent className="pt-8">
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">
+                  4. Ownership & Accountability
+                </h3>
+                <p className="text-gray-700 font-medium mb-2">
+                  We take responsibility for the work we put into the world.
+                </p>
+                <p className="text-gray-600">
+                  When we manage a channel, we own the strategy behind it. When something isn't performing, we address it directly, adjust fast, and communicate clearly. No excuses. No finger-pointing.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardContent className="pt-8">
+                <h3 className="font-bold text-2xl text-gray-900 mb-3">
+                  5. Partnership, Not Dependency
+                </h3>
+                <p className="text-gray-700 font-medium mb-2">
+                  We work with our clients, not around them.
+                </p>
+                <p className="text-gray-600">
+                  The best results come from alignment, trust, and shared responsibility. We partner with businesses that value long-term growth, thoughtful execution, and honest collaboration—not shortcuts.
                 </p>
               </CardContent>
             </Card>

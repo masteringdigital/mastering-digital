@@ -1,215 +1,145 @@
-/*
-DESIGN: Professional Modern Marketing
-- Clean navigation with deep blue CTA
-- Montserrat for branding, Open Sans for nav
-- No animations - static and professional
-*/
-
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Menu, X, Target, Palette, Bot, Search, TrendingUp, Share2 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "wouter";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
-
-  const scrollToSection = (sectionId: string) => {
-    // If not on home page, navigate to home first
-    if (location !== "/") {
-      window.location.href = `/#${sectionId}`;
-      return;
-    }
-    
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/">
-            <div className="flex items-center cursor-pointer">
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/TVxNADekNFIUEzTq.jpg"
-                alt="Mastering Digital"
-                className="h-12 w-auto"
-              />
-            </div>
-          </Link>
+          <a href="/" className="flex items-center">
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/TVxNADekNFIUEzTq.jpg"
+              alt="Mastering Digital"
+              className="h-10"
+            />
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground hover:text-primary font-medium bg-transparent">
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
-                      <li>
-                        <Link href="/services/seo">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <Search className="w-4 h-4 text-brand-green" />
-                                <div className="text-sm font-medium leading-none">
-                                  SEO Services
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                Organic search optimization
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/ppc">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <Target className="w-4 h-4 text-brand-orange" />
-                                <div className="text-sm font-medium leading-none">
-                                  PPC Google Ads
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                Search & display advertising
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/meta-ads">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <Share2 className="w-4 h-4 text-brand-purple" />
-                                <div className="text-sm font-medium leading-none">
-                                  Meta Ads & Social
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                Facebook & Instagram ads
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/web-design">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <Palette className="w-4 h-4 text-brand-orange" />
-                                <div className="text-sm font-medium leading-none">
-                                  Web Design & CRO
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                Landing pages & optimization
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/ai-implementation">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <Bot className="w-4 h-4 text-brand-purple" />
-                                <div className="text-sm font-medium leading-none">
-                                  AI Implementation
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                AI automation systems
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/strategy">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="flex items-center gap-2 mb-1">
-                                <TrendingUp className="w-4 h-4 text-brand-green" />
-                                <div className="text-sm font-medium leading-none">
-                                  Strategy & Consulting
-                                </div>
-                              </div>
-                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
-                                Multi-channel marketing strategy
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                      <li className="border-t pt-2">
-                        <Link href="/services">
-                          <NavigationMenuLink asChild>
-                            <a className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="text-sm font-medium text-primary">
-                                View All Services →
-                              </div>
-                            </a>
-                          </NavigationMenuLink>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            
-            <Link href="/industries">
-              <a className="text-sm text-foreground hover:text-primary font-medium">
+          <nav className="hidden lg:flex items-center gap-8">
+            {/* Services Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
+                Services
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                  <a
+                    href="/services/strategy"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors"
+                  >
+                    <div className="font-semibold">Strategy & Channel Marketing</div>
+                    <div className="text-xs text-gray-500 mt-1">Multi-channel growth strategy</div>
+                  </a>
+                  <a
+                    href="/services/web-design"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
+                  >
+                    <div className="font-semibold">Web Design & Conversion</div>
+                    <div className="text-xs text-gray-500 mt-1">High-converting websites</div>
+                  </a>
+                  <a
+                    href="/services/ai"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
+                  >
+                    <div className="font-semibold">AI Implementation</div>
+                    <div className="text-xs text-gray-500 mt-1">Automation that works</div>
+                  </a>
+                  <a
+                    href="/services/ppc"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
+                  >
+                    <div className="font-semibold">PPC Google Ads</div>
+                    <div className="text-xs text-gray-500 mt-1">Paid search campaigns</div>
+                  </a>
+                  <a
+                    href="/services/seo"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
+                  >
+                    <div className="font-semibold">SEO Services</div>
+                    <div className="text-xs text-gray-500 mt-1">Organic growth strategy</div>
+                  </a>
+                  <a
+                    href="/services/meta-ads"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
+                  >
+                    <div className="font-semibold">Meta Ads & Social</div>
+                    <div className="text-xs text-gray-500 mt-1">Social media advertising</div>
+                  </a>
+                  <div className="border-t border-gray-200 mt-2 pt-2">
+                    <a
+                      href="/services"
+                      className="block px-4 py-2 text-sm font-semibold text-brand-blue hover:bg-gray-50 transition-colors"
+                    >
+                      View All Services →
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Industries Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIndustriesOpen(true)}
+              onMouseLeave={() => setIndustriesOpen(false)}
+            >
+              <button className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
                 Industries
-              </a>
-            </Link>
-            <button
-              onClick={() => scrollToSection("results")}
-              className="text-sm text-foreground hover:text-primary font-medium"
-            >
+              </button>
+              {industriesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                  <a
+                    href="/industries#home-services"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
+                  >
+                    <div className="font-semibold">Home Services</div>
+                    <div className="text-xs text-gray-500 mt-1">HVAC, plumbing, roofing</div>
+                  </a>
+                  <a
+                    href="/industries#ecommerce"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-green transition-colors"
+                  >
+                    <div className="font-semibold">E-commerce</div>
+                    <div className="text-xs text-gray-500 mt-1">Shopify & online stores</div>
+                  </a>
+                  <a
+                    href="/industries#lease-ups"
+                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
+                  >
+                    <div className="font-semibold">Lease-Ups</div>
+                    <div className="text-xs text-gray-500 mt-1">Multifamily properties</div>
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a href="/results" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Results
-            </button>
-            <button
-              onClick={() => scrollToSection("why-choose-us")}
-              className="text-sm text-foreground hover:text-primary font-medium"
-            >
+            </a>
+            <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               About
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-sm text-foreground hover:text-primary font-medium"
-            >
+            </a>
+            <a href="/contact" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Contact
-            </button>
+            </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button (Desktop) */}
+          <div className="hidden lg:block">
             <Button
               asChild
-              className="bg-primary text-white font-display px-6 py-3 btn-cta"
+              className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold"
             >
               <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
                 Book a Strategy Session
@@ -218,78 +148,79 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
-              <div className="space-y-2">
-                <div className="font-medium text-[#0B0B0B] px-3 py-2">Services</div>
-                <Link href="/services/strategy">
-                  <a className="flex items-center gap-2 px-6 py-2 text-[#4A4A4A] hover:text-primary">
-                    <Target className="w-4 h-4 text-brand-green" />
-                    <span className="text-sm">Strategy & Channel Marketing</span>
-                  </a>
-                </Link>
-                <Link href="/services/web-design">
-                  <a className="flex items-center gap-2 px-6 py-2 text-[#4A4A4A] hover:text-primary">
-                    <Palette className="w-4 h-4 text-brand-orange" />
-                    <span className="text-sm">Web Design & Conversion</span>
-                  </a>
-                </Link>
-                <Link href="/services/ai-implementation">
-                  <a className="flex items-center gap-2 px-6 py-2 text-[#4A4A4A] hover:text-primary">
-                    <Bot className="w-4 h-4 text-brand-purple" />
-                    <span className="text-sm">AI Implementation</span>
-                  </a>
-                </Link>
-                <Link href="/services">
-                  <a className="flex items-center gap-2 px-6 py-2 text-primary hover:underline">
-                    <span className="text-sm font-medium">View All Services →</span>
-                  </a>
-                </Link>
-              </div>
-              <Link href="/industries">
-                <a className="text-foreground hover:text-primary font-medium text-left px-3">
-                  Industries
-                </a>
-              </Link>
-              <button
-                onClick={() => scrollToSection("results")}
-                className="text-foreground hover:text-primary font-medium text-left px-3"
-              >
-                Results
-              </button>
-              <button
-                onClick={() => scrollToSection("why-choose-us")}
-                className="text-foreground hover:text-primary font-medium text-left px-3"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-foreground hover:text-primary font-medium text-left px-3"
-              >
-                Contact
-              </button>
-              <Button
-                asChild
-                className="bg-primary text-white font-display w-full btn-cta"
-              >
-                <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
-                  Book a Strategy Session
-                </a>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
               </Button>
-            </nav>
-          </div>
-        )}
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full sm:w-96">
+              <nav className="flex flex-col gap-6 mt-8">
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-3">Services</h3>
+                  <div className="flex flex-col gap-2 pl-4">
+                    <a href="/services/strategy" className="text-gray-700 hover:text-brand-blue" onClick={() => setIsOpen(false)}>
+                      Strategy & Channel Marketing
+                    </a>
+                    <a href="/services/web-design" className="text-gray-700 hover:text-brand-purple" onClick={() => setIsOpen(false)}>
+                      Web Design & Conversion
+                    </a>
+                    <a href="/services/ai" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
+                      AI Implementation
+                    </a>
+                    <a href="/services/ppc" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
+                      PPC Google Ads
+                    </a>
+                    <a href="/services/seo" className="text-gray-700 hover:text-brand-green" onClick={() => setIsOpen(false)}>
+                      SEO Services
+                    </a>
+                    <a href="/services/meta-ads" className="text-gray-700 hover:text-brand-purple" onClick={() => setIsOpen(false)}>
+                      Meta Ads & Social
+                    </a>
+                    <a href="/services" className="text-brand-blue font-semibold" onClick={() => setIsOpen(false)}>
+                      View All Services →
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-3">Industries</h3>
+                  <div className="flex flex-col gap-2 pl-4">
+                    <a href="/industries#home-services" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
+                      Home Services
+                    </a>
+                    <a href="/industries#ecommerce" className="text-gray-700 hover:text-brand-green" onClick={() => setIsOpen(false)}>
+                      E-commerce
+                    </a>
+                    <a href="/industries#lease-ups" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
+                      Lease-Ups
+                    </a>
+                  </div>
+                </div>
+
+                <a href="/results" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
+                  Results
+                </a>
+                <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
+                  About
+                </a>
+                <a href="/contact" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
+                  Contact
+                </a>
+
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold mt-4"
+                >
+                  <a href="https://api.leadconnectorhq.com/widget/bookings/strategy-session-mike" target="_blank" rel="noopener noreferrer">
+                    Book a Strategy Session
+                  </a>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

@@ -13,6 +13,10 @@ import Industries from "./pages/Industries";
 import SEOService from "./pages/SEOService";
 import PPCService from "./pages/PPCService";
 import MetaAdsService from "./pages/MetaAdsService";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Results from "./pages/Results";
+import ThankYou from "./pages/ThankYou";
 
 function Router() {
   return (
@@ -26,6 +30,11 @@ function Router() {
       <Route path={"/services/ppc"} component={PPCService} />
       <Route path={"/services/meta-ads"} component={MetaAdsService} />
       <Route path={"/industries"} component={Industries} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/results"} component={Results} />
+      <Route path={"/thank-you"} component={ThankYou} />
+      <Route path={"/services/ai"} component={AIService} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

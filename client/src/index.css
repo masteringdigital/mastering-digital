@@ -3,16 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* 
-DESIGN PHILOSOPHY: Professional Modern Marketing
-- Clean, sophisticated aesthetic with controlled color usage
-- Montserrat for headlines, Open Sans for body
-- Black/charcoal/off-white foundation (80%)
-- Logo accent colors used sparingly (15%)
-- Deep blue CTAs for high conversion (5%)
-- No animations - static, professional
-*/
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -51,91 +41,67 @@ DESIGN PHILOSOPHY: Professional Modern Marketing
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Custom brand colors from specification */
-  --color-brand-green: oklch(0.72 0.12 145);
-  --color-brand-orange: oklch(0.75 0.15 65);
-  --color-brand-purple: oklch(0.35 0.12 310);
-  --color-cta-blue: oklch(0.35 0.15 250);
-  --color-cta-blue-hover: oklch(0.28 0.15 250);
+  /* Brand Colors from Specification */
+  --color-brand-blue: #1E3A5F;
+  --color-brand-purple: #7C3AED;
+  --color-brand-cyan: #06B6D4;
+  --color-brand-orange: #F97316;
+  --color-brand-green: #10B981;
+  --color-brand-dark: #1a1a1a;
 }
 
 :root {
-  /* Primary CTA color - Deep Blue */
-  --primary: var(--color-cta-blue);
-  --primary-foreground: oklch(1 0 0);
-  
-  /* Accent colors from logo */
-  --accent: var(--color-brand-green);
-  --accent-foreground: oklch(1 0 0);
-  
-  /* Chart colors using brand palette */
-  --chart-1: var(--color-brand-green);
-  --chart-2: var(--color-brand-orange);
-  --chart-3: var(--color-brand-purple);
-  --chart-4: var(--color-cta-blue);
-  --chart-5: oklch(0.5 0.1 200);
-  
+  --primary: #1E3A5F;
+  --primary-foreground: #FFFFFF;
+  --brand-blue: #1E3A5F;
+  --brand-purple: #7C3AED;
+  --brand-cyan: #06B6D4;
+  --brand-orange: #F97316;
+  --brand-green: #10B981;
+  --brand-dark: #1a1a1a;
   --radius: 0.5rem;
-  
-  /* Foundation colors - Black, Charcoal, Off-White */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.08 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.08 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.08 0 0);
-  --muted: oklch(0.93 0 0);
-  --muted-foreground: oklch(0.35 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0 0);
-  --input: oklch(0.88 0 0);
-  --ring: var(--color-cta-blue);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.08 0 0);
-  --sidebar-primary: var(--color-cta-blue);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.95 0 0);
-  --sidebar-accent-foreground: oklch(0.08 0 0);
-  --sidebar-border: oklch(0.88 0 0);
-  --sidebar-ring: var(--color-cta-blue);
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --secondary: #F9FAFB;
+  --secondary-foreground: #1F2937;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #F3F4F6;
+  --accent-foreground: #1F2937;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #1E3A5F;
+  --chart-1: #06B6D4;
+  --chart-2: #7C3AED;
+  --chart-3: #F97316;
+  --chart-4: #10B981;
+  --chart-5: #1E3A5F;
 }
 
 .dark {
-  --primary: var(--color-cta-blue);
-  --primary-foreground: oklch(1 0 0);
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.16 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.6 0 0);
-  --accent: var(--color-brand-green);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: var(--color-cta-blue);
-  --chart-1: var(--color-brand-green);
-  --chart-2: var(--color-brand-orange);
-  --chart-3: var(--color-brand-purple);
-  --chart-4: var(--color-cta-blue);
-  --chart-5: oklch(0.5 0.1 200);
-  --sidebar: oklch(0.12 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: var(--color-cta-blue);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.16 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: var(--color-cta-blue);
+  --background: #1a1a1a;
+  --foreground: #F9FAFB;
+  --card: #262626;
+  --card-foreground: #F9FAFB;
+  --popover: #262626;
+  --popover-foreground: #F9FAFB;
+  --secondary: #404040;
+  --secondary-foreground: #F9FAFB;
+  --muted: #525252;
+  --muted-foreground: #D1D5DB;
+  --accent: #404040;
+  --accent-foreground: #F9FAFB;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #404040;
+  --input: #404040;
+  --ring: #7C3AED;
 }
 
 @layer base {
@@ -144,7 +110,7 @@ DESIGN PHILOSOPHY: Professional Modern Marketing
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -158,15 +124,7 @@ DESIGN PHILOSOPHY: Professional Modern Marketing
     @apply cursor-pointer;
   }
   
-  /* Typography system */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  
-  .font-display {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
 }
@@ -200,68 +158,30 @@ DESIGN PHILOSOPHY: Professional Modern Marketing
     }
   }
   
-  /* Accent color utilities */
-  .text-brand-green {
-    color: oklch(0.72 0.12 145);
-  }
+  /* Brand Color Utilities */
+  .bg-brand-blue { background-color: #1E3A5F; }
+  .bg-brand-purple { background-color: #7C3AED; }
+  .bg-brand-cyan { background-color: #06B6D4; }
+  .bg-brand-orange { background-color: #F97316; }
+  .bg-brand-green { background-color: #10B981; }
+  .bg-brand-dark { background-color: #1a1a1a; }
   
-  .text-brand-orange {
-    color: oklch(0.75 0.15 65);
-  }
+  .text-brand-blue { color: #1E3A5F; }
+  .text-brand-purple { color: #7C3AED; }
+  .text-brand-cyan { color: #06B6D4; }
+  .text-brand-orange { color: #F97316; }
+  .text-brand-green { color: #10B981; }
+  .text-brand-dark { color: #1a1a1a; }
   
-  .text-brand-purple {
-    color: oklch(0.35 0.12 310);
-  }
+  .border-brand-blue { border-color: #1E3A5F; }
+  .border-brand-purple { border-color: #7C3AED; }
+  .border-brand-cyan { border-color: #06B6D4; }
+  .border-brand-orange { border-color: #F97316; }
+  .border-brand-green { border-color: #10B981; }
   
-  .bg-brand-green {
-    background-color: oklch(0.72 0.12 145);
-  }
-  
-  .bg-brand-orange {
-    background-color: oklch(0.75 0.15 65);
-  }
-  
-  .bg-brand-purple {
-    background-color: oklch(0.35 0.12 310);
-  }
-  
-  .border-brand-green {
-    border-color: oklch(0.72 0.12 145);
-  }
-  
-  .border-brand-orange {
-    border-color: oklch(0.75 0.15 65);
-  }
-  
-  .border-brand-purple {
-    border-color: oklch(0.35 0.12 310);
-  }
-  
-  /* CTA hover state */
-  .btn-cta:hover {
-    background-color: oklch(0.28 0.15 250);
-  }
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
+  .hover\:bg-brand-blue:hover { background-color: #162D4A; }
+  .hover\:bg-brand-purple:hover { background-color: #6D28D9; }
+  .hover\:bg-brand-cyan:hover { background-color: #0891B2; }
+  .hover\:bg-brand-orange:hover { background-color: #EA580C; }
+  .hover\:bg-brand-green:hover { background-color: #059669; }
 }

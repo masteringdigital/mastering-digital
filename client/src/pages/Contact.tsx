@@ -1,37 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MessageSquare, Calendar } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
+import { useEffect } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    message: "",
-  });
+  // Load GoHighLevel form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real implementation, this would send to a backend or form service
-    toast.success("Thank you! We'll be in touch within 24 hours.");
-    // Redirect to thank you page
-    window.location.href = "/thank-you";
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -118,96 +103,35 @@ export default function Contact() {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* GoHighLevel Contact Form */}
           <div id="contact-form" className="max-w-2xl mx-auto">
             <Card className="border-0 shadow-xl">
-              <CardContent className="pt-8">
+              <CardContent className="pt-8 pb-8">
                 <h2 className="font-bold text-3xl text-gray-900 mb-6 text-center">
                   Send Us a Message
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        className="border-gray-300"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@company.com"
-                        className="border-gray-300"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your Company"
-                        className="border-gray-300"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="(555) 123-4567"
-                        className="border-gray-300"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your business and what you're looking to achieve..."
-                      rows={6}
-                      className="border-gray-300"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold text-lg"
-                  >
-                    Send Message
-                  </Button>
-
-                  <p className="text-sm text-gray-500 text-center">
-                    We'll respond within 24 hours. Or book a call directly using the button above.
-                  </p>
-                </form>
+                <div className="w-full" style={{ minHeight: '650px' }}>
+                  <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/DyxSxyg62a1XFfVDTdZ3"
+                    style={{ width: '100%', height: '650px', border: 'none', borderRadius: '4px' }}
+                    id="inline-DyxSxyg62a1XFfVDTdZ3"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="1. SEO Audit Request"
+                    data-height="614"
+                    data-layout-iframe-id="inline-DyxSxyg62a1XFfVDTdZ3"
+                    data-form-id="DyxSxyg62a1XFfVDTdZ3"
+                    title="1. SEO Audit Request"
+                  />
+                </div>
+                <p className="text-sm text-gray-500 text-center mt-6">
+                  We'll respond within 24 hours. Or book a call directly using the button above.
+                </p>
               </CardContent>
             </Card>
           </div>

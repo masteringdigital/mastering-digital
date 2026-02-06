@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MessageSquare, Calendar } from "lucide-react";
 import { useEffect } from "react";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   // Load GoHighLevel form embed script
@@ -27,13 +28,38 @@ export default function Contact() {
           const data = JSON.parse(event.data);
           // Check if it's a form submission success message
           if (data.type === 'hsFormCallback' && data.eventName === 'onFormSubmitted') {
-            // Track Meta Pixel Lead event
+            // Generate event ID for deduplication
+            const eventId = `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            
+            // Track Meta Pixel Lead event (browser-side)
             if (typeof (window as any).fbq === 'function') {
               (window as any).fbq('track', 'Lead', {
                 content_name: 'Contact Form Submission',
                 content_category: 'Contact'
-              });
+              }, { eventID: eventId });
             }
+            
+            // Track via Meta CAPI (server-side) for deduplication
+            // Get Facebook cookies for better attribution
+            const fbp = document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1];
+            const fbc = document.cookie.split('; ').find(row => row.startsWith('_fbc='))?.split('=')[1];
+            
+            // Call server-side CAPI tracking (fire and forget)
+            fetch('/api/trpc/metaCAPI.trackLead', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                eventId,
+                sourceUrl: window.location.href,
+                fbp,
+                fbc,
+                customData: {
+                  contentName: 'Contact Form Submission',
+                  contentCategory: 'Contact'
+                }
+              })
+            }).catch(err => console.error('CAPI tracking failed:', err));
+            
             // Redirect to thank you page after short delay
             setTimeout(() => {
               window.location.href = '/thank-you';

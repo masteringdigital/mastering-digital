@@ -8,6 +8,7 @@ import { TRPCError } from "@trpc/server";
 import { storagePut } from "./storage";
 import crypto from "crypto";
 import bcrypt from "bcryptjs";
+import { trackLead, trackContact, trackPageView } from "./_core/metaCAPI";
 
 // Admin-only procedure
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -350,6 +351,76 @@ export const appRouter = router({
         settingType: z.string().default("text"),
         description: z.string().optional(),
       })).mutation(({ input }) => db.upsertSiteSetting(input)),
+    }),
+  }),
+
+  // Meta Conversion API tracking
+  metaCAPI: router({
+    trackLead: publicProcedure.input(z.object({
+      eventId: z.string(),
+      sourceUrl: z.string(),
+      fbp: z.string().optional(),
+      fbc: z.string().optional(),
+      customData: z.any().optional(),
+    })).mutation(async ({ input, ctx }) => {
+      const userAgent = ctx.req.headers['user-agent'];
+      const ipAddress = ctx.req.headers['x-forwarded-for'] as string || ctx.req.socket.remoteAddress;
+      
+      const success = await trackLead({
+        eventId: input.eventId,
+        sourceUrl: input.sourceUrl,
+        userAgent,
+        ipAddress,
+        fbp: input.fbp,
+        fbc: input.fbc,
+        customData: input.customData,
+      });
+      
+      return { success };
+    }),
+    
+    trackContact: publicProcedure.input(z.object({
+      eventId: z.string(),
+      sourceUrl: z.string(),
+      fbp: z.string().optional(),
+      fbc: z.string().optional(),
+      customData: z.any().optional(),
+    })).mutation(async ({ input, ctx }) => {
+      const userAgent = ctx.req.headers['user-agent'];
+      const ipAddress = ctx.req.headers['x-forwarded-for'] as string || ctx.req.socket.remoteAddress;
+      
+      const success = await trackContact({
+        eventId: input.eventId,
+        sourceUrl: input.sourceUrl,
+        userAgent,
+        ipAddress,
+        fbp: input.fbp,
+        fbc: input.fbc,
+        customData: input.customData,
+      });
+      
+      return { success };
+    }),
+    
+    trackPageView: publicProcedure.input(z.object({
+      eventId: z.string(),
+      sourceUrl: z.string(),
+      fbp: z.string().optional(),
+      fbc: z.string().optional(),
+    })).mutation(async ({ input, ctx }) => {
+      const userAgent = ctx.req.headers['user-agent'];
+      const ipAddress = ctx.req.headers['x-forwarded-for'] as string || ctx.req.socket.remoteAddress;
+      
+      const success = await trackPageView({
+        eventId: input.eventId,
+        sourceUrl: input.sourceUrl,
+        userAgent,
+        ipAddress,
+        fbp: input.fbp,
+        fbc: input.fbc,
+      });
+      
+      return { success };
     }),
   }),
 });

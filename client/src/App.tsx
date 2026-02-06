@@ -17,8 +17,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Results from "./pages/Results";
 import ThankYou from "./pages/ThankYou";
-
+import CMSAdmin from "./pages/CMSAdmin";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -35,6 +36,7 @@ function Router() {
       <Route path={"/results"} component={Results} />
       <Route path={"/thank-you"} component={ThankYou} />
       <Route path={"/services/ai"} component={AIService} />
+      <Route path={"/admin/cms"} component={CMSAdmin} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

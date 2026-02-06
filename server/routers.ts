@@ -1,0 +1,216 @@
+import { COOKIE_NAME } from "@shared/const";
+import { getSessionCookieOptions } from "./_core/cookies";
+import { systemRouter } from "./_core/systemRouter";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { z } from "zod";
+import * as db from "./db";
+import { TRPCError } from "@trpc/server";
+
+// Admin-only procedure
+const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
+  if (ctx.user.role !== 'admin') {
+    throw new TRPCError({ code: 'FORBIDDEN', message: 'Admin access required' });
+  }
+  return next({ ctx });
+});
+
+export const appRouter = router({
+  // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
+  system: systemRouter,
+  auth: router({
+    me: publicProcedure.query(opts => opts.ctx.user),
+    logout: publicProcedure.mutation(({ ctx }) => {
+      const cookieOptions = getSessionCookieOptions(ctx.req);
+      ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
+      return {
+        success: true,
+      } as const;
+    }),
+  }),
+
+  // CMS Routers - Public procedures for frontend display
+  cms: router({
+    // Team Members
+    teamMembers: router({
+      list: publicProcedure.query(() => db.getActiveTeamMembers()),
+      listAll: adminProcedure.query(() => db.getAllTeamMembers()),
+      get: publicProcedure.input(z.number()).query(({ input }) => db.getTeamMemberById(input)),
+      create: adminProcedure.input(z.object({
+        name: z.string(),
+        role: z.string(),
+        bio: z.string().optional(),
+        photoUrl: z.string().optional(),
+        linkedinUrl: z.string().optional(),
+        order: z.number().default(0),
+        isActive: z.boolean().default(true),
+      })).mutation(({ input }) => db.createTeamMember(input)),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        name: z.string().optional(),
+        role: z.string().optional(),
+        bio: z.string().optional(),
+        photoUrl: z.string().optional(),
+        linkedinUrl: z.string().optional(),
+        order: z.number().optional(),
+        isActive: z.boolean().optional(),
+      })).mutation(({ input }) => {
+        const { id, ...data } = input;
+        return db.updateTeamMember(id, data);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteTeamMember(input)),
+    }),
+
+    // Testimonials
+    testimonials: router({
+      list: publicProcedure.query(() => db.getActiveTestimonials()),
+      listAll: adminProcedure.query(() => db.getAllTestimonials()),
+      get: publicProcedure.input(z.number()).query(({ input }) => db.getTestimonialById(input)),
+      create: adminProcedure.input(z.object({
+        clientName: z.string(),
+        clientTitle: z.string().optional(),
+        clientCompany: z.string().optional(),
+        testimonialText: z.string(),
+        photoUrl: z.string().optional(),
+        rating: z.number().min(1).max(5).default(5),
+        order: z.number().default(0),
+        isActive: z.boolean().default(true),
+      })).mutation(({ input }) => db.createTestimonial(input)),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        clientName: z.string().optional(),
+        clientTitle: z.string().optional(),
+        clientCompany: z.string().optional(),
+        testimonialText: z.string().optional(),
+        photoUrl: z.string().optional(),
+        rating: z.number().min(1).max(5).optional(),
+        order: z.number().optional(),
+        isActive: z.boolean().optional(),
+      })).mutation(({ input }) => {
+        const { id, ...data } = input;
+        return db.updateTestimonial(id, data);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteTestimonial(input)),
+    }),
+
+    // Case Studies
+    caseStudies: router({
+      list: publicProcedure.query(() => db.getActiveCaseStudies()),
+      listFeatured: publicProcedure.query(() => db.getFeaturedCaseStudies()),
+      listAll: adminProcedure.query(() => db.getAllCaseStudies()),
+      get: publicProcedure.input(z.number()).query(({ input }) => db.getCaseStudyById(input)),
+      create: adminProcedure.input(z.object({
+        clientName: z.string(),
+        industry: z.string(),
+        logoUrl: z.string().optional(),
+        challenge: z.string().optional(),
+        solution: z.string().optional(),
+        metric1Label: z.string().optional(),
+        metric1Value: z.string().optional(),
+        metric2Label: z.string().optional(),
+        metric2Value: z.string().optional(),
+        metric3Label: z.string().optional(),
+        metric3Value: z.string().optional(),
+        metric4Label: z.string().optional(),
+        metric4Value: z.string().optional(),
+        order: z.number().default(0),
+        isActive: z.boolean().default(true),
+        isFeatured: z.boolean().default(false),
+      })).mutation(({ input }) => db.createCaseStudy(input)),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        clientName: z.string().optional(),
+        industry: z.string().optional(),
+        logoUrl: z.string().optional(),
+        challenge: z.string().optional(),
+        solution: z.string().optional(),
+        metric1Label: z.string().optional(),
+        metric1Value: z.string().optional(),
+        metric2Label: z.string().optional(),
+        metric2Value: z.string().optional(),
+        metric3Label: z.string().optional(),
+        metric3Value: z.string().optional(),
+        metric4Label: z.string().optional(),
+        metric4Value: z.string().optional(),
+        order: z.number().optional(),
+        isActive: z.boolean().optional(),
+        isFeatured: z.boolean().optional(),
+      })).mutation(({ input }) => {
+        const { id, ...data } = input;
+        return db.updateCaseStudy(id, data);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteCaseStudy(input)),
+    }),
+
+    // Portfolio Items
+    portfolio: router({
+      list: publicProcedure.query(() => db.getActivePortfolioItems()),
+      listAll: adminProcedure.query(() => db.getAllPortfolioItems()),
+      get: publicProcedure.input(z.number()).query(({ input }) => db.getPortfolioItemById(input)),
+      create: adminProcedure.input(z.object({
+        projectName: z.string(),
+        clientName: z.string().optional(),
+        category: z.string().optional(),
+        description: z.string().optional(),
+        imageUrl: z.string().optional(),
+        projectUrl: z.string().optional(),
+        order: z.number().default(0),
+        isActive: z.boolean().default(true),
+      })).mutation(({ input }) => db.createPortfolioItem(input)),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        projectName: z.string().optional(),
+        clientName: z.string().optional(),
+        category: z.string().optional(),
+        description: z.string().optional(),
+        imageUrl: z.string().optional(),
+        projectUrl: z.string().optional(),
+        order: z.number().optional(),
+        isActive: z.boolean().optional(),
+      })).mutation(({ input }) => {
+        const { id, ...data } = input;
+        return db.updatePortfolioItem(id, data);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deletePortfolioItem(input)),
+    }),
+
+    // Client Logos
+    clientLogos: router({
+      list: publicProcedure.query(() => db.getActiveClientLogos()),
+      listAll: adminProcedure.query(() => db.getAllClientLogos()),
+      get: publicProcedure.input(z.number()).query(({ input }) => db.getClientLogoById(input)),
+      create: adminProcedure.input(z.object({
+        clientName: z.string(),
+        logoUrl: z.string(),
+        websiteUrl: z.string().optional(),
+        order: z.number().default(0),
+        isActive: z.boolean().default(true),
+      })).mutation(({ input }) => db.createClientLogo(input)),
+      update: adminProcedure.input(z.object({
+        id: z.number(),
+        clientName: z.string().optional(),
+        logoUrl: z.string().optional(),
+        websiteUrl: z.string().optional(),
+        order: z.number().optional(),
+        isActive: z.boolean().optional(),
+      })).mutation(({ input }) => {
+        const { id, ...data } = input;
+        return db.updateClientLogo(id, data);
+      }),
+      delete: adminProcedure.input(z.number()).mutation(({ input }) => db.deleteClientLogo(input)),
+    }),
+
+    // Site Settings
+    settings: router({
+      list: adminProcedure.query(() => db.getAllSiteSettings()),
+      get: publicProcedure.input(z.string()).query(({ input }) => db.getSiteSettingByKey(input)),
+      upsert: adminProcedure.input(z.object({
+        settingKey: z.string(),
+        settingValue: z.string().optional(),
+        settingType: z.string().default("text"),
+        description: z.string().optional(),
+      })).mutation(({ input }) => db.upsertSiteSetting(input)),
+    }),
+  }),
+});
+
+export type AppRouter = typeof appRouter;

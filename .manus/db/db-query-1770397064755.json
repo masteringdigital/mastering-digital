@@ -1,0 +1,66 @@
+{
+  "query": "SELECT id, name, role, photoUrl, isActive FROM team_members ORDER BY `order` ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT id, name, role, photoUrl, isActive FROM team_members ORDER BY `order` ASC;",
+  "rows": [
+    {
+      "id": "2",
+      "name": "Michael Schott",
+      "role": "CEO",
+      "photoUrl": "https://lease-ups.com/wp-content/uploads/2025/10/1-1.png",
+      "isActive": "1"
+    },
+    {
+      "id": "1",
+      "name": "Johny Schott",
+      "role": "COO",
+      "photoUrl": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/QDQ2tKRCZYUDcKscZdSA/media/697b6d1604b05b03944d5ef6.jpg",
+      "isActive": "1"
+    },
+    {
+      "id": "30003",
+      "name": "Leo Barros",
+      "role": "Senior Marketing Strategist",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395823667-6a37b5ac190bb7c2.webp",
+      "isActive": "1"
+    },
+    {
+      "id": "30004",
+      "name": "Felipe M.",
+      "role": "Creative Director",
+      "photoUrl": "",
+      "isActive": "1"
+    },
+    {
+      "id": "30002",
+      "name": "Frida A.",
+      "role": "Content Marketing",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395768916-d9903ca37a0d7245.webp",
+      "isActive": "1"
+    },
+    {
+      "id": "30001",
+      "name": "Sofia M.",
+      "role": "Paid Media Specialist",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395659950-86722d82f7a6515d.webp",
+      "isActive": "1"
+    },
+    {
+      "id": "30005",
+      "name": "Carlos",
+      "role": "Lead Back End Web Developer",
+      "photoUrl": "",
+      "isActive": "1"
+    },
+    {
+      "id": "30006",
+      "name": "Juan",
+      "role": "Lead Front End Web Developer",
+      "photoUrl": "",
+      "isActive": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\trole\tphotoUrl\tisActive\n2\tMichael Schott\tCEO\thttps://lease-ups.com/wp-content/uploads/2025/10/1-1.png\t1\n1\tJohny Schott\tCOO\thttps://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/QDQ2tKRCZYUDcKscZdSA/media/697b6d1604b05b03944d5ef6.jpg\t1\n30003\tLeo Barros\tSenior Marketing Strategist\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395823667-6a37b5ac190bb7c2.webp\t1\n30004\tFelipe M.\tCreative Director\t\t1\n30002\tFrida A.\tContent Marketing\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395768916-d9903ca37a0d7245.webp\t1\n30001\tSofia M.\tPaid Media Specialist\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395659950-86722d82f7a6515d.webp\t1\n30005\tCarlos\tLead Back End Web Developer\t\t1\n30006\tJuan\tLead Front End Web Developer\t\t1\n",
+  "stderr": "",
+  "execution_time_ms": 354
+}

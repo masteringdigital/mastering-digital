@@ -163,10 +163,10 @@ export default function About() {
               return (
                 <Card key={member.id} className="border-0 shadow-lg text-center">
                   <CardContent className="pt-8">
-                    {member.imageUrl ? (
+                    {member.photoUrl ? (
                       <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
                         <img
-                          src={member.imageUrl}
+                          src={member.photoUrl}
                           alt={member.name}
                           className="w-full h-full object-cover"
                         />

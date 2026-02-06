@@ -226,4 +226,14 @@
 - [x] Configure enhanced measurement (automatic via GA4)
 - [x] Test GA4 tracking in real-time reports (gtag loaded, dataLayer active)
 - [x] Verify page view tracking across all pages (page_path configured)
-- [ ] Save checkpoint with GA4 implementation
+- [x] Save checkpoint with GA4 implementation
+
+## Phase 21: Meta Pixel Implementation
+- [x] Add Meta Pixel ID as environment variable (362577116188669)
+- [x] Install Meta Pixel base code in index.html
+- [x] Configure PageView event (automatic)
+- [x] Add Lead event for contact form submissions
+- [x] Add Contact event for strategy session bookings (external link tracking)
+- [x] Test Meta Pixel implementation (fbq loaded, PageView tracking verified)
+- [x] Verify events tracking correctly (PageView, Lead events configured)
+- [ ] Save checkpoint with Meta Pixel implementation

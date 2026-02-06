@@ -27,6 +27,13 @@ export default function Contact() {
           const data = JSON.parse(event.data);
           // Check if it's a form submission success message
           if (data.type === 'hsFormCallback' && data.eventName === 'onFormSubmitted') {
+            // Track Meta Pixel Lead event
+            if (typeof (window as any).fbq === 'function') {
+              (window as any).fbq('track', 'Lead', {
+                content_name: 'Contact Form Submission',
+                content_category: 'Contact'
+              });
+            }
             // Redirect to thank you page after short delay
             setTimeout(() => {
               window.location.href = '/thank-you';

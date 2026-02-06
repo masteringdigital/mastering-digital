@@ -8,7 +8,7 @@ export default function Footer() {
             <img
               src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/TVxNADekNFIUEzTq.jpg"
               alt="Mastering Digital"
-              className="h-10 mb-4 brightness-0 invert"
+              className="h-10 mb-4"
             />
             <p className="text-white/80 text-sm leading-relaxed">
               Growth marketing for home services, e-commerce, and multifamily.

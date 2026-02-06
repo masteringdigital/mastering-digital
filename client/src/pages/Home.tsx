@@ -142,10 +142,10 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 hover:opacity-100 transition-opacity">
-            <img src="https://cdn.manus.space/mastering-digital/google-partner-badge.png" alt="Google Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://cdn.manus.space/mastering-digital/meta-partner-badge.png" alt="Meta Business Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://cdn.manus.space/mastering-digital/shopify-partner-badge.png" alt="Shopify Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
-            <img src="https://cdn.manus.space/mastering-digital/klaviyo-partner-badge.png" alt="Klaviyo Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png" alt="Google Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png" alt="Meta Business Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png" alt="Shopify Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png" alt="Klaviyo Partner" className="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
           </div>
         </div>
       </section>

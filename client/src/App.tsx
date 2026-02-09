@@ -34,22 +34,26 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/services"} component={Services} />
-      <Route path={"/services/strategy"} component={StrategyService} />
+      {/* More specific service routes MUST come before generic ones */}
       <Route path={"/services/strategy-channel-marketing"} component={StrategyChannelMarketing} />
-      <Route path={"/services/web-design"} component={WebDesignService} />
       <Route path={"/services/ai-implementation"} component={AIImplementation} />
-      <Route path={"/services/ai"} component={AIService} />
-      <Route path={"/services/seo"} component={SEO} />
-      <Route path={"/services/seo-services"} component={SEOService} />
-      <Route path={"/services/ppc"} component={GoogleAds} />
       <Route path={"/services/google-ads"} component={GoogleAds} />
       <Route path={"/services/meta-ads"} component={MetaAds} />
+      <Route path={"/services/seo-services"} component={SEOService} />
       <Route path={"/services/meta-ads-service"} component={MetaAdsService} />
-      <Route path={"/industries"} component={Industries} />
+      {/* Generic service routes */}
+      <Route path={"/services/strategy"} component={StrategyService} />
+      <Route path={"/services/web-design"} component={WebDesignService} />
+      <Route path={"/services/ai"} component={AIService} />
+      <Route path={"/services/ppc"} component={GoogleAds} />
+      <Route path={"/services/seo"} component={SEO} />
+      {/* Who We Serve routes */}
       <Route path={"/who-we-serve"} component={WhoWeServe} />
       <Route path={"/who-we-serve/home-services"} component={HomeServices} />
       <Route path={"/who-we-serve/ecommerce"} component={Ecommerce} />
       <Route path={"/who-we-serve/real-estate"} component={RealEstate} />
+      {/* Other routes */}
+      <Route path={"/industries"} component={Industries} />
       <Route path={"/about"} component={About} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/results"} component={Results} />

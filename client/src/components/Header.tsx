@@ -39,7 +39,7 @@ export default function Header() {
                 }`}
               >
                 <a
-                  href="/services/strategy"
+                  href="/services/strategy-channel-marketing"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors"
                 >
                   <div className="font-semibold">Strategy & Channel Marketing</div>
@@ -53,14 +53,14 @@ export default function Header() {
                   <div className="text-xs text-gray-500 mt-1">High-converting websites</div>
                 </a>
                 <a
-                  href="/services/ai"
+                  href="/services/ai-implementation"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-cyan transition-colors"
                 >
                   <div className="font-semibold">AI Implementation</div>
                   <div className="text-xs text-gray-500 mt-1">Automation that works</div>
                 </a>
                 <a
-                  href="/services/ppc"
+                  href="/services/google-ads"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors"
                 >
                   <div className="font-semibold">PPC Google Ads</div>
@@ -173,16 +173,16 @@ export default function Header() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3">Services</h3>
                   <div className="flex flex-col gap-2 pl-4">
-                    <a href="/services/strategy" className="text-gray-700 hover:text-brand-blue" onClick={() => setIsOpen(false)}>
+                    <a href="/services/strategy-channel-marketing" className="text-gray-700 hover:text-brand-blue" onClick={() => setIsOpen(false)}>
                       Strategy & Channel Marketing
                     </a>
                     <a href="/services/web-design" className="text-gray-700 hover:text-brand-purple" onClick={() => setIsOpen(false)}>
                       Web Design & Conversion
                     </a>
-                    <a href="/services/ai" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
+                    <a href="/services/ai-implementation" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>
                       AI Implementation
                     </a>
-                    <a href="/services/ppc" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
+                    <a href="/services/google-ads" className="text-gray-700 hover:text-brand-orange" onClick={() => setIsOpen(false)}>
                       PPC Google Ads
                     </a>
                     <a href="/services/seo" className="text-gray-700 hover:text-brand-green" onClick={() => setIsOpen(false)}>

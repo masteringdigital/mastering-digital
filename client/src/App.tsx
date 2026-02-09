@@ -7,21 +7,27 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import StrategyService from "./pages/StrategyService";
+import StrategyChannelMarketing from "./pages/StrategyChannelMarketing";
 import WebDesignService from "./pages/WebDesignService";
 import AIService from "./pages/AIService";
+import AIImplementation from "./pages/AIImplementation";
 import Industries from "./pages/Industries";
 import WhoWeServe from "./pages/WhoWeServe";
 import HomeServices from "./pages/HomeServices";
 import Ecommerce from "./pages/Ecommerce";
 import RealEstate from "./pages/RealEstate";
 import SEOService from "./pages/SEOService";
+import SEO from "./pages/SEO";
 import PPCService from "./pages/PPCService";
+import GoogleAds from "./pages/GoogleAds";
 import MetaAdsService from "./pages/MetaAdsService";
+import MetaAds from "./pages/MetaAds";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Results from "./pages/Results";
 import ThankYou from "./pages/ThankYou";
 import CMSAdmin from "./pages/CMSAdmin";
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -29,11 +35,16 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/services"} component={Services} />
       <Route path={"/services/strategy"} component={StrategyService} />
+      <Route path={"/services/strategy-channel-marketing"} component={StrategyChannelMarketing} />
       <Route path={"/services/web-design"} component={WebDesignService} />
-      <Route path={"/services/ai-implementation"} component={AIService} />
-      <Route path={"/services/seo"} component={SEOService} />
-      <Route path={"/services/ppc"} component={PPCService} />
-      <Route path={"/services/meta-ads"} component={MetaAdsService} />
+      <Route path={"/services/ai-implementation"} component={AIImplementation} />
+      <Route path={"/services/ai"} component={AIService} />
+      <Route path={"/services/seo"} component={SEO} />
+      <Route path={"/services/seo-services"} component={SEOService} />
+      <Route path={"/services/ppc"} component={GoogleAds} />
+      <Route path={"/services/google-ads"} component={GoogleAds} />
+      <Route path={"/services/meta-ads"} component={MetaAds} />
+      <Route path={"/services/meta-ads-service"} component={MetaAdsService} />
       <Route path={"/industries"} component={Industries} />
       <Route path={"/who-we-serve"} component={WhoWeServe} />
       <Route path={"/who-we-serve/home-services"} component={HomeServices} />
@@ -43,7 +54,6 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/results"} component={Results} />
       <Route path={"/thank-you"} component={ThankYou} />
-      <Route path={"/services/ai"} component={AIService} />
       <Route path={"/admin/cms"} component={CMSAdmin} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

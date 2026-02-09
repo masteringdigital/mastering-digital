@@ -419,7 +419,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Case Study 1: Lifetime Enclosures */}
             <Card className="border-0 shadow-lg">
               <CardHeader className="border-b">
@@ -432,43 +432,43 @@ export default function Home() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Challenge:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Local home-improvement demand is unforgiving. Needed a measurable local lead engine where numbers tie directly to business actions: calls, directions, and quote-ready traffic.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Solution:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Prioritized Google Business Profile as primary lead channel, optimized for mobile-first behavior, and used Google Ads as precision tool for demand capture.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">+184%</div>
-                      <div className="text-sm text-gray-600">GBP Impressions</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">+130%</div>
-                      <div className="text-sm text-gray-600">Calls</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">+158%</div>
-                      <div className="text-sm text-gray-600">Website Clicks</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-orange mb-1">+78%</div>
-                      <div className="text-sm text-gray-600">Conversion Rate</div>
-                    </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-orange mb-1">+184%</div>
+                    <div className="text-xs text-gray-600 leading-tight">GBP Impressions</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-orange mb-1">+130%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Calls</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-orange mb-1">+158%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Website Clicks</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-orange mb-1">+78%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Conversion Rate</div>
                   </div>
                 </div>
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full mt-6 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white"
+                  className="w-full mt-6 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white text-sm"
                 >
                   <a href="/results">View Case Study →</a>
                 </Button>
@@ -487,43 +487,43 @@ export default function Home() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Challenge:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Uneven tour activity, slow follow-ups, and limited attribution made leasing unpredictable. Needed operational stability and clear reporting.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Solution:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Tightened targeting, improved speed-to-lead with SMS + call routing, and built weekly scorecards for clear attribution.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">$81M</div>
-                      <div className="text-sm text-gray-600">Property Sale</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">304</div>
-                      <div className="text-sm text-gray-600">Units</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">Minutes</div>
-                      <div className="text-sm text-gray-600">Follow-Up Time</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-cyan mb-1">Predictable</div>
-                      <div className="text-sm text-gray-600">Weekly Cadence</div>
-                    </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-cyan mb-1">$81M</div>
+                    <div className="text-xs text-gray-600 leading-tight">Property Sale</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-cyan mb-1">304</div>
+                    <div className="text-xs text-gray-600 leading-tight">Units</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-cyan mb-1">Minutes</div>
+                    <div className="text-xs text-gray-600 leading-tight">Follow-Up Time</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-cyan mb-1">Predictable</div>
+                    <div className="text-xs text-gray-600 leading-tight">Weekly Cadence</div>
                   </div>
                 </div>
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full mt-6 border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white"
+                  className="w-full mt-6 border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white text-sm"
                 >
                   <a href="/results">View Case Study →</a>
                 </Button>
@@ -542,43 +542,43 @@ export default function Home() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 space-y-6">
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Challenge:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Rising acquisition costs and declining ROAS made it difficult to scale profitably. Needed to optimize channel strategy and reduce customer acquisition cost.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-base">Solution:</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Optimized Meta and Google Ads strategy with conversion rate optimization and strategic channel management.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-purple mb-1">+95%</div>
-                      <div className="text-sm text-gray-600">Revenue growth</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-purple mb-1">+59%</div>
-                      <div className="text-sm text-gray-600">Order increase</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-purple mb-1">-44%</div>
-                      <div className="text-sm text-gray-600">Meta CPC</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded">
-                      <div className="text-3xl font-bold text-brand-purple mb-1">+97%</div>
-                      <div className="text-sm text-gray-600">Conversions</div>
-                    </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-purple mb-1">+95%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Revenue growth</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-purple mb-1">+59%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Order increase</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-purple mb-1">-44%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Meta CPC</div>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded">
+                    <div className="text-2xl font-bold text-brand-purple mb-1">+97%</div>
+                    <div className="text-xs text-gray-600 leading-tight">Conversions</div>
                   </div>
                 </div>
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full mt-6 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white"
+                  className="w-full mt-6 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white text-sm"
                 >
                   <a href="/results">View Case Study →</a>
                 </Button>

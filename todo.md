@@ -346,3 +346,12 @@
 - [x] Reformat Lawrence Air Systems card on Results page to match other case study card layout (2-column with metrics on right)
 - [x] Verify changes display correctly on live site
 - [ ] Save checkpoint with Lawrence Air Systems adjustments
+
+
+## Phase 38: Fix Case Studies Section Formatting
+- [x] Fix font spacing and line-height in case study cards
+- [x] Center-align cards in the grid properly
+- [x] Fix metric spacing and alignment (2x2 grid consistency)
+- [x] Ensure button positioning is consistent across all cards
+- [x] Verify formatting looks correct on live site
+- [ ] Save checkpoint with formatting fixes

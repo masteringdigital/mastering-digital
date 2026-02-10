@@ -92,7 +92,17 @@ export const appRouter = router({
     }),
     // Team Members
     teamMembers: router({
-      list: publicProcedure.query(() => db.getActiveTeamMembers()),
+      list: publicProcedure.query(async () => {
+        console.log("[DEBUG] Fetching active team members...");
+        try {
+          const result = await db.getActiveTeamMembers();
+          console.log("[DEBUG] Team members fetched:", result.length);
+          return result;
+        } catch (error) {
+          console.error("[DEBUG] Error fetching team members:", error);
+          throw error;
+        }
+      }),
       listAll: adminProcedure.query(() => db.getAllTeamMembers()),
       get: publicProcedure.input(z.number()).query(({ input }) => db.getTeamMemberById(input)),
       create: adminProcedure.input(z.object({

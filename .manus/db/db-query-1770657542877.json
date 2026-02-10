@@ -1,0 +1,106 @@
+{
+  "query": "SELECT * FROM team_members ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT * FROM team_members ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "Johny Schott",
+      "role": "COO",
+      "bio": "",
+      "photoUrl": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/QDQ2tKRCZYUDcKscZdSA/media/697b6d1604b05b03944d5ef6.jpg",
+      "linkedinUrl": "https://www.linkedin.com/in/johny-schott/",
+      "order": "2",
+      "isActive": "1",
+      "createdAt": "2026-02-06 14:09:28",
+      "updatedAt": "2026-02-06 16:44:14"
+    },
+    {
+      "id": "2",
+      "name": "Michael Schott",
+      "role": "CEO",
+      "bio": "",
+      "photoUrl": "https://lease-ups.com/wp-content/uploads/2025/10/1-1.png",
+      "linkedinUrl": "https://www.linkedin.com/in/michaelschott/",
+      "order": "1",
+      "isActive": "1",
+      "createdAt": "2026-02-06 14:12:17",
+      "updatedAt": "2026-02-06 14:12:17"
+    },
+    {
+      "id": "30001",
+      "name": "Sofia M.",
+      "role": "Paid Media Specialist",
+      "bio": "Expert in paid advertising campaigns across Google Ads, Meta Ads, and other digital platforms. Sofia specializes in maximizing ROI through data-driven campaign optimization and strategic audience targeting.",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395659950-86722d82f7a6515d.webp",
+      "linkedinUrl": "",
+      "order": "6",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:35:30",
+      "updatedAt": "2026-02-06 16:35:30"
+    },
+    {
+      "id": "30002",
+      "name": "Frida A.",
+      "role": "Content Marketing",
+      "bio": "Creative content strategist specializing in storytelling, brand voice development, and multi-channel content campaigns. Frida creates compelling narratives that engage audiences and drive conversions.",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395768916-d9903ca37a0d7245.webp",
+      "linkedinUrl": "",
+      "order": "5",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:36:24",
+      "updatedAt": "2026-02-06 16:36:24"
+    },
+    {
+      "id": "30003",
+      "name": "Leo Barros",
+      "role": "Senior Marketing Strategist",
+      "bio": "Data-driven marketing strategist with expertise in multi-channel campaign development, performance analytics, and growth strategy. Leo brings a strategic approach to every client engagement.",
+      "photoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395823667-6a37b5ac190bb7c2.webp",
+      "linkedinUrl": "",
+      "order": "3",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:37:19",
+      "updatedAt": "2026-02-06 16:37:19"
+    },
+    {
+      "id": "30004",
+      "name": "Felipe M.",
+      "role": "Creative Director",
+      "bio": "Award-winning creative director with expertise in brand identity, visual storytelling, and campaign conceptualization. Felipe leads creative strategy across all client projects.",
+      "photoUrl": "",
+      "linkedinUrl": "",
+      "order": "4",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:37:58",
+      "updatedAt": "2026-02-06 16:37:58"
+    },
+    {
+      "id": "30005",
+      "name": "Carlos",
+      "role": "Lead Back End Web Developer",
+      "bio": "Expert backend developer specializing in scalable architecture, API development, and database optimization. Carlos ensures robust technical foundations for all web projects.",
+      "photoUrl": "",
+      "linkedinUrl": "",
+      "order": "7",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:38:44",
+      "updatedAt": "2026-02-06 16:38:44"
+    },
+    {
+      "id": "30006",
+      "name": "Juan",
+      "role": "Lead Front End Web Developer",
+      "bio": "Creative frontend developer specializing in responsive design, user experience, and modern web technologies. Juan transforms designs into pixel-perfect, high-performance web experiences.",
+      "photoUrl": "",
+      "linkedinUrl": "",
+      "order": "8",
+      "isActive": "1",
+      "createdAt": "2026-02-06 16:39:18",
+      "updatedAt": "2026-02-06 16:39:18"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\trole\tbio\tphotoUrl\tlinkedinUrl\torder\tisActive\tcreatedAt\tupdatedAt\n1\tJohny Schott\tCOO\t\thttps://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/QDQ2tKRCZYUDcKscZdSA/media/697b6d1604b05b03944d5ef6.jpg\thttps://www.linkedin.com/in/johny-schott/\t2\t1\t2026-02-06 14:09:28\t2026-02-06 16:44:14\n2\tMichael Schott\tCEO\t\thttps://lease-ups.com/wp-content/uploads/2025/10/1-1.png\thttps://www.linkedin.com/in/michaelschott/\t1\t1\t2026-02-06 14:12:17\t2026-02-06 14:12:17\n30001\tSofia M.\tPaid Media Specialist\tExpert in paid advertising campaigns across Google Ads, Meta Ads, and other digital platforms. Sofia specializes in maximizing ROI through data-driven campaign optimization and strategic audience targeting.\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395659950-86722d82f7a6515d.webp\t\t6\t1\t2026-02-06 16:35:30\t2026-02-06 16:35:30\n30002\tFrida A.\tContent Marketing\tCreative content strategist specializing in storytelling, brand voice development, and multi-channel content campaigns. Frida creates compelling narratives that engage audiences and drive conversions.\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395768916-d9903ca37a0d7245.webp\t\t5\t1\t2026-02-06 16:36:24\t2026-02-06 16:36:24\n30003\tLeo Barros\tSenior Marketing Strategist\tData-driven marketing strategist with expertise in multi-channel campaign development, performance analytics, and growth strategy. Leo brings a strategic approach to every client engagement.\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663316492277/bbrAEM5eVgqVKxG9yZnK6V/cms-uploads/1770395823667-6a37b5ac190bb7c2.webp\t\t3\t1\t2026-02-06 16:37:19\t2026-02-06 16:37:19\n30004\tFelipe M.\tCreative Director\tAward-winning creative director with expertise in brand identity, visual storytelling, and campaign conceptualization. Felipe leads creative strategy across all client projects.\t\t\t4\t1\t2026-02-06 16:37:58\t2026-02-06 16:37:58\n30005\tCarlos\tLead Back End Web Developer\tExpert backend developer specializing in scalable architecture, API development, and database optimization. Carlos ensures robust technical foundations for all web projects.\t\t\t7\t1\t2026-02-06 16:38:44\t2026-02-06 16:38:44\n30006\tJuan\tLead Front End Web Developer\tCreative frontend developer specializing in responsive design, user experience, and modern web technologies. Juan transforms designs into pixel-perfect, high-performance web experiences.\t\t\t8\t1\t2026-02-06 16:39:18\t2026-02-06 16:39:18\n",
+  "stderr": "",
+  "execution_time_ms": 532
+}

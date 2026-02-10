@@ -8,9 +8,12 @@ import { trpc } from "@/lib/trpc";
 
 export default function About() {
   const { getContent, isLoading } = usePageContent("about");
-  const { data: teamMembers = [], isLoading: teamLoading } = trpc.cms.teamMembers.listAll.useQuery();
+  const { data: teamMembers = [], isLoading: teamLoading, error: teamError } = trpc.cms.teamMembers.list.useQuery(undefined, {
+    retry: false,
+  });
 
-  if (isLoading || teamLoading) {
+  // Don't block rendering - show content even if loading
+  if (isLoading && teamLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-500">Loading...</p>
@@ -18,10 +21,9 @@ export default function About() {
     );
   }
 
-  // Filter active team members and sort by display order
+  // Sort team members by display order
   const activeTeamMembers = teamMembers
-    .filter((member: any) => member.isActive)
-    .sort((a: any, b: any) => (a.displayOrder || 0) - (b.displayOrder || 0));
+    .sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
 
   return (
     <div className="min-h-screen flex flex-col">

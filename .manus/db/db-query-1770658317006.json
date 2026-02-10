@@ -1,0 +1,66 @@
+{
+  "query": "SELECT id, name, role, isActive, `order` FROM team_members WHERE isActive = true ORDER BY `order`;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT id, name, role, isActive, `order` FROM team_members WHERE isActive = true ORDER BY `order`;",
+  "rows": [
+    {
+      "id": "2",
+      "name": "Michael Schott",
+      "role": "CEO",
+      "isActive": "1",
+      "order": "1"
+    },
+    {
+      "id": "1",
+      "name": "Johny Schott",
+      "role": "COO",
+      "isActive": "1",
+      "order": "2"
+    },
+    {
+      "id": "30003",
+      "name": "Leo Barros",
+      "role": "Senior Marketing Strategist",
+      "isActive": "1",
+      "order": "3"
+    },
+    {
+      "id": "30004",
+      "name": "Felipe M.",
+      "role": "Creative Director",
+      "isActive": "1",
+      "order": "4"
+    },
+    {
+      "id": "30002",
+      "name": "Frida A.",
+      "role": "Content Marketing",
+      "isActive": "1",
+      "order": "5"
+    },
+    {
+      "id": "30001",
+      "name": "Sofia M.",
+      "role": "Paid Media Specialist",
+      "isActive": "1",
+      "order": "6"
+    },
+    {
+      "id": "30005",
+      "name": "Carlos",
+      "role": "Lead Back End Web Developer",
+      "isActive": "1",
+      "order": "7"
+    },
+    {
+      "id": "30006",
+      "name": "Juan",
+      "role": "Lead Front End Web Developer",
+      "isActive": "1",
+      "order": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\trole\tisActive\torder\n2\tMichael Schott\tCEO\t1\t1\n1\tJohny Schott\tCOO\t1\t2\n30003\tLeo Barros\tSenior Marketing Strategist\t1\t3\n30004\tFelipe M.\tCreative Director\t1\t4\n30002\tFrida A.\tContent Marketing\t1\t5\n30001\tSofia M.\tPaid Media Specialist\t1\t6\n30005\tCarlos\tLead Back End Web Developer\t1\t7\n30006\tJuan\tLead Front End Web Developer\t1\t8\n",
+  "stderr": "",
+  "execution_time_ms": 357
+}

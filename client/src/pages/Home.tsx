@@ -152,25 +152,25 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo1_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nike_logo.svg/1200px-Nike_logo.svg.png")} alt="Nike" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo1_url", "https://logospng.org/download/nike/logo-nike-2048.png")} alt="Nike" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo2_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Reebok_logo.svg/1200px-Reebok_logo.svg.png")} alt="Reebok" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo2_url", "https://logospng.org/download/reebok/logo-reebok-2048.png")} alt="Reebok" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo3_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Fila_logo.svg/1200px-Fila_logo.svg.png")} alt="Fila" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo3_url", "https://logospng.org/download/fila/logo-fila-2048.png")} alt="Fila" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo4_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Adidas_logo.svg/1200px-Adidas_logo.svg.png")} alt="Adidas" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo4_url", "https://logospng.org/download/adidas/logo-adidas-2048.png")} alt="Adidas" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo5_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Puma_logo.svg/1200px-Puma_logo.svg.png")} alt="Puma" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo5_url", "https://logospng.org/download/jordan/logo-jordan-2048.png")} alt="Jordan" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo6_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Under_Armour_logo.svg/1200px-Under_Armour_logo.svg.png")} alt="Under Armour" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo6_url", "https://logospng.org/download/vans/logo-vans-2048.png")} alt="Vans" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo7_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/New_Balance_logo.svg/1200px-New_Balance_logo.svg.png")} alt="New Balance" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo7_url", "https://cdn.worldvectorlogo.com/logos/new-balance-2.svg")} alt="New Balance" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
           </div>
         </div>

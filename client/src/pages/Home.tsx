@@ -139,29 +139,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Platforms We Work With Section */}
+      {/* Trusted by Leading Brands Section */}
       <section className="py-16 bg-white border-b">
         <div className="container">
           <div className="text-center mb-12">
             <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
-              {getContent("partners", "section_label", "PLATFORMS WE WORK WITH")}
+              {getContent("brands", "section_label", "TRUSTED BY LEADING BRANDS")}
             </p>
             <h2 className="font-bold text-3xl text-gray-900">
-              {getContent("partners", "headline", "Built on Trusted Platforms")}
+              {getContent("brands", "headline", "Trusted by Industry Leaders")}
             </h2>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("partners", "logo1_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png")} alt="Google Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo1_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nike_logo.svg/1200px-Nike_logo.svg.png")} alt="Nike" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("partners", "logo2_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png")} alt="Meta Business Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo2_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Reebok_logo.svg/1200px-Reebok_logo.svg.png")} alt="Reebok" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("partners", "logo3_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png")} alt="Shopify Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo3_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Fila_logo.svg/1200px-Fila_logo.svg.png")} alt="Fila" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("partners", "logo4_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png")} alt="Klaviyo Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo4_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Adidas_logo.svg/1200px-Adidas_logo.svg.png")} alt="Adidas" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("brands", "logo5_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Puma_logo.svg/1200px-Puma_logo.svg.png")} alt="Puma" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("brands", "logo6_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Under_Armour_logo.svg/1200px-Under_Armour_logo.svg.png")} alt="Under Armour" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("brands", "logo7_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/New_Balance_logo.svg/1200px-New_Balance_logo.svg.png")} alt="New Balance" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
           </div>
         </div>
@@ -337,7 +346,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 <div className="border-l-4 border-brand-orange pl-6">
-                  <div className="text-5xl font-bold text-brand-orange mb-2">2.5x</div>
+                  <div className="text-5xl font-bold text-brand-orange mb-2">5x</div>
                   <p className="text-gray-700">Average lead increase for home services clients</p>
                 </div>
 
@@ -375,7 +384,7 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-gray-800/50 rounded p-4">
-                      <div className="text-3xl font-bold text-white mb-1">2.5x</div>
+                      <div className="text-3xl font-bold text-white mb-1">5x</div>
                       <div className="text-gray-400 text-xs">Lead Growth</div>
                     </div>
                     <div className="bg-gray-800/50 rounded p-4">
@@ -741,6 +750,34 @@ export default function Home() {
             <p className="text-white/80 mt-6 text-sm">
               {getContent("final_cta", "disclaimer", "No commitment required. We'll review your current marketing, identify quick wins, and give you a roadmap — whether we work together or not.")}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms We Work With Section */}
+      <section className="py-16 bg-white border-b">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-brand-purple font-semibold text-sm uppercase tracking-wider mb-2">
+              {getContent("partners", "section_label", "PLATFORMS WE WORK WITH")}
+            </p>
+            <h2 className="font-bold text-3xl text-gray-900">
+              {getContent("partners", "headline", "Built on Trusted Platforms")}
+            </h2>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("partners", "logo1_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/DtabXbUeaCLLhLjm.png")} alt="Google Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("partners", "logo2_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/XlmvORpTBdZZnCNH.png")} alt="Meta Business Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("partners", "logo3_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/etFhazdMtrTekBUJ.png")} alt="Shopify Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("partners", "logo4_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/sDblFttRCAFprhXd.png")} alt="Klaviyo Partner" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
           </div>
         </div>
       </section>

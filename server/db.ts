@@ -11,6 +11,8 @@ import {
   clientLogos,
   siteSettings,
   pageContent,
+  blogCategories,
+  blogPosts,
   InsertAdminUser,
   InsertTeamMember,
   InsertTestimonial,
@@ -19,6 +21,8 @@ import {
   InsertClientLogo,
   InsertSiteSetting,
   InsertPageContent,
+  InsertBlogCategory,
+  InsertBlogPost,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -459,4 +463,96 @@ export async function deleteAdminUser(id: number) {
   const db = await getDb();
   if (!db) throw new Error('Database not initialized');
   await db.delete(adminUsers).where(eq(adminUsers.id, id));
+}
+
+// ============================================================================
+// Blog Categories
+// ============================================================================
+
+export async function getAllBlogCategories() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(blogCategories).where(eq(blogCategories.isActive, true)).orderBy(blogCategories.order);
+}
+
+export async function getBlogCategoryById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(blogCategories).where(eq(blogCategories.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getBlogCategoryBySlug(slug: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(blogCategories).where(eq(blogCategories.slug, slug)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createBlogCategory(category: InsertBlogCategory) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(blogCategories).values(category);
+  return 0;
+}
+
+export async function updateBlogCategory(id: number, category: Partial<InsertBlogCategory>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(blogCategories).set(category).where(eq(blogCategories.id, id));
+}
+
+export async function deleteBlogCategory(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(blogCategories).where(eq(blogCategories.id, id));
+}
+
+// ============================================================================
+// Blog Posts
+// ============================================================================
+
+export async function getAllBlogPosts() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(blogPosts).where(eq(blogPosts.isPublished, true)).orderBy(desc(blogPosts.publishedAt));
+}
+
+export async function getBlogPostsByCategory(categoryId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(blogPosts).where(and(eq(blogPosts.categoryId, categoryId), eq(blogPosts.isPublished, true))).orderBy(desc(blogPosts.publishedAt));
+}
+
+export async function getBlogPostById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getBlogPostBySlug(slug: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createBlogPost(post: InsertBlogPost) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(blogPosts).values(post);
+  return 0;
+}
+
+export async function updateBlogPost(id: number, post: Partial<InsertBlogPost>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(blogPosts).set(post).where(eq(blogPosts.id, id));
+}
+
+export async function deleteBlogPost(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(blogPosts).where(eq(blogPosts.id, id));
 }

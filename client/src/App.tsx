@@ -27,6 +27,8 @@ import Contact from "./pages/Contact";
 import Results from "./pages/Results";
 import ThankYou from "./pages/ThankYou";
 import CMSAdmin from "./pages/CMSAdmin";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -59,6 +61,9 @@ function Router() {
       <Route path={"/results"} component={Results} />
       <Route path={"/thank-you"} component={ThankYou} />
       <Route path={"/admin/cms"} component={CMSAdmin} />
+      {/* Blog routes */}
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

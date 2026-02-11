@@ -141,6 +141,9 @@ export default function Header() {
             <a href="/results" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Results
             </a>
+            <a href="/blog" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
+              Blog
+            </a>
             <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Who We Are
             </a>
@@ -217,6 +220,9 @@ export default function Header() {
 
                 <a href="/results" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
                   Results
+                </a>
+                <a href="/blog" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
+                  Blog
                 </a>
                 <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
                   Who We Are

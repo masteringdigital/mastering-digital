@@ -433,6 +433,109 @@ export const appRouter = router({
       return { success };
     }),
   }),
+
+  // Blog Router - Public procedures
+  blog: router({
+    // Get all blog categories
+    categories: publicProcedure.query(async () => {
+      return await db.getAllBlogCategories();
+    }),
+
+    // Get blog posts by category
+    postsByCategory: publicProcedure.input(z.object({
+      categorySlug: z.string(),
+    })).query(async ({ input }) => {
+      const category = await db.getBlogCategoryBySlug(input.categorySlug);
+      if (!category) {
+        throw new TRPCError({ code: 'NOT_FOUND', message: 'Category not found' });
+      }
+      return await db.getBlogPostsByCategory(category.id);
+    }),
+
+    // Get all blog posts
+    all: publicProcedure.query(async () => {
+      return await db.getAllBlogPosts();
+    }),
+
+    // Get single blog post by slug
+    bySlug: publicProcedure.input(z.object({
+      slug: z.string(),
+    })).query(async ({ input }) => {
+      const post = await db.getBlogPostBySlug(input.slug);
+      if (!post) {
+        throw new TRPCError({ code: 'NOT_FOUND', message: 'Blog post not found' });
+      }
+      return post;
+    }),
+
+    // Admin: Create blog category
+    createCategory: adminProcedure.input(z.object({
+      name: z.string(),
+      slug: z.string(),
+      description: z.string().optional(),
+    })).mutation(async ({ input }) => {
+      await db.createBlogCategory({
+        name: input.name,
+        slug: input.slug,
+        description: input.description,
+        order: 0,
+        isActive: true,
+      });
+      return { success: true };
+    }),
+
+    // Admin: Create blog post
+    createPost: adminProcedure.input(z.object({
+      categoryId: z.number(),
+      title: z.string(),
+      slug: z.string(),
+      excerpt: z.string().optional(),
+      content: z.string(),
+      featuredImageUrl: z.string().optional(),
+      author: z.string().optional(),
+      isPublished: z.boolean().default(false),
+      publishedAt: z.date().optional(),
+    })).mutation(async ({ input }) => {
+      await db.createBlogPost({
+        categoryId: input.categoryId,
+        title: input.title,
+        slug: input.slug,
+        excerpt: input.excerpt,
+        content: input.content,
+        featuredImageUrl: input.featuredImageUrl,
+        author: input.author || 'Mastering Digital',
+        order: 0,
+        isPublished: input.isPublished,
+        publishedAt: input.publishedAt,
+      });
+      return { success: true };
+    }),
+
+    // Admin: Update blog post
+    updatePost: adminProcedure.input(z.object({
+      id: z.number(),
+      title: z.string().optional(),
+      slug: z.string().optional(),
+      excerpt: z.string().optional(),
+      content: z.string().optional(),
+      featuredImageUrl: z.string().optional(),
+      author: z.string().optional(),
+      isPublished: z.boolean().optional(),
+      publishedAt: z.date().optional(),
+    })).mutation(async ({ input }) => {
+      const { id, ...updateData } = input;
+      await db.updateBlogPost(id, updateData);
+      return { success: true };
+    }),
+
+    // Admin: Delete blog post
+    deletePost: adminProcedure.input(z.object({
+      id: z.number(),
+    })).mutation(async ({ input }) => {
+      await db.deleteBlogPost(input.id);
+      return { success: true };
+    }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

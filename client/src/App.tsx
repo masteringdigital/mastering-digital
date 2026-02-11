@@ -29,6 +29,10 @@ import ThankYou from "./pages/ThankYou";
 import CMSAdmin from "./pages/CMSAdmin";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FreeTools from "./pages/FreeTools";
+import FreeMarketingAudit from "./pages/FreeMarketingAudit";
+import FreeSeoSnapshot from "./pages/FreeSeoSnapshot";
+import FreeAiVisibilityReport from "./pages/FreeAiVisibilityReport";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -64,6 +68,11 @@ function Router() {
       {/* Blog routes */}
       <Route path={"/blog"} component={Blog} />
       <Route path={"/blog/:slug"} component={BlogPost} />
+      {/* Free Tools (FITD) routes */}
+      <Route path={"/free-tools"} component={FreeTools} />
+      <Route path={"/free-marketing-audit"} component={FreeMarketingAudit} />
+      <Route path={"/free-seo-snapshot"} component={FreeSeoSnapshot} />
+      <Route path={"/free-ai-visibility-report"} component={FreeAiVisibilityReport} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

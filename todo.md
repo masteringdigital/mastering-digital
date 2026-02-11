@@ -402,4 +402,20 @@
 - [x] Remove test category from database
 - [x] Remove test blog posts from database
 - [x] Verify blog listing displays correctly
-- [ ] Save checkpoint with blog updates
+- [x] Save checkpoint with blog updates
+
+## Phase 44: Free Tools Landing Pages - FITD (Free In The Door)
+- [x] Design database schema for FITD lead captures (fitd_leads table)
+- [x] Push database migrations
+- [x] Create database helpers for FITD form submissions
+- [x] Create tRPC procedures for form submission and thank you page retrieval
+- [x] Build Free Tools Overview page (/free-tools) with 3 tool cards and How It Works section
+- [x] Build Marketing Audit landing page (/free-marketing-audit) with hero form and What You'll Get cards
+- [x] Build SEO Snapshot landing page (/free-seo-snapshot) with hero form and What You'll Get cards
+- [x] Build AI Visibility Report landing page (/free-ai-visibility-report) with hero form and Why This Matters section
+- [x] Build thank you page (/thank-you) with confirmation message and calendar link
+- [x] Implement form submission logic with CRM integration placeholder
+- [x] Add Free Tools to header navigation
+- [x] Test all pages and forms on desktop and mobile
+- [x] Write vitest tests for FITD procedures (9/9 passing)
+- [ ] Save checkpoint with Free Tools section complete

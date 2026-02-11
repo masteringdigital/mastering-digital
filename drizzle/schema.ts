@@ -220,3 +220,30 @@ export const blogPosts = mysqlTable("blog_posts", {
 
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = typeof blogPosts.$inferInsert;
+
+
+/**
+ * FITD (Free In The Door) Lead Captures
+ * Stores submissions from free tool landing pages
+ */
+export const fitdLeads = mysqlTable("fitd_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  reportType: mysqlEnum("reportType", ["marketing-audit", "seo-snapshot", "ai-visibility"]).notNull(), // Which tool they signed up for
+  businessName: varchar("businessName", { length: 255 }).notNull(),
+  websiteUrl: varchar("websiteUrl", { length: 500 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 20 }),
+  industry: varchar("industry", { length: 100 }).notNull(), // Home Services, E-commerce, etc.
+  primaryService: varchar("primaryService", { length: 255 }), // For SEO Snapshot & AI Report
+  targetLocation: varchar("targetLocation", { length: 255 }), // For SEO Snapshot & AI Report
+  crmContactId: varchar("crmContactId", { length: 255 }), // ID from CRM (GoHighLevel, etc.)
+  reportDeliveryStatus: mysqlEnum("reportDeliveryStatus", ["pending", "sent", "failed"]).default("pending").notNull(),
+  reportDeliveryDate: timestamp("reportDeliveryDate"),
+  thankYouPageViewed: boolean("thankYouPageViewed").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FitdLead = typeof fitdLeads.$inferSelect;
+export type InsertFitdLead = typeof fitdLeads.$inferInsert;

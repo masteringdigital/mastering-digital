@@ -144,6 +144,9 @@ export default function Header() {
             <a href="/blog" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Blog
             </a>
+            <a href="/free-tools" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
+              Free Tools
+            </a>
             <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium text-sm transition-colors">
               Who We Are
             </a>
@@ -223,6 +226,9 @@ export default function Header() {
                 </a>
                 <a href="/blog" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
                   Blog
+                </a>
+                <a href="/free-tools" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
+                  Free Tools
                 </a>
                 <a href="/about" className="text-gray-700 hover:text-brand-blue font-medium" onClick={() => setIsOpen(false)}>
                   Who We Are

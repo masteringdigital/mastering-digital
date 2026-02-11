@@ -556,3 +556,42 @@ export async function deleteBlogPost(id: number) {
   if (!db) throw new Error("Database not available");
   await db.delete(blogPosts).where(eq(blogPosts.id, id));
 }
+
+
+// ============================================================================
+// FITD (Free In The Door) Leads
+// ============================================================================
+import { fitdLeads, InsertFitdLead } from "../drizzle/schema";
+
+export async function createFitdLead(lead: InsertFitdLead) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(fitdLeads).values(lead);
+  return result;
+}
+
+export async function getFitdLeadById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(fitdLeads).where(eq(fitdLeads.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getFitdLeadByEmail(email: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(fitdLeads).where(eq(fitdLeads.email, email)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getAllFitdLeads() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(fitdLeads).orderBy(desc(fitdLeads.createdAt));
+}
+
+export async function updateFitdLead(id: number, lead: Partial<InsertFitdLead>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(fitdLeads).set(lead).where(eq(fitdLeads.id, id));
+}

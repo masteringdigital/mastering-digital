@@ -536,6 +536,60 @@ export const appRouter = router({
       return { success: true };
     }),
   }),
+
+  // FITD (Free In The Door) Lead Capture
+  fitd: router({
+    submitLead: publicProcedure.input(z.object({
+      reportType: z.enum(['marketing-audit', 'seo-snapshot', 'ai-visibility']),
+      businessName: z.string().min(1),
+      websiteUrl: z.string().url(),
+      name: z.string().min(1),
+      email: z.string().email(),
+      phone: z.string().optional(),
+      industry: z.string().min(1),
+      primaryService: z.string().optional(),
+      targetLocation: z.string().optional(),
+    })).mutation(async ({ input }) => {
+      // Create lead in database
+      const lead = await db.createFitdLead({
+        reportType: input.reportType,
+        businessName: input.businessName,
+        websiteUrl: input.websiteUrl,
+        name: input.name,
+        email: input.email,
+        phone: input.phone,
+        industry: input.industry,
+        primaryService: input.primaryService,
+        targetLocation: input.targetLocation,
+        reportDeliveryStatus: 'pending',
+      });
+
+      // Track as Lead in Meta CAPI
+      await trackLead({
+        sourceUrl: input.websiteUrl,
+        customData: {
+          businessName: input.businessName,
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+        },
+      });
+
+      return { success: true };
+    }),
+    
+    getLeadByEmail: publicProcedure.input(z.object({
+      email: z.string().email(),
+    })).query(async ({ input }) => {
+      const lead = await db.getFitdLeadByEmail(input.email);
+      if (!lead) {
+        throw new TRPCError({ code: 'NOT_FOUND', message: 'Lead not found' });
+      }
+      return lead;
+    }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
+
+// Note: FITD router will be added here

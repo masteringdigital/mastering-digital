@@ -36,6 +36,13 @@
       "when": 1770821901718,
       "tag": "0004_flimsy_hannibal_king",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1770828244598,
+      "tag": "0005_melodic_the_stranger",
+      "breakpoints": true
     }
   ]
 }

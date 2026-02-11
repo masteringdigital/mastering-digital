@@ -394,3 +394,12 @@
 - [ ] Seed database with 7 Kitchen & Bathroom blog posts
 - [ ] Test blog functionality and responsive design
 - [ ] Save checkpoint with blog feature complete
+
+## Phase 43: Blog Updates - Marketing Category and SEO Post
+- [x] Extract content from SEO blog post document
+- [x] Create Marketing category in database
+- [x] Add SEO blog post to Marketing category
+- [x] Remove test category from database
+- [x] Remove test blog posts from database
+- [x] Verify blog listing displays correctly
+- [ ] Save checkpoint with blog updates

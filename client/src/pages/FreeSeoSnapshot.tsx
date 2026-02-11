@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Search, MapPin, AlertTriangle, ListChecks } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
 export default function FreeSeoSnapshot() {
@@ -67,11 +67,11 @@ export default function FreeSeoSnapshot() {
   };
 
   const features = [
-    { title: "Domain Authority & Backlinks", description: "See your domain strength and the quality of sites linking to you." },
-    { title: "Keyword Visibility", description: "Find out which keywords you rank for and where you stand against competitors." },
-    { title: "Local SEO Status", description: "Check your local pack visibility, citations, and local ranking opportunities." },
-    { title: "Technical Health Flags", description: "Identify crawl errors, mobile issues, and other technical barriers." },
-    { title: "Top 3-5 Priority Fixes", description: "Get a clear roadmap of the fastest wins to improve your rankings." },
+    { title: "Domain Authority & Backlinks", description: "See your domain strength and the quality of sites linking to you.", icon: ShieldCheck },
+    { title: "Keyword Visibility", description: "Find out which keywords you rank for and where you stand against competitors.", icon: Search },
+    { title: "Local SEO Status", description: "Check your local pack visibility, citations, and local ranking opportunities.", icon: MapPin },
+    { title: "Technical Health Flags", description: "Identify crawl errors, mobile issues, and other technical barriers.", icon: AlertTriangle },
+    { title: "Top 3-5 Priority Fixes", description: "Get a clear roadmap of the fastest wins to improve your rankings.", icon: ListChecks },
   ];
 
   return (
@@ -270,16 +270,22 @@ export default function FreeSeoSnapshot() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-lg text-gray-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card key={index} className="border-0 shadow-lg">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                      <IconComponent className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-lg text-gray-900">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

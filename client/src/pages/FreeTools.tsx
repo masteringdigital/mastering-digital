@@ -65,20 +65,17 @@ export default function FreeTools() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
+      <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-brand-orange font-semibold text-sm uppercase tracking-wider mb-4">
+            <p className="text-brand-orange font-semibold text-xs uppercase tracking-widest mb-6">
               FREE MARKETING TOOLS
             </p>
-            <h1 className="font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
+            <h1 className="font-bold text-6xl md:text-7xl text-white leading-tight mb-8">
               Free Tools to See Where You Stand
             </h1>
-            <p className="text-xl text-white/90 mb-4">
+            <p className="text-xl text-white/90">
               Get a data-driven snapshot of your marketing performance — no sales pitch, no commitment. Just clarity.
-            </p>
-            <p className="text-lg text-white/80">
-              Choose the tool that matches what you want to know. Each one delivers actionable insights you can use immediately.
             </p>
           </div>
         </div>
@@ -91,8 +88,26 @@ export default function FreeTools() {
             {tools.map((tool, index) => {
               const IconComponent = tool.icon;
               return (
-                <Card key={index} className={`${tool.color} border-2 overflow-hidden hover:shadow-lg transition-shadow`}>
-                  <CardHeader className="pb-4">
+                <Card key={index} className={`${tool.color} border-2 overflow-hidden hover:shadow-lg transition-shadow relative`}>
+                  {/* Delivery Badge */}
+                  <div className="absolute top-4 right-4">
+                    {tool.title === "Marketing Audit" && (
+                      <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <span>⚡</span> Instant
+                      </div>
+                    )}
+                    {tool.title === "SEO Snapshot" && (
+                      <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <span>📄</span> 24 hrs
+                      </div>
+                    )}
+                    {tool.title === "AI Visibility Report" && (
+                      <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <span>🤖</span> 48 hrs
+                      </div>
+                    )}
+                  </div>
+                  <CardHeader className="pb-4 pt-8">
                     <div className="w-12 h-12 rounded-lg mb-4" style={{ backgroundColor: `${tool.accentColor}20` }}>
                       <IconComponent className="w-6 h-6 m-3" style={{ color: tool.accentColor }} />
                     </div>

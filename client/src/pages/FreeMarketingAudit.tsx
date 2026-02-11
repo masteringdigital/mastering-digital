@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Gauge, Cpu, MapPin, Star, Zap, TrendingUp } from "lucide-react";
 
 import { trpc } from "@/lib/trpc";
 
@@ -62,12 +62,12 @@ export default function FreeMarketingAudit() {
   };
 
   const features = [
-    { title: "Overall Health Score", description: "See how you stack up across visibility, SEO, and reputation with a single score." },
-    { title: "Tech Stack Scan", description: "We detect your analytics, pixels, and marketing tools — and flag what's missing." },
-    { title: "Google Business Profile", description: "Check if your GBP is claimed, complete, and optimized for local search." },
-    { title: "Reputation Snapshot", description: "See your star ratings, review volume, and response rate across platforms." },
-    { title: "Website Performance", description: "Get your mobile and desktop speed scores plus Core Web Vitals." },
-    { title: "SEO Quick Wins", description: "Identify the fastest fixes to improve your search visibility." },
+    { title: "Overall Health Score", description: "See how you stack up across visibility, SEO, and reputation with a single score.", icon: Gauge },
+    { title: "Tech Stack Scan", description: "We detect your analytics, pixels, and marketing tools — and flag what's missing.", icon: Cpu },
+    { title: "Google Business Profile", description: "Check if your GBP is claimed, complete, and optimized for local search.", icon: MapPin },
+    { title: "Reputation Snapshot", description: "See your star ratings, review volume, and response rate across platforms.", icon: Star },
+    { title: "Website Performance", description: "Get your mobile and desktop speed scores plus Core Web Vitals.", icon: Zap },
+    { title: "SEO Quick Wins", description: "Identify the fastest fixes to improve your search visibility.", icon: TrendingUp },
   ];
 
   const bulletPoints = [
@@ -237,16 +237,22 @@ export default function FreeMarketingAudit() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
+                      <IconComponent className="w-6 h-6 text-brand-orange" />
+                    </div>
+                    <CardTitle className="text-xl text-gray-900">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -451,3 +451,37 @@
 - [x] Document workflow triggers, wait actions, and email/SMS configuration
 - [x] Include troubleshooting section and testing instructions
 - [x] Save checkpoint with complete GHL setup guide
+
+## Phase 48: Comprehensive Website Updates - Navigation, Footer, Blog Redesign, and 10 New Posts
+- [ ] Ensure navigation bar appears on ALL pages (homepage, services, industries, results, about, contact, blog, FITD, thank you)
+- [ ] Fix footer styling: Navy top section (#1E3A5F) with white text, lighter blue bottom section (#2D4A6F) with white text
+- [ ] Redesign blog listing page (/blog) with hero section, category filter bar, and 3-column card grid
+- [ ] Add category filter functionality (All, Home Services, E-commerce, Multifamily, SEO, Paid Ads, AI & Automation)
+- [ ] Implement blog card design with featured image, category tag, title, excerpt, read time, and read more link
+- [ ] Enhance individual blog post pages with breadcrumbs, category tag, author box, and related posts section
+- [ ] Generate 10 blog featured images using AI image generation
+- [ ] Create blog post: 5 Google Ads Mistakes Home Service Businesses Make (Home Services, Paid Ads)
+- [ ] Create blog post: Local SEO Checklist for HVAC Companies (Home Services, SEO)
+- [ ] Create blog post: How E-commerce Brands Can Use AI to Write Product Descriptions (E-commerce, AI & Automation)
+- [ ] Create blog post: The Complete Guide to Facebook Ads for Roofers (Home Services, Paid Ads)
+- [ ] Create blog post: What Is AI Search Optimization? A Beginner's Guide (SEO, AI & Automation)
+- [ ] Create blog post: How to Get More Google Reviews for Your Local Business (Home Services, SEO)
+- [ ] Create blog post: Shopify SEO in 2026: What's Changed and What Still Works (E-commerce, SEO)
+- [ ] Create blog post: Multifamily Marketing in a Digital-First World (Multifamily)
+- [ ] Create blog post: Google Local Service Ads (LSAs) Explained (Home Services, Paid Ads)
+- [ ] Create blog post: The ROI of SEO: How Long Does It Take (SEO)
+- [ ] Test all pages and verify navigation/footer consistency
+- [ ] Save checkpoint with comprehensive website updates
+
+## Phase 46: Create 10 Comprehensive Blog Posts
+- [x] Create blog post content for 10 marketing articles (1,200-1,800 words each)
+- [x] Create blog posts covering: Lead Generation, SEO, Paid Ads, Email Marketing, CRO, AI/Automation, Social Media, Customer Retention, Analytics, Marketing Automation
+- [x] Add featured images to all blog posts
+- [x] Fix Footer.tsx JSX structure error
+- [x] Verify blog infrastructure (tRPC procedures, database schema, Blog page component)
+- [ ] Add 3 initial blog posts to database with full content and featured images
+- [ ] Publish all blog posts and verify they display on blog page
+- [ ] Create individual blog post detail pages
+- [ ] Test blog navigation and filtering
+- [ ] Write vitest tests for blog procedures
+- [ ] Save checkpoint with blog posts complete

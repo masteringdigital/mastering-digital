@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blog_posts SET isPublished = true, publishedAt = NOW() WHERE slug IN ('lead-generation-strategies-home-services', 'seo-optimization-ecommerce-businesses', 'paid-advertising-strategy-guide')",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute UPDATE blog_posts SET isPublished = true, publishedAt = NOW() WHERE slug IN ('lead-generation-strategies-home-services', 'seo-optimization-ecommerce-businesses', 'paid-advertising-strategy-guide')",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 350
+}

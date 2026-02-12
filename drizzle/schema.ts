@@ -247,3 +247,19 @@ export const fitdLeads = mysqlTable("fitd_leads", {
 
 export type FitdLead = typeof fitdLeads.$inferSelect;
 export type InsertFitdLead = typeof fitdLeads.$inferInsert;
+
+// Delayed jobs table for SMS follow-ups and other scheduled tasks
+export const delayedJobs = mysqlTable("delayed_jobs", {
+  id: int("id").primaryKey().autoincrement(),
+  jobType: varchar("job_type", { length: 50 }).notNull(), // 'sms_followup', etc.
+  payload: text("payload").notNull(), // Job-specific data as JSON string
+  scheduledFor: timestamp("scheduled_for").notNull(), // When to execute
+  status: varchar("status", { length: 20 }).notNull().default("pending"), // pending, completed, failed
+  attempts: int("attempts").notNull().default(0),
+  lastError: text("last_error"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  completedAt: timestamp("completed_at"),
+});
+
+export type DelayedJob = typeof delayedJobs.$inferSelect;
+export type InsertDelayedJob = typeof delayedJobs.$inferInsert;

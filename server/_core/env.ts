@@ -9,4 +9,5 @@ export const ENV = {
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
   goHighLevelApiKey: process.env.GOHIGHLEVEL_API_KEY ?? "",
   goHighLevelLocationId: process.env.GOHIGHLEVEL_LOCATION_ID ?? "",
+  goHighLevelWorkflowApiKey: process.env.GOHIGHLEVEL_WORKFLOW_API_KEY ?? "",
 };

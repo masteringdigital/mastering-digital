@@ -9,6 +9,7 @@ import { storagePut } from "./storage";
 import crypto from "crypto";
 import bcrypt from "bcryptjs";
 import { trackLead, trackContact, trackPageView } from "./_core/metaCAPI";
+import { createGoHighLevelContact, mapFITDToGoHighLevel } from "./_core/gohighlevel";
 
 // Admin-only procedure
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -564,6 +565,30 @@ export const appRouter = router({
         reportDeliveryStatus: 'pending',
       });
 
+      // Create contact in GoHighLevel
+      const ghlContact = mapFITDToGoHighLevel(
+        {
+          businessName: input.businessName,
+          website: input.websiteUrl,
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+          industry: input.industry,
+          primaryService: input.primaryService,
+          targetLocation: input.targetLocation,
+        },
+        input.reportType
+      );
+
+      const ghlResult = await createGoHighLevelContact(ghlContact);
+      
+      if (!ghlResult.success) {
+        console.error('[FITD] GoHighLevel contact creation failed:', ghlResult.error);
+        // Continue even if GHL fails - don't block user experience
+      } else {
+        console.log('[FITD] GoHighLevel contact created:', ghlResult.contactId);
+      }
+
       // Track as Lead in Meta CAPI
       await trackLead({
         sourceUrl: input.websiteUrl,
@@ -575,7 +600,7 @@ export const appRouter = router({
         },
       });
 
-      return { success: true };
+      return { success: true, ghlContactId: ghlResult.contactId };
     }),
     
     getLeadByEmail: publicProcedure.input(z.object({

@@ -430,4 +430,16 @@
 - [x] Add icons to AI Visibility Report cards (brain, lightbulb, code, trophy)
 - [x] Add "Full AI Search Audit" upsell section to AI Visibility Report page
 - [x] Test all updates on desktop and mobile
-- [ ] Save checkpoint with FITD feedback updates
+- [x] Save checkpoint with FITD feedback updates
+
+## Phase 46: GoHighLevel API Integration for FITD Forms
+- [x] Add GoHighLevel API key as environment variable
+- [x] Add GoHighLevel Location ID as environment variable
+- [x] Create GoHighLevel API helper functions in server/_core/gohighlevel.ts
+- [x] Implement contact creation function with proper error handling
+- [x] Update FITD submitLead procedure to call GoHighLevel API
+- [x] Map form fields to GoHighLevel contact fields
+- [x] Keep database logging for backup and analytics
+- [x] Test form submission creates contact in GoHighLevel (✅ Working! Contact ID: IwkjKNg2j1qdT7Tn38ZL)
+- [x] Write vitest tests for GoHighLevel integration (6/6 passing)
+- [x] Save checkpoint with GoHighLevel integration complete

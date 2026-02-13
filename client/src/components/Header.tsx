@@ -46,7 +46,7 @@ export default function Header() {
                   <div className="text-xs text-gray-500 mt-1">Multi-channel growth strategy</div>
                 </a>
                 <a
-                  href="/services/web-design"
+                  href="/web-design"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-purple transition-colors"
                 >
                   <div className="font-semibold">Web Design & Conversion</div>
@@ -185,7 +185,7 @@ export default function Header() {
                     <a href="/services/strategy-channel-marketing" className="text-gray-700 hover:text-brand-blue" onClick={() => setIsOpen(false)}>
                       Strategy & Channel Marketing
                     </a>
-                    <a href="/services/web-design" className="text-gray-700 hover:text-brand-purple" onClick={() => setIsOpen(false)}>
+                    <a href="/web-design" className="text-gray-700 hover:text-brand-purple" onClick={() => setIsOpen(false)}>
                       Web Design & Conversion
                     </a>
                     <a href="/services/ai-implementation" className="text-gray-700 hover:text-brand-cyan" onClick={() => setIsOpen(false)}>

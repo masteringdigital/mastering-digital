@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, Brain, Lightbulb, Code, Trophy } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 
 export default function FreeAiVisibilityReport() {
@@ -74,7 +76,9 @@ export default function FreeAiVisibilityReport() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Header />
+      <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">
@@ -402,5 +406,7 @@ export default function FreeAiVisibilityReport() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }

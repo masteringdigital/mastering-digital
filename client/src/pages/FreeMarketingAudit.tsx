@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, Gauge, Cpu, MapPin, Star, Zap, TrendingUp } from "lucide-react";
-
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 
 export default function FreeMarketingAudit() {
@@ -80,7 +81,9 @@ export default function FreeMarketingAudit() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Header />
+      <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">
@@ -349,5 +352,7 @@ export default function FreeMarketingAudit() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }

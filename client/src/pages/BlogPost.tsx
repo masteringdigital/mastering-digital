@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { Streamdown } from 'streamdown';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Category color mapping
 const categoryColors: Record<string, { bg: string; text: string }> = {
@@ -50,16 +52,22 @@ export default function BlogPost() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-blue" />
-      </div>
+      <>
+        <Header />
+        <div className="min-h-screen flex items-center justify-center pt-20">
+          <Loader2 className="w-8 h-8 animate-spin text-brand-blue" />
+        </div>
+        <Footer />
+      </>
     );
   }
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-background">
-        <div className="container py-16">
+      <>
+        <Header />
+        <div className="min-h-screen bg-background pt-20">
+          <div className="container py-16">
           <Link href="/blog">
             <Button variant="outline" className="mb-8">
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -74,7 +82,9 @@ export default function BlogPost() {
             </Link>
           </div>
         </div>
-      </div>
+        </div>
+        <Footer />
+      </>
     );
   }
 
@@ -84,7 +94,9 @@ export default function BlogPost() {
   const readTime = getReadTime(post.content);
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Header />
+      <div className="min-h-screen bg-background pt-20">
       {/* Featured Image */}
       {post.featuredImageUrl && (
         <div className="w-full h-96 md:h-[500px] overflow-hidden bg-gray-200">
@@ -232,5 +244,7 @@ export default function BlogPost() {
         </div>
       </article>
     </div>
+    <Footer />
+    </>
   );
 }

@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function ThankYou() {
   const [reportType, setReportType] = useState<string>("marketing-audit");
@@ -36,7 +38,9 @@ export default function ThankYou() {
   const info = reportInfo[reportType] || reportInfo["marketing-audit"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-blue to-[#2A4A6F] flex items-center justify-center py-20">
+    <>
+      <Header />
+      <div className="min-h-screen bg-gradient-to-br from-brand-blue to-[#2A4A6F] flex items-center justify-center py-20 pt-32">
       <div className="container">
         <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-2xl p-12 text-center">
           {/* Success Icon */}
@@ -131,5 +135,7 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

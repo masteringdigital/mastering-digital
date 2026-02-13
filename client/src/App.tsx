@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import StrategyService from "./pages/StrategyService";
 import StrategyChannelMarketing from "./pages/StrategyChannelMarketing";
-import WebDesignService from "./pages/WebDesignService";
+
 import AIService from "./pages/AIService";
 import AIImplementation from "./pages/AIImplementation";
 import Industries from "./pages/Industries";
@@ -49,12 +49,11 @@ function Router() {
       <Route path={"/services/seo-services"} component={SEOService} />
       <Route path={"/services/meta-ads-service"} component={MetaAdsService} />
       {/* Generic service routes */}
-      <Route path={"/services/strategy"} component={StrategyService} />
-      <Route path={"/services/web-design"} component={WebDesignService} />
-      <Route path={"/web-design"} component={WebDesign} />
-      <Route path={"/services/ai"} component={AIService} />
-      <Route path={"/services/ppc"} component={GoogleAds} />
-      <Route path={"/services/seo"} component={SEO} />
+        <Route path={"services/strategy"} component={StrategyService} />
+      <Route path={"web-design"} component={WebDesign} />
+      <Route path={"services/ai"} component={AIService} />
+      <Route path={"services/ppc"} component={GoogleAds} />
+      <Route path={"services/seo"} component={SEO} />
       {/* Who We Serve routes */}
       <Route path={"/who-we-serve"} component={WhoWeServe} />
       <Route path={"/who-we-serve/home-services"} component={HomeServices} />

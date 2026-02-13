@@ -1,0 +1,18 @@
+{
+  "query": "\n-- First, get the blog category IDs\nSELECT id, name FROM blog_categories LIMIT 20;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute \n-- First, get the blog category IDs\nSELECT id, name FROM blog_categories LIMIT 20;\n",
+  "rows": [
+    {
+      "id": "1",
+      "name": "Kitchen & Bathroom"
+    },
+    {
+      "id": "5",
+      "name": "Marketing"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n1\tKitchen & Bathroom\n5\tMarketing\n",
+  "stderr": "",
+  "execution_time_ms": 800
+}

@@ -152,25 +152,31 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo1_url", "https://logospng.org/download/nike/logo-nike-2048.png")} alt="Nike" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo1_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/PSPOyUASrnOnbNsJ.png")} alt="850 Living" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo2_url", "https://logospng.org/download/reebok/logo-reebok-2048.png")} alt="Reebok" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo2_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/HudDnYiHVYKNJaJa.png")} alt="Shoma Way" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo3_url", "https://logospng.org/download/fila/logo-fila-2048.png")} alt="Fila" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo3_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/GNjKWNxCAXryXgDq.png")} alt="Century Town Center" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo4_url", "https://logospng.org/download/adidas/logo-adidas-2048.png")} alt="Adidas" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo4_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/eEMAGMEkhMCtlkSV.png")} alt="Greystar" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo5_url", "https://logospng.org/download/jordan/logo-jordan-2048.png")} alt="Jordan" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo5_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/efDlajbCfgZzuKgU.png")} alt="Sanctuary Lofts" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo6_url", "https://logospng.org/download/vans/logo-vans-2048.png")} alt="Vans" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo6_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/gbJSubeXWEMELEyK.png")} alt="Z30 Apartment Community" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
             <div className="w-32 h-16 flex items-center justify-center">
-              <img src={getContent("brands", "logo7_url", "https://cdn.worldvectorlogo.com/logos/new-balance-2.svg")} alt="New Balance" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src={getContent("brands", "logo7_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/IbVyTrcLGULxPCiS.png")} alt="Shoma Village" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("brands", "logo8_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/UxMKCptlIbUBjhrw.png")} alt="Dish" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="w-32 h-16 flex items-center justify-center">
+              <img src={getContent("brands", "logo9_url", "https://files.manuscdn.com/user_upload_by_module/session_file/310519663316492277/AvxXuThrfzlfEAYL.png")} alt="Ramona LaRue by Arianne" className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all" />
             </div>
           </div>
         </div>

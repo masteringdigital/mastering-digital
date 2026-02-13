@@ -485,3 +485,9 @@
 - [ ] Test blog navigation and filtering
 - [ ] Write vitest tests for blog procedures
 - [ ] Save checkpoint with blog posts complete
+
+## Phase 47: Fix Homepage Hero Spacing
+- [x] Increase top margin/padding on white card (Dedicated experts section)
+- [x] Test spacing on desktop and mobile
+- [x] Verify visual balance between nav and card
+- [ ] Save checkpoint with spacing fix

@@ -50,7 +50,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center pt-20 pb-12 bg-gradient-to-br from-brand-blue via-brand-blue to-[#2A4A6F]">
+      <section className="relative min-h-[60vh] flex items-center pt-32 pb-12 bg-gradient-to-br from-brand-blue via-brand-blue to-[#2A4A6F]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column */}

@@ -33,6 +33,7 @@ import FreeTools from "./pages/FreeTools";
 import FreeMarketingAudit from "./pages/FreeMarketingAudit";
 import FreeSeoSnapshot from "./pages/FreeSeoSnapshot";
 import FreeAiVisibilityReport from "./pages/FreeAiVisibilityReport";
+import WebDesign from "./pages/WebDesign";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -50,6 +51,7 @@ function Router() {
       {/* Generic service routes */}
       <Route path={"/services/strategy"} component={StrategyService} />
       <Route path={"/services/web-design"} component={WebDesignService} />
+      <Route path={"/web-design"} component={WebDesign} />
       <Route path={"/services/ai"} component={AIService} />
       <Route path={"/services/ppc"} component={GoogleAds} />
       <Route path={"/services/seo"} component={SEO} />

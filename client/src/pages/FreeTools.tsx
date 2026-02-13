@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Clipboard, Search, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function FreeTools() {
   const tools = [
@@ -64,6 +66,7 @@ export default function FreeTools() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-brand-blue to-[#2A4A6F]">
         <div className="container">
@@ -224,6 +227,7 @@ export default function FreeTools() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

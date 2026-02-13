@@ -4,6 +4,8 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, ArrowRight } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Category color mapping
 const categoryColors: Record<string, { bg: string; text: string; badge: string }> = {
@@ -58,6 +60,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       {/* Hero Section */}
       <section className="py-20 md:py-32 bg-gradient-to-br from-brand-blue via-brand-blue to-[#2A4A6F]">
         <div className="container">
@@ -211,6 +214,7 @@ export default function Blog() {
           )}
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

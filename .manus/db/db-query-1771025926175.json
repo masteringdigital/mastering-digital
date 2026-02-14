@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, title, slug, content, featuredImageUrl FROM blog_posts WHERE title LIKE '%Paid Advertising%' OR title LIKE '%Google Ads%' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT id, title, slug, content, featuredImageUrl FROM blog_posts WHERE title LIKE '%Paid Advertising%' OR title LIKE '%Google Ads%' LIMIT 5;",
+  "rows": [
+    {
+      "id": "30003",
+      "title": "Paid Advertising Strategy Guide",
+      "slug": "paid-advertising-strategy",
+      "content": "Paid advertising is the fastest way to generate qualified leads and drive sales. Unlike organic channels that take months to produce results, paid advertising can generate leads within hours of launching a campaign. This guide walks you through the framework we use to build profitable paid campaigns for clients across multiple industries, including understanding unit economics, channel selection, landing page optimization, and systematic testing.",
+      "featuredImageUrl": "https://private-us-east-1.manuscdn.com/sessionFile/gdoMzMLMX7RpezMxgQSeYN/sandbox/3U2nSU5WS6MGxpObz4vErs-img-3_1770937166000_na1fn_YmxvZy1wYWlkLWFkcy1zdHJhdGVneQ.png"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tcontent\tfeaturedImageUrl\n30003\tPaid Advertising Strategy Guide\tpaid-advertising-strategy\tPaid advertising is the fastest way to generate qualified leads and drive sales. Unlike organic channels that take months to produce results, paid advertising can generate leads within hours of launching a campaign. This guide walks you through the framework we use to build profitable paid campaigns for clients across multiple industries, including understanding unit economics, channel selection, landing page optimization, and systematic testing.\thttps://private-us-east-1.manuscdn.com/sessionFile/gdoMzMLMX7RpezMxgQSeYN/sandbox/3U2nSU5WS6MGxpObz4vErs-img-3_1770937166000_na1fn_YmxvZy1wYWlkLWFkcy1zdHJhdGVneQ.png\n",
+  "stderr": "",
+  "execution_time_ms": 350
+}

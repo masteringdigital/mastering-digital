@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blog_posts SET \n  content = TRIM(SUBSTRING_INDEX(content, 'Ready to stop wasting ad spend', 1))\nWHERE slug = '5-google-ads-mistakes-home-service-businesses' AND content LIKE '%Ready to stop wasting ad spend%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute UPDATE blog_posts SET \n  content = TRIM(SUBSTRING_INDEX(content, 'Ready to stop wasting ad spend', 1))\nWHERE slug = '5-google-ads-mistakes-home-service-businesses' AND content LIKE '%Ready to stop wasting ad spend%';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 364
+}

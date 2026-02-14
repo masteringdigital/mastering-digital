@@ -1,0 +1,313 @@
+{
+  "query": "SELECT content FROM blog_posts WHERE slug = '5-google-ads-mistakes-home-service-businesses' LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT content FROM blog_posts WHERE slug = '5-google-ads-mistakes-home-service-businesses' LIMIT 1;",
+  "rows": [
+    {
+      "content": "Google Ads can be one of the most powerful lead generation tools for home service businesses. When someone searches \"emergency plumber near me\" or \"AC repair in [city],\" they're ready to buy. Showing up at that exact moment is marketing gold."
+    },
+    {
+      "content": "But here's the problem: most home service businesses are wasting money on Google Ads because of a handful of avoidable mistakes. We've audited hundreds of accounts for HVAC companies, roofers, plumbers, and electricians — and we see the same issues over and over again."
+    },
+    {
+      "content": "This guide breaks down the five most common Google Ads mistakes and shows you exactly how to fix them."
+    },
+    {
+      "content": "## Mistake #1: Bidding on Broad Match Keywords Without Negative Keywords"
+    },
+    {
+      "content": "This is the most expensive mistake we see. Broad match keywords tell Google to show your ad for any search that's loosely related to your keyword. That sounds helpful until you realize what \"loosely related\" means to Google."
+    },
+    {
+      "content": "If you're bidding on \"plumbing services,\" your ad might show for:"
+    },
+    {
+      "content": "- \"plumbing services hiring\" (job seekers, not customers)"
+    },
+    {
+      "content": "- \"free plumbing advice\" (DIYers who won't pay)"
+    },
+    {
+      "content": "- \"plumbing services complaints\" (people looking to complain, not buy)"
+    },
+    {
+      "content": "- \"plumbing school near me\" (students, not homeowners)"
+    },
+    {
+      "content": "Every one of those clicks costs you money — and none of them will become customers."
+    },
+    {
+      "content": "**How to fix it:**"
+    },
+    {
+      "content": "Start with phrase match or exact match keywords instead of broad match. These give you more control over which searches trigger your ads."
+    },
+    {
+      "content": "More importantly, build a negative keyword list. These are terms you explicitly tell Google NOT to show your ads for. Every home service account should have negatives for:"
+    },
+    {
+      "content": "- Jobs, hiring, careers, salary"
+    },
+    {
+      "content": "- Free, DIY, how to"
+    },
+    {
+      "content": "- Complaints, reviews, lawsuit"
+    },
+    {
+      "content": "- Schools, training, certification"
+    },
+    {
+      "content": "- Wholesale, supplier, parts"
+    },
+    {
+      "content": "Review your Search Terms Report weekly. This shows you the actual searches that triggered your ads. Add irrelevant terms as negatives immediately."
+    },
+    {
+      "content": "## Mistake #2: Not Using Call Tracking"
+    },
+    {
+      "content": "Here's a scenario we see constantly: a home service business spends $5,000/month on Google Ads. They know they're getting calls. But when we ask which keywords or campaigns are driving those calls, they have no idea."
+    },
+    {
+      "content": "Without call tracking, you're flying blind. You can't optimize what you can't measure."
+    },
+    {
+      "content": "Most home service leads come through phone calls, not form submissions. If you're only tracking form fills, you're missing 60-80% of your conversions. That means Google's algorithm is optimizing for the wrong thing, and you can't make smart budget decisions."
+    },
+    {
+      "content": "**How to fix it:**"
+    },
+    {
+      "content": "Implement call tracking with dynamic number insertion. This means your website shows a unique phone number to each visitor based on how they arrived. When they call, you know exactly which ad, keyword, and campaign drove that call."
+    },
+    {
+      "content": "Options include:"
+    },
+    {
+      "content": "- Google's built-in call tracking (free but limited)"
+    },
+    {
+      "content": "- CallRail, CallTrackingMetrics, or WhatConverts (more features)"
+    },
+    {
+      "content": "Once tracking is in place, set up call conversions in Google Ads. Now the algorithm can optimize for actual leads, not just clicks."
+    },
+    {
+      "content": "## Mistake #3: Sending All Traffic to the Homepage"
+    },
+    {
+      "content": "Your homepage is designed to introduce your business to everyone — residential customers, commercial clients, people looking for careers, vendors, and more. It's not designed to convert someone who just searched \"furnace repair Denver.\""
+    },
+    {
+      "content": "When someone clicks an ad for a specific service, they expect to land on a page about that specific service. If they have to hunt around your homepage to find what they need, most will bounce."
+    },
+    {
+      "content": "**How to fix it:**"
+    },
+    {
+      "content": "Create dedicated landing pages for each service you advertise. If you're running ads for AC repair, furnace installation, and duct cleaning, you need three separate landing pages."
+    },
+    {
+      "content": "Each landing page should include:"
+    },
+    {
+      "content": "- A headline matching the search intent (\"Fast AC Repair in [City]\")"
+    },
+    {
+      "content": "- Clear description of the service"
+    },
+    {
+      "content": "- Trust signals (reviews, certifications, years in business)"
+    },
+    {
+      "content": "- Prominent phone number and/or form"
+    },
+    {
+      "content": "- No navigation menu (keeps them focused on converting)"
+    },
+    {
+      "content": "This single change can double or triple your conversion rate. We've seen it happen repeatedly."
+    },
+    {
+      "content": "## Mistake #4: Ignoring Local Service Ads (LSAs)"
+    },
+    {
+      "content": "Local Service Ads appear above regular Google Ads in search results. They show your business name, reviews, and a \"Google Guaranteed\" badge. For home services, they're incredibly effective — and many businesses either don't know about them or haven't set them up properly."
+    },
+    {
+      "content": "LSAs work on a pay-per-lead model, not pay-per-click. You only pay when someone actually contacts you through the ad. For many home service businesses, the cost per lead from LSAs is lower than traditional Google Ads."
+    },
+    {
+      "content": "**How to fix it:**"
+    },
+    {
+      "content": "Set up your Local Service Ads profile if you haven't already. The process includes:"
+    },
+    {
+      "content": "- Background checks for you and your technicians"
+    },
+    {
+      "content": "- License and insurance verification"
+    },
+    {
+      "content": "- Google Guaranteed badge application"
+    },
+    {
+      "content": "Once approved, optimize your profile:"
+    },
+    {
+      "content": "- Add all services you offer"
+    },
+    {
+      "content": "- Set your service areas accurately"
+    },
+    {
+      "content": "- Upload photos of your team and work"
+    },
+    {
+      "content": "- Respond to every lead quickly (response time affects ranking)"
+    },
+    {
+      "content": "- Ask happy customers to leave Google reviews"
+    },
+    {
+      "content": "Run LSAs alongside your regular Google Ads campaigns. They complement each other — LSAs capture the top of the page while traditional ads catch everyone else."
+    },
+    {
+      "content": "## Mistake #5: No Conversion Tracking Setup"
+    },
+    {
+      "content": "This might sound basic, but we audit accounts every week where conversion tracking is either missing, broken, or misconfigured. Without proper tracking, Google Ads has no idea which clicks turn into customers."
+    },
+    {
+      "content": "When tracking is missing, Google optimizes for clicks — not leads. You end up paying for traffic that never converts."
+    },
+    {
+      "content": "Common tracking problems we see:"
+    },
+    {
+      "content": "- Tracking code installed incorrectly (or not at all)"
+    },
+    {
+      "content": "- Tracking only form submissions, not phone calls"
+    },
+    {
+      "content": "- Counting page views as conversions (inflated numbers, bad data)"
+    },
+    {
+      "content": "- Duplicate conversion tracking (counting one lead multiple times)"
+    },
+    {
+      "content": "**How to fix it:**"
+    },
+    {
+      "content": "Audit your conversion tracking setup:"
+    },
+    {
+      "content": "1. **Check Google Tag Assistant** — Install the Chrome extension and visit your landing pages. It'll show if your tracking codes are firing correctly."
+    },
+    {
+      "content": "2. **Verify in Google Ads** — Go to Tools > Conversions. Make sure each conversion action is marked as \"Recording conversions.\" If it says \"No recent conversions,\" something is broken."
+    },
+    {
+      "content": "3. **Test the full flow** — Submit a test form and make a test call. Verify that both show up as conversions in your account within 24 hours."
+    },
+    {
+      "content": "4. **Track the right actions** — For home services, track: phone calls (from ads and website), form submissions, and chat conversations. Don't track page views or button clicks as conversions."
+    },
+    {
+      "content": "## How to Audit Your Own Campaigns"
+    },
+    {
+      "content": "Want to check if your account has these issues? Here's a quick self-audit:"
+    },
+    {
+      "content": "**Keyword Check:**"
+    },
+    {
+      "content": "- Go to Keywords > Search Terms"
+    },
+    {
+      "content": "- Look for irrelevant searches in the last 30 days"
+    },
+    {
+      "content": "- If you see job seekers, DIYers, or off-topic searches, add them as negatives"
+    },
+    {
+      "content": "**Call Tracking Check:**"
+    },
+    {
+      "content": "- Look at your conversion data"
+    },
+    {
+      "content": "- If you're only seeing form submissions, you're missing calls"
+    },
+    {
+      "content": "- If phone conversions show zero, tracking isn't working"
+    },
+    {
+      "content": "**Landing Page Check:**"
+    },
+    {
+      "content": "- Click on your own ads"
+    },
+    {
+      "content": "- Do you land on a page specific to that service?"
+    },
+    {
+      "content": "- Is there a clear call-to-action above the fold?"
+    },
+    {
+      "content": "**LSA Check:**"
+    },
+    {
+      "content": "- Search for your main service + city on Google"
+    },
+    {
+      "content": "- Do you see Local Service Ads at the top?"
+    },
+    {
+      "content": "- Is your business showing up? If not, you're missing out."
+    },
+    {
+      "content": "**Conversion Check:**"
+    },
+    {
+      "content": "- Go to Tools > Conversions"
+    },
+    {
+      "content": "- Are all conversion actions recording?"
+    },
+    {
+      "content": "- Is the conversion count realistic compared to your actual leads?"
+    },
+    {
+      "content": "## The Bottom Line"
+    },
+    {
+      "content": "Google Ads works for home service businesses — when it's set up correctly. These five mistakes are costing you money every single day they go unfixed."
+    },
+    {
+      "content": "The good news? Each one has a clear solution. Start with conversion tracking (you can't improve what you can't measure), then work through the rest of the list."
+    },
+    {
+      "content": "If you want a professional audit of your Google Ads account, we offer a free marketing audit that includes a review of your paid advertising setup. You'll see exactly where you're wasting money and what to fix first."
+    },
+    {
+      "content": "---"
+    },
+    {
+      "content": "**Ready to stop wasting ad spend?**"
+    },
+    {
+      "content": "Get a free marketing audit and see where your Google Ads account stands — no commitment required."
+    },
+    {
+      "content": "[Get My Free Audit →](/free-marketing-audit)"
+    }
+  ],
+  "messages": [],
+  "stdout": "content\nGoogle Ads can be one of the most powerful lead generation tools for home service businesses. When someone searches \"emergency plumber near me\" or \"AC repair in [city],\" they're ready to buy. Showing up at that exact moment is marketing gold.\n\nBut here's the problem: most home service businesses are wasting money on Google Ads because of a handful of avoidable mistakes. We've audited hundreds of accounts for HVAC companies, roofers, plumbers, and electricians — and we see the same issues over and over again.\n\nThis guide breaks down the five most common Google Ads mistakes and shows you exactly how to fix them.\n\n## Mistake #1: Bidding on Broad Match Keywords Without Negative Keywords\n\nThis is the most expensive mistake we see. Broad match keywords tell Google to show your ad for any search that's loosely related to your keyword. That sounds helpful until you realize what \"loosely related\" means to Google.\n\nIf you're bidding on \"plumbing services,\" your ad might show for:\n- \"plumbing services hiring\" (job seekers, not customers)\n- \"free plumbing advice\" (DIYers who won't pay)\n- \"plumbing services complaints\" (people looking to complain, not buy)\n- \"plumbing school near me\" (students, not homeowners)\n\nEvery one of those clicks costs you money — and none of them will become customers.\n\n**How to fix it:**\n\nStart with phrase match or exact match keywords instead of broad match. These give you more control over which searches trigger your ads.\n\nMore importantly, build a negative keyword list. These are terms you explicitly tell Google NOT to show your ads for. Every home service account should have negatives for:\n- Jobs, hiring, careers, salary\n- Free, DIY, how to\n- Complaints, reviews, lawsuit\n- Schools, training, certification\n- Wholesale, supplier, parts\n\nReview your Search Terms Report weekly. This shows you the actual searches that triggered your ads. Add irrelevant terms as negatives immediately.\n\n## Mistake #2: Not Using Call Tracking\n\nHere's a scenario we see constantly: a home service business spends $5,000/month on Google Ads. They know they're getting calls. But when we ask which keywords or campaigns are driving those calls, they have no idea.\n\nWithout call tracking, you're flying blind. You can't optimize what you can't measure.\n\nMost home service leads come through phone calls, not form submissions. If you're only tracking form fills, you're missing 60-80% of your conversions. That means Google's algorithm is optimizing for the wrong thing, and you can't make smart budget decisions.\n\n**How to fix it:**\n\nImplement call tracking with dynamic number insertion. This means your website shows a unique phone number to each visitor based on how they arrived. When they call, you know exactly which ad, keyword, and campaign drove that call.\n\nOptions include:\n- Google's built-in call tracking (free but limited)\n- CallRail, CallTrackingMetrics, or WhatConverts (more features)\n\nOnce tracking is in place, set up call conversions in Google Ads. Now the algorithm can optimize for actual leads, not just clicks.\n\n## Mistake #3: Sending All Traffic to the Homepage\n\nYour homepage is designed to introduce your business to everyone — residential customers, commercial clients, people looking for careers, vendors, and more. It's not designed to convert someone who just searched \"furnace repair Denver.\"\n\nWhen someone clicks an ad for a specific service, they expect to land on a page about that specific service. If they have to hunt around your homepage to find what they need, most will bounce.\n\n**How to fix it:**\n\nCreate dedicated landing pages for each service you advertise. If you're running ads for AC repair, furnace installation, and duct cleaning, you need three separate landing pages.\n\nEach landing page should include:\n- A headline matching the search intent (\"Fast AC Repair in [City]\")\n- Clear description of the service\n- Trust signals (reviews, certifications, years in business)\n- Prominent phone number and/or form\n- No navigation menu (keeps them focused on converting)\n\nThis single change can double or triple your conversion rate. We've seen it happen repeatedly.\n\n## Mistake #4: Ignoring Local Service Ads (LSAs)\n\nLocal Service Ads appear above regular Google Ads in search results. They show your business name, reviews, and a \"Google Guaranteed\" badge. For home services, they're incredibly effective — and many businesses either don't know about them or haven't set them up properly.\n\nLSAs work on a pay-per-lead model, not pay-per-click. You only pay when someone actually contacts you through the ad. For many home service businesses, the cost per lead from LSAs is lower than traditional Google Ads.\n\n**How to fix it:**\n\nSet up your Local Service Ads profile if you haven't already. The process includes:\n- Background checks for you and your technicians\n- License and insurance verification\n- Google Guaranteed badge application\n\nOnce approved, optimize your profile:\n- Add all services you offer\n- Set your service areas accurately\n- Upload photos of your team and work\n- Respond to every lead quickly (response time affects ranking)\n- Ask happy customers to leave Google reviews\n\nRun LSAs alongside your regular Google Ads campaigns. They complement each other — LSAs capture the top of the page while traditional ads catch everyone else.\n\n## Mistake #5: No Conversion Tracking Setup\n\nThis might sound basic, but we audit accounts every week where conversion tracking is either missing, broken, or misconfigured. Without proper tracking, Google Ads has no idea which clicks turn into customers.\n\nWhen tracking is missing, Google optimizes for clicks — not leads. You end up paying for traffic that never converts.\n\nCommon tracking problems we see:\n- Tracking code installed incorrectly (or not at all)\n- Tracking only form submissions, not phone calls\n- Counting page views as conversions (inflated numbers, bad data)\n- Duplicate conversion tracking (counting one lead multiple times)\n\n**How to fix it:**\n\nAudit your conversion tracking setup:\n\n1. **Check Google Tag Assistant** — Install the Chrome extension and visit your landing pages. It'll show if your tracking codes are firing correctly.\n\n2. **Verify in Google Ads** — Go to Tools > Conversions. Make sure each conversion action is marked as \"Recording conversions.\" If it says \"No recent conversions,\" something is broken.\n\n3. **Test the full flow** — Submit a test form and make a test call. Verify that both show up as conversions in your account within 24 hours.\n\n4. **Track the right actions** — For home services, track: phone calls (from ads and website), form submissions, and chat conversations. Don't track page views or button clicks as conversions.\n\n## How to Audit Your Own Campaigns\n\nWant to check if your account has these issues? Here's a quick self-audit:\n\n**Keyword Check:**\n- Go to Keywords > Search Terms\n- Look for irrelevant searches in the last 30 days\n- If you see job seekers, DIYers, or off-topic searches, add them as negatives\n\n**Call Tracking Check:**\n- Look at your conversion data\n- If you're only seeing form submissions, you're missing calls\n- If phone conversions show zero, tracking isn't working\n\n**Landing Page Check:**\n- Click on your own ads\n- Do you land on a page specific to that service?\n- Is there a clear call-to-action above the fold?\n\n**LSA Check:**\n- Search for your main service + city on Google\n- Do you see Local Service Ads at the top?\n- Is your business showing up? If not, you're missing out.\n\n**Conversion Check:**\n- Go to Tools > Conversions\n- Are all conversion actions recording?\n- Is the conversion count realistic compared to your actual leads?\n\n## The Bottom Line\n\nGoogle Ads works for home service businesses — when it's set up correctly. These five mistakes are costing you money every single day they go unfixed.\n\nThe good news? Each one has a clear solution. Start with conversion tracking (you can't improve what you can't measure), then work through the rest of the list.\n\nIf you want a professional audit of your Google Ads account, we offer a free marketing audit that includes a review of your paid advertising setup. You'll see exactly where you're wasting money and what to fix first.\n\n---\n\n**Ready to stop wasting ad spend?**\n\nGet a free marketing audit and see where your Google Ads account stands — no commitment required.\n\n[Get My Free Audit →](/free-marketing-audit)\n",
+  "stderr": "",
+  "execution_time_ms": 343
+}

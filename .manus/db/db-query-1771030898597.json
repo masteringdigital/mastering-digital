@@ -1,0 +1,22 @@
+{
+  "query": "SELECT id, title, slug, isPublished FROM blog_posts WHERE slug LIKE '%automation%' OR slug LIKE '%lead-nurturing%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute SELECT id, title, slug, isPublished FROM blog_posts WHERE slug LIKE '%automation%' OR slug LIKE '%lead-nurturing%';",
+  "rows": [
+    {
+      "id": "30006",
+      "title": "What Is AI Search Optimization? A Beginner's Guide for Business Owners",
+      "slug": "ai-marketing-automation-personalization",
+      "isPublished": "1"
+    },
+    {
+      "id": "30010",
+      "title": "Marketing Automation for Lead Nurturing",
+      "slug": "marketing-automation-lead-nurturing",
+      "isPublished": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tisPublished\n30006\tWhat Is AI Search Optimization? A Beginner's Guide for Business Owners\tai-marketing-automation-personalization\t1\n30010\tMarketing Automation for Lead Nurturing\tmarketing-automation-lead-nurturing\t1\n",
+  "stderr": "",
+  "execution_time_ms": 351
+}

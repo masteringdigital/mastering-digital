@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blog_posts SET \n  title = '5 Google Ads Mistakes Home Service Businesses Make (And How to Fix Them)',\n  slug = '5-google-ads-mistakes-home-service-businesses',\n  content = REPLACE(\n    content,\n    'Ready to stop wasting ad spend?\nGet a free marketing audit and see where your Google Ads account stands — no commitment required.\nGet My Free Audit → [blocked]',\n    ''\n  )\nWHERE slug = 'paid-advertising-strategy';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2rPebCrXoNSExXo.a36247f6c327 --database bbrAEM5eVgqVKxG9yZnK6V --execute UPDATE blog_posts SET \n  title = '5 Google Ads Mistakes Home Service Businesses Make (And How to Fix Them)',\n  slug = '5-google-ads-mistakes-home-service-businesses',\n  content = REPLACE(\n    content,\n    'Ready to stop wasting ad spend?\nGet a free marketing audit and see where your Google Ads account stands — no commitment required.\nGet My Free Audit → [blocked]',\n    ''\n  )\nWHERE slug = 'paid-advertising-strategy';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 354
+}
